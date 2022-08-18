@@ -11,7 +11,7 @@ class Index
 {
 
     private $model;
-    public $title = "Blog";
+    private $title = "Blog";
 
     public function __construct($model)
     {

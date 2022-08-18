@@ -1,21 +1,23 @@
 <?php
 /**
- * Db Return a connection to the mysql database
+ * Config Return a connection to the mysql database and sets the environemnt config
  *
  * @author Daniel Costello
  * @property private $host Hostname of database
  * @property private $dbname Name of database
  * @property private $user User name of database
  * @property private $pass Password of database
+ * @property private $timeZone Holds the timezone for date
  *
  */
-class Db
+class Config
 {
 
     private $host = "localhost";
     private $dbname = "databasedb";
     private $user = "root";
     private $pass = "";
+    private $timeZone = "Australia/Perth";
 
     protected function connect()
     {
@@ -31,6 +33,7 @@ class Db
             exit();
         }
 
+        date_default_timezone_set($this->timeZone);
         return $pdo;
     }
 }
