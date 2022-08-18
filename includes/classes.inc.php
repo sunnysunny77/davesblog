@@ -5,9 +5,19 @@ spl_autoload_register("autoloader");
 function autoloader($class)
 {
 
-    $path = "classes/";
-    $ext = ".class.php";
-    $fullPath = $path . $class . $ext;
+    $class = strtolower($class);
 
-    require_once $fullPath;
+    $path = "classes/" . $class . ".class.php";
+
+    if (file_exists($path)) {
+
+        require_once $path;
+    }
+
+    $path = "../classes/" . $class . ".class.php";
+
+    if (file_exists($path)) {
+
+        require_once $path;
+    }
 }
