@@ -1,4 +1,17 @@
 <div id="wrapper">
+
+    <?php echo file_get_contents("../components/menu.html"); ?>
+
+    <?php if ($result->errorInfo) {
+
+        echo $result->getMessage();
+        ?>
+        </div>
+        <?php
+        exit();
+    }
+    ?>
+
     <table>
         <tr>
             <th>Title</th>
@@ -22,4 +35,9 @@
         ?>
 
     </table>
+
+    <p>
+        <a href='add-post.php'>Add Post</a>
+    </p>
+
 </div>
