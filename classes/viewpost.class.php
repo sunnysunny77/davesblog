@@ -35,34 +35,15 @@ class Viewpost
     public function GetBody()
     {
 
-        if (!$this->result) {
+        $result = $this->result;
+        
+        if (!$result) {
 
             header('Location: ./');
             exit;
         }
 
-        echo "<div id='wrapper'>
-            <h1>Blog</h1>
-            <hr />";
-
-        if ($this->result->errorInfo) {
-
-            echo $this->result->getMessage();
-            echo '</div>';
-            header("Refresh:5; url=./");
-            exit;
-        }
-
-        echo "<p>
-                <a href='./'>Blog Index</a>
-            </p>";
-
-        echo '<div>';
-        echo '<h1>' . $this->result['postTitle'] . '</h1>';
-        echo '<p>Posted on ' . date('jS M Y', strtotime($this->result['postDate'])) . '</p>';
-        echo '<p>' . $this->result['postCont'] . '</p>';
-        echo '</div>';
-        echo '</div>';
+        include_once "components/viewpost.html.php";
     }
 
     public function GetFoot()

@@ -23,16 +23,14 @@ class Login
 
     public function GetHead()
     {
-
+        
         include_once "../components/head.html.php";
     }
 
     public function GetBody()
     {
 
-        echo "<div id='login'>";
         include_once "../components/loginform.html.php";
-        echo "</div>";
     }
 
     public function GetFoot()

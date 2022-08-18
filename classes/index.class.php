@@ -32,27 +32,7 @@ class Index
 
         $result = $this->model->GetPostsTable();
 
-        echo "<div id='wrapper'>
-        <h1>Blog</h1>
-        <hr />";
-
-        if ($result->errorInfo) {
-
-            echo $result->getMessage();
-            exit();
-        }
-
-        foreach ($result as $row) {
-
-            echo '<div>';
-            echo '<h1><a href="viewpost.php?id=' . $row['postID'] . '">' . $row['postTitle'] . '</a></h1>';
-            echo '<p>Posted on ' . date('jS M Y H:i:s', strtotime($row['postDate'])) . '</p>';
-            echo '<p>' . $row['postDesc'] . '</p>';
-            echo '<p><a href="viewpost.php?id=' . $row['postID'] . '">Read More</a></p>';
-            echo '</div>';
-        }
-
-        echo '</div>';
+        include_once "components/index.html.php";
     }
 
     public function GetFoot()
