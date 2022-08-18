@@ -15,7 +15,7 @@ class Poststable extends Config
         try {
 
             $sql = "SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC";
-            $stmt = $this->connect()->query($sql);
+            $stmt = $this->Connect()->query($sql);
         } catch (PDOException $e) {
 
             echo $e->getMessage();

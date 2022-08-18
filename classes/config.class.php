@@ -19,7 +19,13 @@ class Config
     private $pass = "";
     private $timeZone = "Australia/Perth";
 
-    protected function connect()
+    public function __construct()
+    {
+        
+        date_default_timezone_set($this->timeZone);
+    }
+
+    protected function Connect()
     {
 
         try {
@@ -33,7 +39,6 @@ class Config
             exit();
         }
 
-        date_default_timezone_set($this->timeZone);
         return $pdo;
     }
 }

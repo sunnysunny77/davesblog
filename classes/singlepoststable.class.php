@@ -15,7 +15,7 @@ class Singlepoststable extends Config
         try {
 
             $sql = "SELECT postID, postTitle, postCont, postDate FROM blog_posts WHERE postID = ?";
-            $stmt = $this->connect()->prepare($sql);
+            $stmt = $this->Connect()->prepare($sql);
             $stmt->execute([$postID]);
         } catch (PDOException $e) {
 
