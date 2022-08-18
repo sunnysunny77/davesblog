@@ -1,7 +1,7 @@
 <?php
 require_once "db.class.php";
 /**
- * Poststable return the Posts tabel from the data base
+ * Poststable return the Posts table from the data base
  *
  * @author Daniel Costello
  *

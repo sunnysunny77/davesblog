@@ -1,8 +1,9 @@
-<?php 
+<?php
 
 spl_autoload_register("autoloader");
 
-function autoloader ($class){
+function autoloader($class)
+{
 
     $path = "classes/";
     $ext = ".class.php";

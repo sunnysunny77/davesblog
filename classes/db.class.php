@@ -1,6 +1,6 @@
 <?php
 /**
- * Db Return a connection to a mysql databse
+ * Db Return a connection to the mysql database
  *
  * @author Daniel Costello
  * @property private $host Hostname of database

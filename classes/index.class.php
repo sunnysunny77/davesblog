@@ -11,7 +11,7 @@ class Index
 {
 
     private $model;
-    private $title = "Blog";
+    public $title = "Blog";
 
     public function __construct($model)
     {
@@ -19,9 +19,9 @@ class Index
         $this->model = $model;
     }
 
-    public function Head () {
+    public function Head()
+    {
 
-        $title = $this->title;
         include_once "components/head.html.php";
     }
 
@@ -41,8 +41,9 @@ class Index
         }
     }
 
-    public function Foot () {
-        
+    public function Foot()
+    {
+
         echo file_get_contents("components/foot.html");
     }
 }
