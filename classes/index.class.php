@@ -19,13 +19,13 @@ class Index
         $this->model = $model;
     }
 
-    public function IndexHead()
+    public function GetHead()
     {
 
         include_once "components/head.html.php";
     }
 
-    public function IndexPostsTable()
+    public function GetPostsTable()
     {
 
         $result = $this->model->GetPostsTable();
@@ -41,7 +41,7 @@ class Index
         }
     }
 
-    public function IndexFoot()
+    public function GetFoot()
     {
 
         echo file_get_contents("components/foot.html");

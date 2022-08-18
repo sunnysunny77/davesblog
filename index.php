@@ -5,6 +5,6 @@ include_once "includes/classes.inc.php";
 $model = new poststable();
 // View usage
 $view = new index($model);
-$view->IndexHead();
-$view->IndexPostsTable();
-$view->IndexFoot();
+$view->GetHead();
+$view->GetPostsTable();
+$view->GetFoot();
