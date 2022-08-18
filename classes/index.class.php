@@ -1,16 +1,18 @@
 <?php
 /**
- * Index presents the index page
+ * Index View for index.php
  *
  * @author Daniel Costello
  * @property private $model Holds the Poststable model
- * @property private $title Holds the html head page title
+ * @property private $root Holds root directory for the head
+ * @property private $title Holds title from the head
  *
  */
 class Index
 {
 
     private $model;
+    private $root = "./";
     private $title = "Blog";
 
     public function __construct($model)
@@ -25,10 +27,20 @@ class Index
         include_once "components/head.html.php";
     }
 
-    public function GetPostsTable()
+    public function GetBody()
     {
 
         $result = $this->model->GetPostsTable();
+
+        echo "<div id='wrapper'>
+        <h1>Blog</h1>
+        <hr />";
+
+        if ($result->errorInfo) {
+
+            echo $result->getMessage();
+            exit();
+        }
 
         foreach ($result as $row) {
 
@@ -39,6 +51,8 @@ class Index
             echo '<p><a href="viewpost.php?id=' . $row['postID'] . '">Read More</a></p>';
             echo '</div>';
         }
+
+        echo '</div>';
     }
 
     public function GetFoot()

@@ -1,7 +1,7 @@
 <?php
 require_once "config.class.php";
 /**
- * Poststable return the Posts table from the data base
+ * Poststable model for single blog_posts
  *
  * @author Daniel Costello
  *
@@ -18,8 +18,7 @@ class Poststable extends Config
             $stmt = $this->Connect()->query($sql);
         } catch (PDOException $e) {
 
-            echo $e->getMessage();
-            exit();
+            return $e;
         }
 
         return $stmt->fetchAll();

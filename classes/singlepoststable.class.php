@@ -1,7 +1,7 @@
 <?php
 require_once "config.class.php";
 /**
- * Singlepoststable return a single Post table from the Posts table in the data base
+ * Singlepoststable model for all blog_posts
  *
  * @author Daniel Costello
  *
@@ -19,8 +19,7 @@ class Singlepoststable extends Config
             $stmt->execute([$postID]);
         } catch (PDOException $e) {
 
-            echo $e->getMessage();
-            exit();
+            return $e;
         }
 
         return $stmt->fetch();
