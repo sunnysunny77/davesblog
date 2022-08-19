@@ -68,7 +68,7 @@ class Blogposts extends Config
 
             return $e;
         }
-
+        
         return $stmt->fetch();
     }
 

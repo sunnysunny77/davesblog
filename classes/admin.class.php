@@ -6,7 +6,6 @@
  * @property private $result Holds result from the Blogposts model
  * @property private $root Holds root directory for the head
  * @property private $title Holds title from the head
- * @property private $output Holds message for body
  *
  */
 class Admin
@@ -15,13 +14,11 @@ class Admin
     private $result;
     private $root = "../";
     private $title = "Admin";
-    private $output;
 
-    public function __construct($output, $model)
+    public function __construct($model)
     {
 
         $this->result = $model->GetAdminBlogPosts();
-        $this->output = $output;
     }
 
     public function GetHead()

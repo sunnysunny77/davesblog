@@ -5,18 +5,15 @@
     <?php 
     if ($this->result->errorInfo) {
 
-        echo '<h2>' . $this->result->getMessage() . '</h2>';
-        ?>
-        </div>
-        <?php
-        exit();
+        echo $this->result->getMessage() . '<br /><br />';
     }
-    ?>
-
-    <?php 
-    if ($this->output) {
+    if (isset($_GET["error"])) {
     
-        echo  '<h3>' . $this->output . '</h3>'; 
+        echo  $_GET["error"] . '<br /><br />'; 
+    }
+    if (isset($_GET["output"])) {
+    
+        echo  '<h3>' . $_GET["output"] . '</h3>'; 
     }
     ?>
 

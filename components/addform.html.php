@@ -10,7 +10,9 @@
 
     <?php
     if (isset($this->output)) {
+
         foreach ($this->output as $output) {
+
             echo '<p class="error">' . $output . '</p>';
         }
     }

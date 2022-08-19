@@ -51,12 +51,14 @@ class Handeladd
 
             if ($result->errorInfo) {
 
-                return $result->getMessage();
+                header("Location: ./?error=" . $result->getMessage());
+                exit();
              }
 
              if ($result) {
 
-                return 'Post added.';
+                header("Location: ./?output=Post added.");
+                exit();
               }
         }
     }
