@@ -59,9 +59,15 @@ class Blogposts extends Config
     public function GetViewPostBlogPosts($postID)
     {
 
-        $sql = "SELECT postID, postTitle, postCont, postDate FROM blog_posts WHERE postID = ?";
-        $stmt = $this->Connect()->prepare($sql);
-        $stmt->execute([$postID]);
+        try {
+
+            $sql = "SELECT postID, postTitle, postCont, postDate FROM blog_posts WHERE postID = ?";
+            $stmt = $this->Connect()->prepare($sql);
+            $stmt->execute([$postID]);
+        } catch (PDOException $e) {
+
+            return $e;
+        }
 
         return $stmt->fetch();
     }

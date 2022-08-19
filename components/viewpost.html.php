@@ -3,6 +3,19 @@
     <h1>Blog</h1>
     <hr />
 
+    <?php
+   
+    if ($this->result->errorInfo) {
+
+        echo '<h2>' . $this->result->getMessage() . '</h2>';
+        ?>
+        </div>
+        <?php
+        header("Refresh:5; url=./");
+        exit();
+    }
+    ?>
+
     <p>
         <a href='./'>Blog Index</a>
     </p>

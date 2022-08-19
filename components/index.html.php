@@ -5,7 +5,7 @@
 
     if ($this->result->errorInfo) {
 
-        echo $this->result->getMessage();
+        echo '<h2>' . $this->result->getMessage() . '</h2>';
         ?>
         </div>
         <?php
