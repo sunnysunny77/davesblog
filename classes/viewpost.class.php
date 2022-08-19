@@ -38,7 +38,6 @@ class Viewpost
     public function GetBody()
     {
     
-
         include_once "components/viewpost.html.php";
     }
 

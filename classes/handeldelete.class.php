@@ -7,7 +7,7 @@
  * @property private $postID Holds get value for postID
  *
  */
-class Handeldelete extends Password
+class Handeldelete
 {
 
     private $model;
