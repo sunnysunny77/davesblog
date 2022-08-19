@@ -3,21 +3,23 @@ CREATE DATABASE databasedb;
 USE databasedb;
 
 CREATE TABLE `blog_members` (
-  `memberID` int(11) UNSIGNED NOT NULL,
+  `memberID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL
+  `email` varchar(255) DEFAULT NULL,
+   PRIMARY KEY (`memberID`)
 );
 
 INSERT INTO `blog_members` (`memberID`, `username`, `password`, `email`) VALUES
 (1, 'Demo', '$2y$10$wJxa1Wm0rtS2BzqKnoCPd.7QQzgu7D/aLlMR5Aw3O.m9jx3oRJ5R2', 'demo@demo.com');
 
 CREATE TABLE `blog_posts` (
-  `postID` int(11) UNSIGNED NOT NULL,
+  `postID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `postTitle` varchar(255) DEFAULT NULL,
   `postDesc` text DEFAULT NULL,
   `postCont` text DEFAULT NULL,
-  `postDate` datetime DEFAULT NULL
+  `postDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`postID`)
 );
 
 INSERT INTO `blog_posts` (`postID`, `postTitle`, `postDesc`, `postCont`, `postDate`) VALUES
@@ -27,14 +29,6 @@ INSERT INTO `blog_posts` (`postID`, `postTitle`, `postDesc`, `postCont`, `postDa
 (6, 'The Cyber House Rules', '<p>You guys realize you live in a sewer, right? Uh, is the puppy mechanical in any way? Come, Comrade Bender! We must take to the streets! I daresay that Fry has discovered the smelliest object in the known universe! Good news, everyone! There\'s a report on TV with some very bad news!</p>', '<h2>The Luck of the Fryrish</h2>\r\n<p>Professor, make a woman out of me. I am the man with no name, Zapp Brannigan! Good man. Nixon\'s pro-war and pro-family. The alien mothership is in orbit here. If we can hit that bullseye, the rest of the dominoes will fall like a house of cards. Checkmate. Fry, you can\'t just sit here in the dark listening to classical music.</p>\r\n<ul>\r\n<li>Who are those horrible orange men?</li>\r\n<li>Is today\'s hectic lifestyle making you tense and impatient?</li>\r\n</ul>\r\n<h3>Lethal Inspection</h3>\r\n<p>Oh, but you can. But you may have to metaphorically make a deal with the devil. And by \"devil\", I mean Robot Devil. And by \"metaphorically\", I mean get your coat. No. We\'re on the top. Does anybody else feel jealous and aroused and worried? Well I\'da done better, but it\'s plum hard pleading a case while awaiting trial for that there incompetence. It must be wonderful.</p>\r\n<h4>Where No Fan Has Gone Before</h4>\r\n<p>Who are those horrible orange men? Bender, we\'re trying our best. Please, Don-Bot&hellip; look into your hard drive, and open your mercy file! Wow! A superpowers drug you can just rub onto your skin? You\'d think it would be something you\'d have to freebase. WINDMILLS DO NOT WORK THAT WAY! GOOD NIGHT! Look, last night was a mistake.</p>\r\n<ol>\r\n<li>I\'m sorry, guys. I never meant to hurt you. Just to destroy everything you ever believed in.</li>\r\n<li>Stop it, stop it. It\'s fine. I will \'destroy\' you!</li>\r\n<li>You guys realize you live in a sewer, right?</li>\r\n</ol>\r\n<h5>Fear of a Bot Planet</h5>\r\n<p>Why yes! Thanks for noticing. Hey, guess what you\'re accessories to. Yes, except the Dave Matthews Band doesn\'t rock. Take me to your leader! Daddy Bender, we\'re hungry.</p>', '2013-06-06 08:28:35');
 
 
-ALTER TABLE `blog_members`
-  ADD PRIMARY KEY (`memberID`);
 
-ALTER TABLE `blog_posts`
-  ADD PRIMARY KEY (`postID`);
 
-ALTER TABLE `blog_members`
-  MODIFY `memberID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
-ALTER TABLE `blog_posts`
-  MODIFY `postID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
