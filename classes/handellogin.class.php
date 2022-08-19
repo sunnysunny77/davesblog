@@ -43,6 +43,5 @@ class Handellogin extends Password
 
             return 'Wrong username or password';
         }
-
     }
 }
