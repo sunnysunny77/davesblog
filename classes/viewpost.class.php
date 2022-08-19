@@ -18,7 +18,7 @@ class Viewpost
     public function __construct($postID, $model)
     {
 
-        $this->result = $model->GetViewPostBlogPosts($postID);
+      $this->result = $model->GetViewPostBlogPosts($postID);
 
         if (!$this->result) {
 
