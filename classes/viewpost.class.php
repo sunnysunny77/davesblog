@@ -26,7 +26,7 @@ class Viewpost
             exit;
         }
         
-        $this->result->errorInfo ? $this->title = "Blog" : $this->title = "Blog - " . $this->result['postTitle'];
+        $this->title = "Blog - " . $this->result['postTitle'];
     }
 
     public function GetHead()
