@@ -2,7 +2,8 @@
 
     <?php echo file_get_contents("../components/menu.html"); ?>
 
-    <?php if ($result->errorInfo) {
+    <?php 
+    if ($result->errorInfo) {
 
         echo '<h3>' . $result->getMessage() . '</h3>';
         ?>
@@ -12,7 +13,12 @@
     }
     ?>
 
-    <?php echo  '<h3>' . $this->message . '</h3>'; ?>
+    <?php 
+    if ($this->message) {
+    
+        echo  '<h3>' . $this->message . '</h3>'; 
+    }
+    ?>
 
     <table>
         <tr>
