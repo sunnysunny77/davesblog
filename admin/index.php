@@ -3,7 +3,7 @@
 include_once "../includes/classes.inc.php";
 session_start();
 // index admin page
-if (isset($_POST['submit'])) {
+if (!$_SESSION["loggedin"] && isset($_GET['action']) && $_GET['action'] == "login" &&  isset($_POST['username']) &&  isset($_POST['password'])) {
     
     $model = new Authorization();
     $controller = new Handellogin($_POST['username'], $_POST['password'], $model);
@@ -15,6 +15,21 @@ if (!$_SESSION["loggedin"]) {
     $view->GetHead();
     $view->GetBody();
     $view->GetFoot();
+}
+if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "logout") {
+
+}
+if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "users") {
+
+}
+if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "add") {
+
+}
+if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "edit" && isset($_GET["id"]) ) {
+
+}
+if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "delete" && isset($_GET["id"]) ) {
+
 }
 if ($_SESSION["loggedin"]) {
 
