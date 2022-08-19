@@ -9,6 +9,22 @@ require_once "config.class.php";
 class Blogposts extends Config
 {
 
+    public function AddAdminBlogPosts($postTitle, $postDesc, $postCont)
+    {
+
+        try {
+
+            $sql = "INSERT INTO blog_posts (postTitle,postDesc,postCont,postDate) VALUES (?, ?, ?, ?)";
+            $stmt = $this->Connect()->prepare($sql);
+            $stmt->execute([$postTitle, $postDesc, $postCont, date('Y-m-d H:i:s')]);
+        } catch (PDOException $e) {
+
+            return $e;
+        }
+
+        return $stmt;
+    }
+
     public function DeleteAdminBlogPosts($postID)
     {
 

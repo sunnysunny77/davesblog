@@ -17,7 +17,7 @@ class Index
 
     public function __construct($model)
     {
-
+    
         $this->result = $model->GetIndexBlogPosts();
     }
 

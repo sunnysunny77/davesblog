@@ -1,6 +1,6 @@
 <?php
 /**
- * Admin View for admin/index.php
+ * Add View for admin/index.php
  *
  * @author Daniel Costello
  * @property private $result Holds result from the Blogposts model
@@ -9,18 +9,17 @@
  * @property private $output Holds message for body
  *
  */
-class Admin
+class Add
 {
 
     private $result;
     private $root = "../";
-    private $title = "Admin";
+    private $title = "Admin - Add Post";
     private $output;
 
-    public function __construct($output, $model)
+    public function __construct($output)
     {
-
-        $this->result = $model->GetAdminBlogPosts();
+        
         $this->output = $output;
     }
 
@@ -32,14 +31,12 @@ class Admin
 
     public function GetBody()
     {
-    
-        include_once "../components/admin.html.php";
+
+        include_once "../components/addform.html.php";
     }
 
     public function GetFoot()
     {
-
-        echo file_get_contents("../components/deletescript.html");
         echo file_get_contents("../components/foot.html");
     }
 }
