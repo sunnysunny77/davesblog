@@ -3,25 +3,25 @@
  * Admin View for admin/index.php
  *
  * @author Daniel Costello
- * @property private $model Holds the Blogposts model
+ * @property private $result Holds result from the Blogposts model
  * @property private $root Holds root directory for the head
  * @property private $title Holds title from the head
- * @property private $message Holds message for body
+ * @property private $output Holds message for body
  *
  */
 class Admin
 {
 
-    private $model;
+    private $result;
     private $root = "../";
     private $title = "Admin";
-    private $message;
+    private $output;
 
-    public function __construct($message, $model)
+    public function __construct($output, $model)
     {
 
-        $this->model = $model;
-        $this->message = $message;
+        $this->result = $model->GetAdminBlogPosts();
+        $this->output = $output;
     }
 
     public function GetHead()
@@ -32,8 +32,6 @@ class Admin
 
     public function GetBody()
     {
-        
-        $result = $this->model->GetAdminPostsTable();
     
         include_once "../components/admin.html.php";
     }

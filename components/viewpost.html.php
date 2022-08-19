@@ -5,9 +5,9 @@
 
     <?php
    
-    if ($result->errorInfo) {
+    if ($this->result->errorInfo) {
 
-        echo '<h3>' . $result->getMessage() . '</h3>';
+        echo '<h3>' . $this->result->getMessage() . '</h3>';
         ?>
         </div>
         <?php
@@ -21,9 +21,9 @@
     </p>
 
     <div> 
-        <h1> <?php echo $result['postTitle'] ?> </h1>
-        <p>Posted on <?php echo date('jS M Y', strtotime($result['postDate'])) ?> </p>
-        <p> <?php echo $result['postCont'] ?> </p>
+        <h1> <?php echo $this->result['postTitle'] ?> </h1>
+        <p>Posted on <?php echo date('jS M Y', strtotime($this->result['postDate'])) ?> </p>
+        <p> <?php echo $this->result['postCont'] ?> </p>
     </div>
     
 </div>

@@ -3,9 +3,9 @@
     <?php echo file_get_contents("../components/menu.html"); ?>
 
     <?php 
-    if ($result->errorInfo) {
+    if ($this->result->errorInfo) {
 
-        echo '<h3>' . $result->getMessage() . '</h3>';
+        echo '<h3>' . $this->result->getMessage() . '</h3>';
         ?>
         </div>
         <?php
@@ -14,9 +14,9 @@
     ?>
 
     <?php 
-    if ($this->message) {
+    if ($this->output) {
     
-        echo  '<h3>' . $this->message . '</h3>'; 
+        echo  '<h3>' . $this->output . '</h3>'; 
     }
     ?>
 
@@ -28,7 +28,7 @@
         </tr>
 
         <?php
-        foreach ($result as $row) {
+        foreach ($this->result as $row) {
 
             echo '<tr>';
             echo '<td>' . $row['postTitle'] . '</td>';

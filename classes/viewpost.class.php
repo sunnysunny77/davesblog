@@ -13,17 +13,20 @@ class Viewpost
 
     private $result;
     private $root = "./";
-    private $title = "Blog";
+    private $title;
 
-    public function __construct($model, $postID)
+    public function __construct($postID, $model)
     {
 
-        $this->result = $model->GetViewPostPostsTable($postID);
+        $this->result = $model->GetViewPostBlogPosts($postID);
 
-        if (!$this->result->errorInfo) {
+        if (!$this->result) {
 
-            $this->title = "Blog - " . $this->result['postTitle'];
+            header('Location: ./');
+            exit;
         }
+        
+        $this->result->errorInfo ? $this->title = "Blog" : $this->title = "Blog - " . $this->result['postTitle'];
     }
 
     public function GetHead()
@@ -34,14 +37,7 @@ class Viewpost
 
     public function GetBody()
     {
-
-        $result = $this->result;
-        
-        if (!$result) {
-
-            header('Location: ./');
-            exit;
-        }
+    
 
         include_once "components/viewpost.html.php";
     }

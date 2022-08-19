@@ -5,7 +5,7 @@
  * @author Daniel Costello
  * @property private $root Holds root directory for the head
  * @property private $title Holds title from the head
- * @property private $message Holds message for body
+ * @property private $output Holds message for body
  *
  */
 class Login
@@ -13,12 +13,12 @@ class Login
 
     private $root = "../";
     private $title = "Admin Login";
-    private $message;
+    private $output;
 
-    public function __construct($message)
+    public function __construct($output)
     {
 
-        $this->message = $message;
+        $this->output = $output;
     }
 
     public function GetHead()

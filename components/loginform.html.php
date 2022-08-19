@@ -1,8 +1,8 @@
 <div id='login'>
     <?php
-     if ($this->message) { 
+     if ($this->output) { 
 
-        echo '<p class="error">' . $this->message  . '</p>'; 
+        echo '<p class="error">' . $this->output  . '</p>'; 
      }
     ?>
     <form action="?action=login" method="post">

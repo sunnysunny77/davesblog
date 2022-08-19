@@ -9,7 +9,7 @@ require_once "config.class.php";
 class Blogposts extends Config
 {
 
-    public function DeleteAdminPostsTable($postID)
+    public function DeleteAdminBlogPosts($postID)
     {
 
         try {
@@ -25,7 +25,7 @@ class Blogposts extends Config
         return $stmt;
     }
 
-    public function GetAdminPostsTable()
+    public function GetAdminBlogPosts()
     {
 
         try {
@@ -40,7 +40,7 @@ class Blogposts extends Config
         return $stmt->fetchAll();
     }
 
-    public function GetViewPostPostsTable($postID)
+    public function GetViewPostBlogPosts($postID)
     {
 
         try {
@@ -56,7 +56,7 @@ class Blogposts extends Config
         return $stmt->fetch();
     }
 
-    public function GetIndexPostsTable()
+    public function GetIndexBlogPosts()
     {
 
         try {

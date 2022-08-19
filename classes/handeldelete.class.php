@@ -1,5 +1,4 @@
 <?php
-require_once "password.class.php";
 /**
  * Handeldelete controlls the delete action
  *
@@ -24,7 +23,7 @@ class Handeldelete extends Password
     public function DeleteBlogPosts()
     {
 
-        $result = $this->model->DeleteAdminPostsTable($this->postID);
+        $result = $this->model->DeleteAdminBlogPosts($this->postID);
 
         if ($result->errorInfo) {
 
