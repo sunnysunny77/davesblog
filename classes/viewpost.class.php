@@ -20,7 +20,7 @@ class Viewpost
 
       $this->result = $model->GetViewPostBlogPosts($postID);
 
-        if (!$this->result) {
+        if (!$this->result['postID']) {
 
             header('Location: ./');
             exit;
