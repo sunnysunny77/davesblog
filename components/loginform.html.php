@@ -1,5 +1,5 @@
 <div id='login'>
-    <?php echo $this->message; ?>
+    <?php echo '<p class="error">' . $this->message  . '</p>'; ?>
     <form action="?action=login" method="post">
         <p>
             <label for="username"> Username </label>

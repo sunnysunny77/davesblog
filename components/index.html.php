@@ -5,7 +5,7 @@
 
     if ($result->errorInfo) {
 
-        echo $result->getMessage();
+        echo '<h3>' . $result->getMessage() . '</h3>';
         ?>
         </div>
         <?php

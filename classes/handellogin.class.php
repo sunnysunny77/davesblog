@@ -1,7 +1,7 @@
 <?php
 require_once "password.class.php";
 /**
- * Handellogin controlls the login form
+ * Handellogin controlls the login action
  *
  * @author Daniel Costello
  * @property private $model Holds the Authorization model
@@ -19,9 +19,9 @@ class Handellogin extends Password
     public function __construct($username, $password, $model)
     {
 
+        $this->model = $model;
         $this->username = trim($username);
         $this->password = trim($password);
-        $this->model = $model;
     }
 
     public function HandelAuthorization()
@@ -31,7 +31,7 @@ class Handellogin extends Password
 
         if ($result->errorInfo) {
 
-            return '<p class="error">' . $result->getMessage() . '</p>';
+            return $result->getMessage();
         }
 
         if ($this->password_verify($this->password, $result['password']) == 1) {
@@ -41,7 +41,7 @@ class Handellogin extends Password
             $_SESSION['username'] = $user['username'];
         } else {
 
-            return '<p class="error">Wrong username or password</p>';
+            return 'Wrong username or password';
         }
 
     }

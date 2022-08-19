@@ -30,11 +30,14 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "edit"
 }
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "delete" && isset($_GET["id"]) ) {
 
+    $model = new Deleteblogposts();
+    $controller = new Handeldelete($_GET["id"], $model);
+    $message = $controller->HandeDeleteBlogPosts(); 
 }
 if ($_SESSION["loggedin"]) {
 
     $model = new Blogposts();
-    $view = new Admin($model);
+    $view = new Admin($message, $model);
     $view->GetHead();
     $view->GetBody();
     $view->GetFoot();

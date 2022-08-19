@@ -4,13 +4,15 @@
 
     <?php if ($result->errorInfo) {
 
-        echo $result->getMessage();
+        echo '<h3>' . $result->getMessage() . '</h3>';
         ?>
         </div>
         <?php
         exit();
     }
     ?>
+
+    <?php echo  '<h3>' . $this->message . '</h3>'; ?>
 
     <table>
         <tr>
