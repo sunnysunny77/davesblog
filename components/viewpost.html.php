@@ -3,22 +3,21 @@
     <h1>Blog</h1>
     <hr />
 
+    <p>
+        <a href='./'>Blog Index</a>
+    </p>
+
     <?php
    
     if ($this->result->errorInfo) {
 
-        echo '<h2>' . $this->result->getMessage() . '</h2>';
+        echo  $this->result->getMessage();
         ?>
         </div>
         <?php
-        header("Refresh:5; url=./");
         exit();
     }
     ?>
-
-    <p>
-        <a href='./'>Blog Index</a>
-    </p>
 
     <div> 
         <h1> <?php echo $this->result['postTitle'] ?> </h1>
