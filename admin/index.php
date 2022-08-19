@@ -5,9 +5,9 @@ session_start();
 // index admin page
 if (!$_SESSION["loggedin"] && isset($_GET['action']) && $_GET['action'] == "login" &&  isset($_POST['username']) &&  isset($_POST['password'])) {
     
-    $model = new Authorization();
+    $model = new Blogmembers();
     $controller = new Handellogin($_POST['username'], $_POST['password'], $model);
-    $message = $controller->HandelAuthorization(); 
+    $message = $controller->AuthorizeBlogMembers(); 
 }
 if (!$_SESSION["loggedin"]) {
 
@@ -30,9 +30,9 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "edit"
 }
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "delete" && isset($_GET["id"]) ) {
 
-    $model = new Deleteblogposts();
+    $model = new Blogposts();
     $controller = new Handeldelete($_GET["id"], $model);
-    $message = $controller->HandeDeleteBlogPosts(); 
+    $message = $controller->DeleteBlogPosts(); 
 }
 if ($_SESSION["loggedin"]) {
 

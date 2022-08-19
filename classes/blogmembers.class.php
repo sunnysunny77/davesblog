@@ -1,15 +1,15 @@
 <?php
 require_once "config.class.php";
 /**
- * Authorization model for authorized blog_members 
+ * Blogmembers model for blog_members 
  *
  * @author Daniel Costello
  *
  */
-class Authorization extends Config
+class Blogmembers extends Config
 {
 
-    public function GetAuthorization($username)
+    public function GetBlogMembers($username)
     {
         try {
 

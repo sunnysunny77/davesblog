@@ -1,6 +1,6 @@
 <?php
 /**
- * Login View for the login from admin/index.php
+ * Login View for admin/index.php
  *
  * @author Daniel Costello
  * @property private $root Holds root directory for the head

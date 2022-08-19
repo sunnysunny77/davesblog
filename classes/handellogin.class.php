@@ -4,7 +4,7 @@ require_once "password.class.php";
  * Handellogin controlls the login action
  *
  * @author Daniel Costello
- * @property private $model Holds the Authorization model
+ * @property private $model Holds the Blogmembers model
  * @property private $username Holds post value for username
  * @property private $password Holds post value for password
  *
@@ -24,10 +24,10 @@ class Handellogin extends Password
         $this->password = trim($password);
     }
 
-    public function HandelAuthorization()
+    public function AuthorizeBlogMembers()
     {
 
-        $result = $this->model->GetAuthorization($this->username);
+        $result = $this->model->GetBlogMembers($this->username);
 
         if ($result->errorInfo) {
 

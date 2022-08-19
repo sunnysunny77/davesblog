@@ -3,7 +3,7 @@
  * Index View for index.php
  *
  * @author Daniel Costello
- * @property private $model Holds the Poststable model
+ * @property private $model Holds the Blogposts model
  * @property private $root Holds root directory for the head
  * @property private $title Holds title from the head
  *
@@ -30,7 +30,7 @@ class Index
     public function GetBody()
     {
 
-        $result = $this->model->GetPostsTable();
+        $result = $this->model->GetIndexPostsTable();
 
         include_once "components/index.html.php";
     }

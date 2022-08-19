@@ -33,7 +33,7 @@ class Admin
     public function GetBody()
     {
         
-        $result = $this->model->GetBlogPosts();
+        $result = $this->model->GetAdminPostsTable();
     
         include_once "../components/admin.html.php";
     }

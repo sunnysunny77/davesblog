@@ -3,7 +3,7 @@
  * Viewpost View for viewpost.php
  *
  * @author Daniel Costello
- * @property private $result Holds result from the Singlepoststable model
+ * @property private $result Holds result from the Blogposts model
  * @property private $root Holds root directory for the head
  * @property private $title Holds title from the head
  *
@@ -18,7 +18,7 @@ class Viewpost
     public function __construct($model, $postID)
     {
 
-        $this->result = $model->GetSinglePostsTable($postID);
+        $this->result = $model->GetViewPostPostsTable($postID);
 
         if (!$this->result->errorInfo) {
 

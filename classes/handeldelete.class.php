@@ -4,7 +4,7 @@ require_once "password.class.php";
  * Handeldelete controlls the delete action
  *
  * @author Daniel Costello
- * @property private $model Holds the Deleteblogposts model
+ * @property private $model Holds the Blogposts model
  * @property private $postID Holds get value for postID
  *
  */
@@ -21,10 +21,10 @@ class Handeldelete extends Password
         $this->postID = $postID;
     }
 
-    public function HandeDeleteBlogPosts()
+    public function DeleteBlogPosts()
     {
 
-        $result = $this->model->DeleteBlogPosts($this->postID);
+        $result = $this->model->DeleteAdminPostsTable($this->postID);
 
         if ($result->errorInfo) {
 
