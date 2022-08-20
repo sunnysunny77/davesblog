@@ -25,16 +25,14 @@ class Handeldeleteuser
 
         $result = $this->model->SetDeleteUserBlogMembers($this->postID);
 
-        
-
         if ($result->errorInfo) {
 
-            return header("Location: ./?action=users&error=" . $result->getMessage());
+            return $result;
         }
 
         if ($result) {
 
-            return header("Location: ./?action=users&output=User deleted.");
+            return "User deleted.";
         }
     }
 }
