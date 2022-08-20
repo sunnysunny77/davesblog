@@ -9,6 +9,52 @@ require_once __DIR__ . "/../libs/config.class.php";
 class Blogmembers extends Config
 {
 
+    public function SetEditUserPasswordBlogMembers($username, $password, $email, $memberID)
+    {
+        try {
+
+            $sql = "UPDATE blog_members SET username = ?, password = ?, email = ? WHERE memberID = ?";
+            $stmt = $this->Connect()->prepare($sql);
+            $stmt->execute([$username, $password, $email, $memberID]);
+        } catch (PDOException $e) {
+
+            return $e;
+        }
+
+        return true;
+    }
+
+
+    public function SetEditUserBlogMembers($username, $email, $memberID)
+    {
+        try {
+
+            $sql = "UPDATE blog_members SET username = ?, email = ? WHERE memberID = ?";
+            $stmt = $this->Connect()->prepare($sql);
+            $stmt->execute([$username, $email, $memberID]);
+        } catch (PDOException $e) {
+
+            return $e;
+        }
+
+        return true;
+    }
+
+    public function GetUserBlogMembers($memberID)
+    {
+        try {
+
+            $sql = "SELECT memberID, username, email FROM blog_members WHERE memberID = ?";
+            $stmt = $this->Connect()->prepare($sql);
+            $stmt->execute([$memberID]);
+        } catch (PDOException $e) {
+
+            return $e;
+        }
+
+        return $stmt->fetch();
+    }
+
     public function SetAddBlogMembers($username, $email, $password)
     {
         try {

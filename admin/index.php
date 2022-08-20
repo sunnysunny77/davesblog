@@ -29,14 +29,27 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "addus
     $output = $controller->AddBlogMembers();
 }
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "adduser") {
+
     $view = new Adduser($output);
     $view->GetHead();
     $view->GetBody();
     $view->GetFoot();
     exit();
 }
-if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "edituser") {
+if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "edituser" && isset($_POST['submit']) && isset($_GET["id"])) {
 
+    $model = new Blogmembers();
+    $controller = new Handeledituser($_POST, $model);
+    $output = $controller->EditUserBlogMembers();   
+}
+if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "edituser" && isset($_GET["id"])) {
+
+    $model = new Blogmembers();
+    $view = new Edituser($_GET["id"], $output, $model);
+    $view->GetHead();
+    $view->GetBody();
+    $view->GetFoot();
+    exit();
 }
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "deleteuser" ) {
 

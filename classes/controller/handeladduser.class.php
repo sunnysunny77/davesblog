@@ -23,8 +23,6 @@ class Handeladduser
     public function AddBlogMembers()
     {
 
-        $_POST = array_map('stripslashes', $this->post);
-
         extract($_POST);
 
         if($username ==''){
@@ -54,9 +52,9 @@ class Handeladduser
 
         if (!isset($error)) {
 
-            $password = password_hash($password, PASSWORD_DEFAULT);
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-            $result = $this->model->SetAddBlogMembers($username, $email, $password);
+            $result = $this->model->SetAddBlogMembers($username, $email, $hashed_password);
 
             if ($result->errorInfo) {
 
