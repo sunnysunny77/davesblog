@@ -40,6 +40,12 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "add")
 }
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "edit" && isset($_GET["id"])) {
 
+    $model = new Blogposts();
+    $view = new Edit($_GET["id"], $output, $model);
+    $view->GetHead();
+    $view->GetBody();
+    $view->GetFoot();
+    exit();
 }
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "delete" && isset($_GET["id"])) {
 

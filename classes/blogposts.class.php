@@ -9,7 +9,23 @@ require_once "config.class.php";
 class Blogposts extends Config
 {
 
-    public function AddAdminBlogPosts($postTitle, $postDesc, $postCont)
+    public function GetEditBlogPosts($postID)
+    {
+
+        try {
+
+            $sql = "SELECT postID, postTitle, postDesc, postCont FROM blog_posts WHERE postID = ?";
+            $stmt = $this->Connect()->prepare($sql);
+            $stmt->execute([$postID]);
+        } catch (PDOException $e) {
+
+            return $e;
+        }
+
+        return $stmt->fetch();
+    }
+
+    public function AddActionBlogPosts($postTitle, $postDesc, $postCont)
     {
 
         try {
@@ -25,7 +41,7 @@ class Blogposts extends Config
         return $stmt;
     }
 
-    public function DeleteAdminBlogPosts($postID)
+    public function DeleteActionBlogPosts($postID)
     {
 
         try {

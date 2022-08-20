@@ -23,7 +23,7 @@ class Handeldelete
     public function DeleteBlogPosts()
     {
 
-        $result = $this->model->DeleteAdminBlogPosts($this->postID);
+        $result = $this->model->DeleteActionBlogPosts($this->postID);
 
         if ($result->errorInfo) {
 
