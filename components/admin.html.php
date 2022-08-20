@@ -7,13 +7,6 @@
 
         echo $this->result->getMessage() . '<br /><br />';
     }
-    if ($this->output->errorInfo) { 
-
-        echo $this->output->getMessage() . '<br /><br />';
-    } else if ($this->output) { 
-
-        echo '<h3>' . $this->output . '</h3>';  
-    }
     if (isset($_GET["error"])) {
     
         echo  $_GET["error"] . '<br /><br />'; 

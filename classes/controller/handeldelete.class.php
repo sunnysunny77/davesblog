@@ -27,12 +27,12 @@ class Handeldelete
 
         if ($result->errorInfo) {
 
-            return $result;
+            return header("Location: ./&error=" . $result->getMessage());
         }
 
         if ($result) {
 
-            return "Post deleted.";
+            return header("Location: ./?action=users&output=Post deleted.");
         }
     }
 }
