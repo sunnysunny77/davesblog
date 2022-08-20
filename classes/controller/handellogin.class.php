@@ -36,10 +36,7 @@ class Handellogin
         if (password_verify($this->password, $result['password'])) {
 
             $_SESSION['loggedin'] = true;
-            $_SESSION['memberID'] = $user['memberID'];
-            $_SESSION['username'] = $user['username'];
-
-            
+                   
             return header("Location: ./");
         } else {
 
