@@ -22,7 +22,7 @@ class Blogposts extends Config
             return $e;
         }
 
-        return $stmt;
+        return true;
     }
 
     public function GetEditBlogPosts($postID)
@@ -54,7 +54,7 @@ class Blogposts extends Config
             return $e;
         }
 
-        return $stmt;
+        return true;
     }
 
     public function DeleteActionBlogPosts($postID)
@@ -70,7 +70,7 @@ class Blogposts extends Config
             return $e;
         }
 
-        return $stmt;
+        return true;
     }
 
     public function GetAdminBlogPosts()
