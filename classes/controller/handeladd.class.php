@@ -23,40 +23,40 @@ class Handeladd
     public function AddBlogPosts()
     {
 
-        $_POST = array_map( 'stripslashes', $this->post );
+        $_POST = array_map('stripslashes', $this->post);
 
         extract($_POST);
 
-        if($postTitle ==''){
+        if ($postTitle == '') {
             $error[] = 'Please enter the title.';
         }
-    
-        if($postDesc ==''){
+
+        if ($postDesc == '') {
             $error[] = 'Please enter the description.';
         }
-    
-        if($postCont ==''){
+
+        if ($postCont == '') {
             $error[] = 'Please enter the content.';
         }
 
-        if(isset($error)){
+        if (isset($error)) {
 
             return $error;
         }
-    
-        if(!isset($error)){
+
+        if (!isset($error)) {
 
             $result = $this->model->SetAddBlogPosts($postTitle, $postDesc, $postCont);
 
             if ($result->errorInfo) {
-     
-                return header("Location: ./?error=" . $result->getMessage());
-             }
 
-             if ($result) {
-    
+                return header("Location: ./?error=" . $result->getMessage());
+            }
+
+            if ($result) {
+
                 return header("Location: ./?output=Post added.");
-              }
+            }
         }
     }
 }

@@ -53,13 +53,13 @@ class Handeledit
             $result = $this->model->SetEditBlogPosts($postTitle, $postDesc, $postCont, $postID);
 
             if ($result->errorInfo) {
-    
-                return  header("Location: ./?error=" . $result->getMessage());;
+
+                return header("Location: ./?error=" . $result->getMessage());
             }
 
             if ($result) {
-                   
-                return  header("Location: ./?output=Post updated.");
+
+                return header("Location: ./?output=Post updated.");
             }
         }
     }
