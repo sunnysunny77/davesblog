@@ -23,6 +23,11 @@ class Handeldeleteuser
     public function DeleteUserBlogMembers()
     {
 
+        if ($this->postID == 1) { 
+
+            return;
+        } 
+
         $result = $this->model->SetDeleteUserBlogMembers($this->postID);
 
         if ($result->errorInfo) {
