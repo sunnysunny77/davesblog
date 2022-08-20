@@ -1,5 +1,5 @@
 <?php
-require_once "password.class.php";
+require_once __DIR__ . "/../libs/password.class.php";
 /**
  * Handellogin controlls the login action
  *

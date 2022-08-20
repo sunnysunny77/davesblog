@@ -1,5 +1,5 @@
 <?php
-require_once "config.class.php";
+require_once __DIR__ . "/../libs/config.class.php";
 /**
  * Blogmembers model for blog_members 
  *
