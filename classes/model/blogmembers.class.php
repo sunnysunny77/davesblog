@@ -9,6 +9,21 @@ require_once __DIR__ . "/../libs/config.class.php";
 class Blogmembers extends Config
 {
 
+    public function SetDeleteUserBlogMembers($postID)
+    {
+        try {
+
+            $sql = "DELETE FROM blog_members WHERE memberID = ?";
+            $stmt = $this->Connect()->prepare($sql);
+            $stmt->execute([$postID]);
+        } catch (PDOException $e) {
+
+            return $e;
+        }
+
+        return true;
+    }
+
     public function SetEditUserPasswordBlogMembers($username, $password, $email, $memberID)
     {
         try {
@@ -23,7 +38,6 @@ class Blogmembers extends Config
 
         return true;
     }
-
 
     public function SetEditUserBlogMembers($username, $email, $memberID)
     {
