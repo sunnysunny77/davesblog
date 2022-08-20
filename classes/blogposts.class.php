@@ -9,6 +9,22 @@ require_once "config.class.php";
 class Blogposts extends Config
 {
 
+    public function EditActionBlogPosts($postTitle, $postDesc, $postCont, $postID)
+    {
+
+        try {
+
+            $sql = "UPDATE blog_posts SET postTitle = ?, postDesc = ?, postCont = ? WHERE postID = ?";
+            $stmt = $this->Connect()->prepare($sql);
+            $stmt->execute([$postTitle, $postDesc, $postCont, $postID]);
+        } catch (PDOException $e) {
+
+            return $e;
+        }
+
+        return $stmt;
+    }
+
     public function GetEditBlogPosts($postID)
     {
 

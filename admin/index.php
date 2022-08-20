@@ -3,11 +3,11 @@
 include_once "../includes/classes.inc.php";
 session_start();
 // index admin page
-if (!$_SESSION["loggedin"] && isset($_GET['action']) && $_GET['action'] == "login" &&  isset($_POST['submit'])) {
-    
+if (!$_SESSION["loggedin"] && isset($_GET['action']) && $_GET['action'] == "login" && isset($_POST['submit'])) {
+
     $model = new Blogmembers();
     $controller = new Handellogin($_POST['username'], $_POST['password'], $model);
-    $output = $controller->AuthorizeBlogMembers(); 
+    $output = $controller->AuthorizeBlogMembers();
 }
 if (!$_SESSION["loggedin"]) {
 
@@ -19,15 +19,16 @@ if (!$_SESSION["loggedin"]) {
 }
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "logout") {
     session_destroy();
-    header('Location: ./'); 
+    header('Location: ./');
     exit();
 }
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "users") {
 
 }
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "add" && isset($_POST['submit'])) {
-    $model = new  Blogposts();
-    $controller = new Handeladd($_POST,$model);
+
+    $model = new Blogposts();
+    $controller = new Handeladd($_POST, $model);
     $output = $controller->AddBlogPosts();
 }
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "add") {
@@ -37,6 +38,12 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "add")
     $view->GetBody();
     $view->GetFoot();
     exit();
+}
+if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "edit" && isset($_POST['submit'])) {
+
+    $model = new Blogposts();
+    $controller = new Handeledit($_POST, $model);
+    $output = $controller->EditBlogPosts();
 }
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "edit" && isset($_GET["id"])) {
 
@@ -51,7 +58,7 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "delet
 
     $model = new Blogposts();
     $controller = new Handeldelete($_GET["id"], $model);
-    $controller->DeleteBlogPosts(); 
+    $controller->DeleteBlogPosts();
 }
 if ($_SESSION["loggedin"]) {
 

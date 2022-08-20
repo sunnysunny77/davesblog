@@ -17,14 +17,14 @@
 
         foreach ($this->output as $output) {
 
-            echo '<p class="error">' . $output . '</p>';
+            echo  $output . '<br />';
         }
     }
     ?>
 
-    <form action='?action=edit' method='post'>
+    <form action='<?php echo '?action=edit&id=' . $this->result['postID']?>' method='post'>
 
-        <input type='hidden' name='postID' value='<?php echo $postID['postID'];?>'>
+        <input type='hidden' name='postID' value='<?php echo $this->result['postID'];?>'>
 
         <p><label>Title</label><br />
         <input type='text' name='postTitle' value='<?php echo $this->result['postTitle'];?>'></p>

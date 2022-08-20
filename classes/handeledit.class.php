@@ -1,13 +1,13 @@
 <?php
 /**
- * Handeladd controlls the add action
+ * Handeledit controlls the edit action
  *
  * @author Daniel Costello
  * @property private $model Holds the Blogposts model
  * @property private $post Holds the $_POST object
  *
  */
-class Handeladd
+class Handeledit
 {
 
     private $model;
@@ -20,45 +20,49 @@ class Handeladd
         $this->post = $post;
     }
 
-    public function AddBlogPosts()
+    public function EditBlogPosts()
     {
 
-        $_POST = array_map( 'stripslashes', $this->post );
+        $_POST = array_map('stripslashes', $this->post);
 
         extract($_POST);
 
-        if($postTitle ==''){
+        if ($postID == '') {
+            $error[] = 'This post is missing a valid id!.';
+        }
+
+        if ($postTitle == '') {
             $error[] = 'Please enter the title.';
         }
-    
-        if($postDesc ==''){
+
+        if ($postDesc == '') {
             $error[] = 'Please enter the description.';
         }
-    
-        if($postCont ==''){
+
+        if ($postCont == '') {
             $error[] = 'Please enter the content.';
         }
 
-        if(isset($error)){
+        if (isset($error)) {
 
             return $error;
         }
-    
-        if(!isset($error)){
 
-            $result = $this->model->AddActionBlogPosts($postTitle, $postDesc, $postCont);
+        if (!isset($error)) {
+
+            $result = $this->model->EditActionBlogPosts($postTitle, $postDesc, $postCont, $postID);
 
             if ($result->errorInfo) {
 
                 header("Location: ./?error=" . $result->getMessage());
                 return;
-             }
+            }
 
-             if ($result) {
-
-                header("Location: ./?output=Post added.");
+            if ($result) {
+     
+                header("Location: ./?output=Post updated.");
                 return;
-              }
+            }
         }
     }
 }

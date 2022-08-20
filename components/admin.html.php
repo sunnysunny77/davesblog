@@ -31,7 +31,7 @@
             echo '<td>' . $row['postTitle'] . '</td>';
             echo '<td>' . date('jS M Y', strtotime($row['postDate'])) . '</td>';
             echo '<td>
-                    <a href="./?action=edit&id=' . $row['postID'] . '"> Edit </a> 
+                    <a href="./?action=edit&id=' . $row['postID'] . '"> Edit </a> |
                     <a href="javascript:delpost(`' . $row['postID'] . '`,`' . $row['postTitle'] . '`)"> Delete </a>
                 </td>';
             echo '</tr>';
