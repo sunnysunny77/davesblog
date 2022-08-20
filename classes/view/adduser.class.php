@@ -1,6 +1,6 @@
 <?php
 /**
- * Add View for admin/index.php
+ * Adduser View for admin/index.php
  *
  * @author Daniel Costello
  * @property private $root Holds root directory for the head
@@ -8,11 +8,11 @@
  * @property private $output Holds message for body
  *
  */
-class Add
+class Adduser
 {
 
     private $root = "../";
-    private $title = "Admin - Add Post";
+    private $title = "Admin - Add User";
     private $output;
 
     public function __construct($output)
@@ -30,7 +30,7 @@ class Add
     public function GetBody()
     {
 
-        include_once "../components/addform.html.php";
+        include_once "../components/adduserform.html.php";
     }
 
     public function GetFoot()

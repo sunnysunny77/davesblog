@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__ . "/../libs/password.class.php";
 /**
  * Handellogin controlls the login action
  *
@@ -9,7 +8,7 @@ require_once __DIR__ . "/../libs/password.class.php";
  * @property private $password Holds post value for password
  *
  */
-class Handellogin extends Password
+class Handellogin
 {
 
     private $model;
@@ -34,7 +33,7 @@ class Handellogin extends Password
             return $result->getMessage();
         }
 
-        if ($this->password_verify($this->password, $result['password']) == 1) {
+        if (password_verify($this->password, $result['password'])) {
 
             $_SESSION['loggedin'] = true;
             $_SESSION['memberID'] = $user['memberID'];

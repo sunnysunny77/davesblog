@@ -22,8 +22,33 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "logou
     header('Location: ./');
     exit();
 }
+if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "adduser" && isset($_POST['submit'])) {
+
+    $model = new Blogmembers();
+    $controller = new Handeladduser($_POST, $model);
+    $output = $controller->AddBlogMembers();
+}
+if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "adduser") {
+    $view = new Adduser($output);
+    $view->GetHead();
+    $view->GetBody();
+    $view->GetFoot();
+    exit();
+}
+if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "edituser") {
+
+}
+if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "deleteuser" ) {
+
+}
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "users") {
 
+    $model = new Blogmembers();
+    $view = new Users($output, $model);
+    $view->GetHead();
+    $view->GetBody();
+    $view->GetFoot();
+    exit();    
 }
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "add" && isset($_POST['submit'])) {
 

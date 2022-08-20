@@ -22,7 +22,6 @@
     
         echo  '<h3>' . $_GET["output"] . '</h3>'; 
     }
-   
     ?>
 
     <table>
