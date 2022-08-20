@@ -51,7 +51,7 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "editu
     $view->GetFoot();
     exit();
 }
-if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "deleteuser" && isset($_GET["id"])) {
+if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "users" && isset($_GET["id"])) {
 
     $model = new Blogmembers();
     $controller = new Handeldeleteuser($_GET["id"], $model);
@@ -95,7 +95,7 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "edit"
     $view->GetFoot();
     exit();
 }
-if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "delete" && isset($_GET["id"])) {
+if ($_SESSION["loggedin"] && isset($_GET["id"])) {
 
     $model = new Blogposts();
     $controller = new Handeldelete($_GET["id"], $model);
