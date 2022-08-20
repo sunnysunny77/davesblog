@@ -58,12 +58,12 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "delet
 
     $model = new Blogposts();
     $controller = new Handeldelete($_GET["id"], $model);
-    $controller->DeleteBlogPosts();
+    $output = $controller->DeleteBlogPosts();
 }
 if ($_SESSION["loggedin"]) {
 
     $model = new Blogposts();
-    $view = new Admin($model);
+    $view = new Admin($output, $model);
     $view->GetHead();
     $view->GetBody();
     $view->GetFoot();

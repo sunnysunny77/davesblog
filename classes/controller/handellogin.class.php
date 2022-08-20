@@ -40,8 +40,8 @@ class Handellogin extends Password
             $_SESSION['memberID'] = $user['memberID'];
             $_SESSION['username'] = $user['username'];
 
-            header("Location: ./");
-            return;
+            
+            return header("Location: ./");
         } else {
 
             return 'Wrong username or password';
