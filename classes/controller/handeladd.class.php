@@ -46,7 +46,7 @@ class Handeladd
     
         if(!isset($error)){
 
-            $result = $this->model->AddActionBlogPosts($postTitle, $postDesc, $postCont);
+            $result = $this->model->SetAddBlogPosts($postTitle, $postDesc, $postCont);
 
             if ($result->errorInfo) {
 

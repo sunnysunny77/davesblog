@@ -9,7 +9,7 @@ require_once  __DIR__ . "/../libs/config.class.php";
 class Blogposts extends Config
 {
 
-    public function EditActionBlogPosts($postTitle, $postDesc, $postCont, $postID)
+    public function SetEditBlogPosts($postTitle, $postDesc, $postCont, $postID)
     {
 
         try {
@@ -41,7 +41,7 @@ class Blogposts extends Config
         return $stmt->fetch();
     }
 
-    public function AddActionBlogPosts($postTitle, $postDesc, $postCont)
+    public function SetAddBlogPosts($postTitle, $postDesc, $postCont)
     {
 
         try {
@@ -57,7 +57,7 @@ class Blogposts extends Config
         return true;
     }
 
-    public function DeleteActionBlogPosts($postID)
+    public function SetDeleteBlogPosts($postID)
     {
 
         try {

@@ -50,7 +50,7 @@ class Handeledit
 
         if (!isset($error)) {
 
-            $result = $this->model->EditActionBlogPosts($postTitle, $postDesc, $postCont, $postID);
+            $result = $this->model->SetEditBlogPosts($postTitle, $postDesc, $postCont, $postID);
 
             if ($result->errorInfo) {
 
