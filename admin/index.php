@@ -39,7 +39,7 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "add")
     $view->GetFoot();
     exit();
 }
-if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "edit" && isset($_POST['submit'])) {
+if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "edit" && isset($_POST['submit']) && isset($_GET["id"])) {
 
     $model = new Blogposts();
     $controller = new Handeledit($_POST, $model);
