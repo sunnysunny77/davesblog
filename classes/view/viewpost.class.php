@@ -18,14 +18,16 @@ class Viewpost
     public function __construct($postID, $model)
     {
 
-      $this->result = $model->GetViewPostBlogPosts($postID);
+        $this->result = $model->GetViewPostBlogPosts($postID);
 
-        if (!$this->result['postID']) {
+     
+         $this->result->errorInfo ? $id = false : $id =  $this->result['postID'];
 
-            header('Location: ./');
-            exit;
+        if (!$id) {
+
+            return header('Location: ./');
         }
-        
+
         $this->result->errorInfo ? $this->title = "Blog" : $this->title = "Blog - " . $this->result['postTitle'];
     }
 
@@ -37,7 +39,7 @@ class Viewpost
 
     public function GetBody()
     {
-    
+
         include_once "components/viewpost.html.php";
     }
 
