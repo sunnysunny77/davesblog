@@ -3,7 +3,7 @@
  * Handeladduser controlls the adduser action
  *
  * @author Daniel Costello
- * @property private $model Holds the Blogposts model
+ * @property private $model Holds the Blogmembers model
  * @property private $post Holds the $_POST object
  *
  */

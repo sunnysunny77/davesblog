@@ -3,7 +3,7 @@
  * Handeledituser controlls the edituser action
  *
  * @author Daniel Costello
- * @property private $model Holds the Blogposts model
+ * @property private $model Holds the Blogmembers model
  * @property private $post Holds the $_POST object
  *
  */
@@ -42,14 +42,11 @@ class Handeledituser
 			if($password != $passwordConfirm){
 				$error[] = 'Passwords do not match.';
 			}
-
-		}
-		
+		}	
 
 		if($email ==''){
 			$error[] = 'Please enter the email address.';
 		}
-
 
         if (isset($error)) {
 

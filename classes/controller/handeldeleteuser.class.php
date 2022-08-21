@@ -3,7 +3,7 @@
  * Handeldeleteuser controlls the deleteuser action
  *
  * @author Daniel Costello
- * @property private $model Holds the Blogposts model
+ * @property private $model Holds the Blogmembers model
  * @property private $postID Holds get value for postID
  *
  */
