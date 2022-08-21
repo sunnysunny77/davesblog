@@ -12,6 +12,10 @@
      if ($this->result->errorInfo) {
 
         echo $this->result->getMessage() . '<br /><br />';
+        ?>
+        </div>
+        <?php
+        exit();
     }
     if (isset($this->output)) {
 
