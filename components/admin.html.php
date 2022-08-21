@@ -6,17 +6,29 @@
     if ($this->result->errorInfo) {
 
         echo $this->result->getMessage() . '<br /><br />';
+        ?>
+        </div>
+        <?php
+        exit();
     }
     if ($this->output->errorInfo) { 
 
         echo $this->output->getMessage() . '<br /><br />';
+        ?>
+        </div>
+        <?php
+        exit();
     } else if ($this->output) { 
 
         echo '<h3>' . $this->output . '</h3>';  
     }
     if (isset($_GET["error"])) {
     
-        echo  $_GET["error"] . '<br /><br />'; 
+        echo  $_GET["error"] . '<br /><br />';
+        ?>
+        </div>
+        <?php
+        exit(); 
     }
     if (isset($_GET["output"])) {
     
