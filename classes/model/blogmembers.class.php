@@ -9,13 +9,13 @@ require_once __DIR__ . "/../libs/config.class.php";
 class Blogmembers extends Config
 {
 
-    public function SetDeleteUserBlogMembers($postID)
+    public function SetAddBlogMembers($username, $email, $password)
     {
         try {
 
-            $sql = "DELETE FROM blog_members WHERE memberID = ?";
+            $sql = "INSERT INTO blog_members (username,email,password) VALUES (?, ?, ?)";
             $stmt = $this->Connect()->prepare($sql);
-            $stmt->execute([$postID]);
+            $stmt->execute([$username, $email, $password]);
         } catch (PDOException $e) {
 
             return $e;
@@ -69,13 +69,13 @@ class Blogmembers extends Config
         return $stmt->fetch();
     }
 
-    public function SetAddBlogMembers($username, $email, $password)
+    public function SetDeleteUserBlogMembers($postID)
     {
         try {
 
-            $sql = "INSERT INTO blog_members (username,email,password) VALUES (?, ?, ?)";
+            $sql = "DELETE FROM blog_members WHERE memberID = ?";
             $stmt = $this->Connect()->prepare($sql);
-            $stmt->execute([$username, $email, $password]);
+            $stmt->execute([$postID]);
         } catch (PDOException $e) {
 
             return $e;

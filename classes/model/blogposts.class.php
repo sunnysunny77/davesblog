@@ -9,6 +9,22 @@ require_once  __DIR__ . "/../libs/config.class.php";
 class Blogposts extends Config
 {
 
+    public function SetAddBlogPosts($postTitle, $postDesc, $postCont)
+    {
+
+        try {
+
+            $sql = "INSERT INTO blog_posts (postTitle,postDesc,postCont,postDate) VALUES (?, ?, ?, ?)";
+            $stmt = $this->Connect()->prepare($sql);
+            $stmt->execute([$postTitle, $postDesc, $postCont, date('Y-m-d H:i:s')]);
+        } catch (PDOException $e) {
+
+            return $e;
+        }
+
+        return true;
+    }
+
     public function SetEditBlogPosts($postTitle, $postDesc, $postCont, $postID)
     {
 
@@ -39,22 +55,6 @@ class Blogposts extends Config
         }
 
         return $stmt->fetch();
-    }
-
-    public function SetAddBlogPosts($postTitle, $postDesc, $postCont)
-    {
-
-        try {
-
-            $sql = "INSERT INTO blog_posts (postTitle,postDesc,postCont,postDate) VALUES (?, ?, ?, ?)";
-            $stmt = $this->Connect()->prepare($sql);
-            $stmt->execute([$postTitle, $postDesc, $postCont, date('Y-m-d H:i:s')]);
-        } catch (PDOException $e) {
-
-            return $e;
-        }
-
-        return true;
     }
 
     public function SetDeleteBlogPosts($postID)
