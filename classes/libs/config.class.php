@@ -1,7 +1,7 @@
 <?php
 /**
- * Config Return a connection to the mysql database and sets the environemnt config
- *
+ * Config Return a connection to the mysql database
+ * 
  * @author Daniel Costello
  * @property private $host Hostname of database
  * @property private $dbname Name of database

@@ -8,7 +8,6 @@
     </p>
 
     <?php
-   
     if ($this->result->errorInfo) {
 
         echo  $this->result->getMessage();

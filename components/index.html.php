@@ -1,8 +1,9 @@
 <div id='wrapper'>
+    
     <h1>Blog</h1>
     <hr />
-    <?php
 
+    <?php
     if ($this->result->errorInfo) {
 
         echo $this->result->getMessage();
