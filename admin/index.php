@@ -68,7 +68,7 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "users
     $view->GetFoot();
     exit();    
 }
-// posts pages
+// Blog pages
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "add" && isset($_POST['submit'])) {
 
     $model = new Blogposts();
