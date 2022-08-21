@@ -2,7 +2,7 @@
 // Class autoload
 include_once "../includes/classes.inc.php";
 session_start();
-// index admin page
+// admin/index  page
 if (!$_SESSION["loggedin"] && isset($_GET['action']) && $_GET['action'] == "login" && isset($_POST['submit'])) {
 
     $model = new Blogmembers();

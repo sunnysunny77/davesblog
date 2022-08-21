@@ -1,10 +1,12 @@
 <div id='login'>
+
     <?php
      if ($this->output) { 
 
         echo '<p class="error">' . $this->output  . '</p>'; 
      }
     ?>
+
     <form action="?action=login" method="post">
         <p>
             <label for="username"> Username </label>
@@ -18,4 +20,5 @@
             <input type="submit" name="submit" value="Login">
         </p>
     </form>
+    
 </div>
