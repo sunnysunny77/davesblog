@@ -49,15 +49,17 @@
             echo '<tr>';
             echo '<td>' . $row['postTitle'] . '</td>';
             echo '<td>' . date('jS M Y', strtotime($row['postDate'])) . '</td>';
-            echo '<td>
-                    <a href="./?action=edit&id=' . $row['postID'] . '"> Edit </a> |
-                    <a href="javascript:delpost(`' . $row['postID'] . '`,`' . $row['postTitle'] . '`)"> Delete </a>
-                </td>';
+            ?>
+            <td>
+                <a href="./?action=edit&id=<?php echo $row['postID']; ?>">Edit</a> |
+                <a href="javascript:delpost('<?php echo $row['postID']; ?>','<?php echo $row['postTitle']; ?>')">Delete</a>   
+            </td>
+            <?php
             echo '</tr>';
 
         }
         ?>
-
+      
     </table>
 
     <p>

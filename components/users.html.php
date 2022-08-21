@@ -50,14 +50,12 @@
         echo '<td>' . $row['username'] . '</td>';
         echo '<td>' . $row['email'] . '</td>';
         ?>
-
         <td>
             <a href="./?action=edituser&id=<?php echo $row['memberID']; ?>">Edit</a>
             <?php if ($row['memberID'] != 1) {?>
                 | <a href="javascript:deluser('<?php echo $row['memberID']; ?>','<?php echo $row['username']; ?>')">Delete</a>
             <?php }?>
         </td>
-
         <?php
         echo '</tr>';
     }
@@ -66,6 +64,5 @@
     </table>
 
     <p><a href='./?action=adduser'>Add User</a></p>
-
 
 </div>
