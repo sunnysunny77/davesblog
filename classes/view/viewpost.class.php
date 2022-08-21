@@ -1,11 +1,11 @@
 <?php
 /**
- * Viewpost View for viewpost.php
+ * Viewpost View for index.php
  *
  * @author Daniel Costello
  * @property private $result Holds result from the Blogposts model
  * @property private $root Holds root directory for the head
- * @property private $title Holds title from the head
+ * @property private $title Holds title for the head
  *
  */
 class Viewpost

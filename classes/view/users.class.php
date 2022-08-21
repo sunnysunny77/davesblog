@@ -5,7 +5,7 @@
  * @author Daniel Costello
  * @property private $result Holds result from the Blogmembers model
  * @property private $root Holds root directory for the head
- * @property private $title Holds title from the head
+ * @property private $title Holds title for the head
  * @property private $output Holds message for body
  *
  */
