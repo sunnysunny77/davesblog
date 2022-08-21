@@ -3,6 +3,7 @@
 include_once "../includes/classes.inc.php";
 session_start();
 // admin/index  page
+// Login pages
 if (!$_SESSION["loggedin"] && isset($_GET['action']) && $_GET['action'] == "login" && isset($_POST['submit'])) {
 
     $model = new Blogmembers();
@@ -22,6 +23,7 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "logou
     header('Location: ./');
     exit();
 }
+// User pages
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "adduser" && isset($_POST['submit'])) {
 
     $model = new Blogmembers();
@@ -66,6 +68,7 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "users
     $view->GetFoot();
     exit();    
 }
+// posts pages
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "add" && isset($_POST['submit'])) {
 
     $model = new Blogposts();
