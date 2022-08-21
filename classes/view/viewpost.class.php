@@ -20,7 +20,7 @@ class Viewpost
 
         $this->result = $model->GetViewPostBlogPosts($postID);
 
-        $this->result->errorInfo ? $id = false : $id = $this->result['postID'];
+        $this->result->errorInfo ? $id = true : $id = $this->result['postID'];
 
         if (!$id) {
 
