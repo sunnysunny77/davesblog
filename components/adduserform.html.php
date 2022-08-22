@@ -18,7 +18,7 @@
     }
     ?>
     
-    <form action='' method='post'>
+    <form action='?action=adduser' method='post'>
 
         <p><label>Username</label><br />
         <input type='text' name='username' value='<?php if(isset($error)){ echo $_POST['username'];}?>'></p>
