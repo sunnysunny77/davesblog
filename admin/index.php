@@ -19,6 +19,7 @@ if (!$_SESSION["loggedin"]) {
     exit();
 }
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "logout") {
+    
     session_destroy();
     header('Location: ./');
     exit();
