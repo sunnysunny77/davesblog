@@ -3,7 +3,7 @@
     <?php echo file_get_contents("../components/menu.html"); ?>
 
     <p>
-        <a href="./?action-users">User Admin Index</a>
+        <a href="./?action=users">User Admin Index</a>
     </p>
 
 	<h2>Add User</h2>
