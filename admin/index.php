@@ -2,8 +2,8 @@
 // Class autoload
 include_once "../includes/classes.inc.php";
 session_start();
-// admin/index  page
-// Login pages
+// admin/index page
+// Login page
 if (!$_SESSION["loggedin"] && isset($_GET['action']) && $_GET['action'] == "login" && isset($_POST['submit'])) {
 
     $model = new Blogmembers();
@@ -19,12 +19,12 @@ if (!$_SESSION["loggedin"]) {
     exit();
 }
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "logout") {
-    
+
     session_destroy();
     header('Location: ./');
     exit();
 }
-// User pages
+// Users pages
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "adduser" && isset($_POST['submit'])) {
 
     $model = new Blogmembers();
