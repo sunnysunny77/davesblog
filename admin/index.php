@@ -1,7 +1,8 @@
 <?php
 // Class autoload
 include_once "../includes/classes.inc.php";
-session_start();
+// Session config
+include_once "../includes/session.inc.php";
 // admin/index page
 // Login page
 if (!$_SESSION["loggedin"] && isset($_GET['action']) && $_GET['action'] == "login" && isset($_POST['submit'])) {
