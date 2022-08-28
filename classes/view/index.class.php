@@ -18,7 +18,7 @@ class Index
     public function __construct($model)
     {
     
-        $this->result = $model->GetIndexBlogPosts();
+        $this->result = $model->GetIndexBlogPosts(); 
     }
 
     public function GetHead()
