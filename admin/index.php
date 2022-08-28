@@ -4,7 +4,7 @@ include_once "../includes/classes.inc.php";
 // Session config
 include_once "../includes/session.inc.php";
 // admin/index page
-// Login page
+// Login actions
 if (!$_SESSION["loggedin"] && isset($_GET['action']) && $_GET['action'] == "login" && isset($_POST['submit'])) {
 
     $model = new Blogmembers();
@@ -25,7 +25,7 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "logou
     header('Location: ./');
     exit();
 }
-// Users pages
+// Users actions
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "adduser" && isset($_POST['submit'])) {
 
     $model = new Blogmembers();
@@ -61,6 +61,7 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "users
     $controller = new Handeldeleteuser($_GET["id"], $model);
     $output = $controller->DeleteUserBlogMembers();
 }
+// Users page root
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "users") {
 
     $model = new Blogmembers();
@@ -70,7 +71,7 @@ if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "users
     $view->GetFoot();
     exit();    
 }
-// Blog pages
+// Blog actions
 if ($_SESSION["loggedin"] && isset($_GET["action"]) && $_GET["action"] == "add" && isset($_POST['submit'])) {
 
     $model = new Blogposts();
@@ -106,6 +107,7 @@ if ($_SESSION["loggedin"] && isset($_GET["id"])) {
     $controller = new Handeldelete($_GET["id"], $model);
     $output = $controller->DeleteBlogPosts();
 }
+// blog page root
 if ($_SESSION["loggedin"]) {
 
     $model = new Blogposts();

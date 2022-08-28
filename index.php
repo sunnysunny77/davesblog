@@ -2,7 +2,7 @@
 // Class autoload
 include_once "includes/classes.inc.php";
 // index page
-// viewpost page
+// viewpost page root
 if (isset($_GET["action"]) && $_GET["action"] == "viewpost" && isset($_GET["id"])) {
 
     $model = new Blogposts();
@@ -12,7 +12,7 @@ if (isset($_GET["action"]) && $_GET["action"] == "viewpost" && isset($_GET["id"]
     $view->GetFoot();
     exit();
 }
-// blog index page
+// blog index page root
 $model = new Blogposts();
 $view = new Index($model);
 $view->GetHead();
