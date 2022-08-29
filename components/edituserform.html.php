@@ -9,7 +9,7 @@
 	<h2>Edit User</h2>
 
     <?php
-     if ($this->result->errorInfo) {
+     if (isset($this->result->errorInfo)) {
 
         echo $this->result->getMessage() . '<br /><br />';
         ?>
@@ -17,7 +17,7 @@
         <?php
         exit();
     }
-    if (isset($this->output)) {
+    if (is_array($this->output)) {
 
         foreach ($this->output as $output) {
 

@@ -20,14 +20,14 @@ class Viewpost
 
         $this->result = $model->GetViewPostBlogPosts($postID);
 
-        $this->result->errorInfo ? $id = true : $id = $this->result['postID'];
+        isset($this->result->errorInfo) ? $id = true : $id = $this->result['postID'];
 
         if (!$id) {
 
             return header('Location: ./');
         }
 
-        $this->result->errorInfo ? $this->title = "Blog" : $this->title = "Blog - " . $this->result['postTitle'];
+        isset($this->result->errorInfo) ? $this->title = "Blog" : $this->title = "Blog - " . $this->result['postTitle'];
     }
 
     public function GetHead()

@@ -3,7 +3,7 @@
     <?php echo file_get_contents("../components/menu.html"); ?>
 
     <?php 
-    if ($this->result->errorInfo) {
+    if (isset($this->result->errorInfo)) {
 
         echo $this->result->getMessage() . '<br /><br />';
         ?>
@@ -11,14 +11,14 @@
         <?php
         exit();
     }
-    if ($this->output->errorInfo) { 
+    if (isset($this->output->errorInfo)) { 
 
         echo $this->output->getMessage() . '<br /><br />';
         ?>
         </div>
         <?php
         exit();
-    } else if ($this->output) { 
+    } else if (isset($this->output)) { 
 
         echo '<h3>' . $this->output . '</h3>';  
     }

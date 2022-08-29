@@ -25,7 +25,7 @@ class Handeldelete
 
         $result = $this->model->SetDeleteBlogPosts($this->postID);
 
-        if ($result->errorInfo) {
+        if (isset($result->errorInfo)) {
 
             return $result;
         }

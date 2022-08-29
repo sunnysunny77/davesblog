@@ -4,7 +4,7 @@
     <hr />
 
     <?php
-    if ($this->result->errorInfo) {
+    if (isset($this->result->errorInfo)) {
 
         echo $this->result->getMessage();
         ?>

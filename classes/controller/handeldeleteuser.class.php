@@ -30,7 +30,7 @@ class Handeldeleteuser
 
         $result = $this->model->SetDeleteUserBlogMembers($this->postID);
 
-        if ($result->errorInfo) {
+        if (isset($result->errorInfo)) {
 
             return $result;
         }

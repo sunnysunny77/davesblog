@@ -28,7 +28,7 @@ class Handellogin
 
         $result = $this->model->GetBlogMembers($this->username);
 
-        if ($result->errorInfo) {
+        if (isset($result->errorInfo)) {
 
             return $result->getMessage();
         }

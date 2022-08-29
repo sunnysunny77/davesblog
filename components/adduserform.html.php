@@ -9,7 +9,7 @@
 	<h2>Add User</h2>
 
     <?php
-    if (isset($this->output)) {
+    if (is_array($this->output)) {
 
         foreach ($this->output as $output) {
 
@@ -21,16 +21,16 @@
     <form action='?action=adduser' method='post'>
 
         <p><label>Username</label><br />
-        <input type='text' name='username' value='<?php if(isset($this->output)){ echo $_POST['username'];}?>'></p>
+        <input type='text' name='username' value='<?php if(is_array($this->output)){ echo $_POST['username'];}?>'></p>
 
         <p><label>Password</label><br />
-        <input type='password' name='password' value='<?php if(isset($this->output)){ echo $_POST['password'];}?>'></p>
+        <input type='password' name='password' value='<?php if(is_array($this->output)){ echo $_POST['password'];}?>'></p>
 
         <p><label>Confirm Password</label><br />
-        <input type='password' name='passwordConfirm' value='<?php if(isset($this->output)){ echo $_POST['passwordConfirm'];}?>'></p>
+        <input type='password' name='passwordConfirm' value='<?php if(is_array($this->output)){ echo $_POST['passwordConfirm'];}?>'></p>
 
         <p><label>Email</label><br />
-        <input type='text' name='email' value='<?php if(isset($this->output)){ echo $_POST['email'];}?>'></p>
+        <input type='text' name='email' value='<?php if(is_array($this->output)){ echo $_POST['email'];}?>'></p>
 
         <p><input type='submit' name='submit' value='Add User'></p>
 
