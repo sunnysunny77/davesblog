@@ -30,7 +30,7 @@ class Handeldelete
             return $result;
         }
 
-        if ($result) {
+        if (isset($result)) {
 
             return "Post deleted.";
         }

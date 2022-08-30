@@ -35,7 +35,7 @@ class Handeldeleteuser
             return $result;
         }
 
-        if ($result) {
+        if (isset($result)) {
 
             return "User deleted.";
         }
