@@ -4,7 +4,8 @@ include_once "../includes/classes.inc.php";
 // Session config
 include_once "../includes/session.inc.php";
 // admin/index page
-// Login actions
+
+// login action
 if (!isset($_SESSION["loggedin"]) && isset($_GET['action']) && $_GET['action'] == "login" && isset($_POST['submit'])) {
 
     $model = new Blogmembers();
@@ -21,13 +22,18 @@ if (!isset($_SESSION["loggedin"])) {
     $view->GetFoot();
     exit();
 }
+
+// logout action
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "logout") {
 
     session_destroy();
     header('Location: ./');
     exit();
 }
-// Users actions
+
+//Users
+
+// adduser action
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "adduser" && isset($_POST['submit'])) {
 
     $model = new Blogmembers();
@@ -44,6 +50,8 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
     $view->GetFoot();
     exit();
 }
+
+// edituser action
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "edituser" && isset($_POST['submit']) && isset($_GET["id"])) {
 
     $model = new Blogmembers();
@@ -61,13 +69,17 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
     $view->GetFoot();
     exit();
 }
+
+
+//  users action delete 
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "users" && isset($_GET["id"])) {
 
     $model = new Blogmembers();
     $controller = new Handeldeleteuser($_GET["id"], $model);
     $output = $controller->DeleteUserBlogMembers();
 }
-// Users page root
+
+// users action 
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "users") {
 
     isset($output) ? $output = $output : $output =  false;
@@ -79,7 +91,11 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
     $view->GetFoot();
     exit();    
 }
-// Blog actions
+
+
+//Bolgs
+
+// add action
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "add" && isset($_POST['submit'])) {
 
     $model = new Blogposts();
@@ -96,6 +112,8 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
     $view->GetFoot();
     exit();
 }
+
+// edit action
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "edit" && isset($_POST['submit']) && isset($_GET["id"])) {
 
     $model = new Blogposts();
@@ -113,13 +131,16 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
     $view->GetFoot();
     exit();
 }
+
+//  root delete 
 if (isset($_SESSION["loggedin"]) && isset($_GET["id"])) {
 
     $model = new Blogposts();
     $controller = new Handeldelete($_GET["id"], $model);
     $output = $controller->DeleteBlogPosts();
 }
-// blog page root
+
+// root
 if (isset($_SESSION["loggedin"])) {
 
     isset($output) ? $output = $output : $output =  false;
