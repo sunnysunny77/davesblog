@@ -48,12 +48,12 @@ class Handeladd
 
             $result = $this->model->SetAddBlogPosts($postTitle, $postDesc, $postCont);
 
-            if ($result->errorInfo) {
+            if (isset($result->errorInfo)) {
 
                 return header("Location: ./?error=" . $result->getMessage());
             }
 
-            if ($result) {
+            if (isset($result)) {
 
                 return header("Location: ./?output=Post added.");
             }

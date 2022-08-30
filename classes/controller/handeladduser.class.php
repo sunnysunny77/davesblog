@@ -56,12 +56,12 @@ class Handeladduser
 
             $result = $this->model->SetAddBlogMembers($username, $email, $hashed_password);
 
-            if ($result->errorInfo) {
+            if (isset($result->errorInfo)) {
 
                 return header("Location: ./?action=users&error=" . $result->getMessage());
             }
 
-            if ($result) {
+            if (isset($result)) {
 
                 return header("Location: ./?action=users&output=User added.");
             }

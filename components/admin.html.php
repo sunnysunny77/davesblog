@@ -18,7 +18,7 @@
         </div>
         <?php
         exit();
-    } else if (isset($this->output)) { 
+    } else if ($this->output) { 
 
         echo '<h3>' . $this->output . '</h3>';  
     }

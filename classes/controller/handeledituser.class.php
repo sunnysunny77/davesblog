@@ -66,12 +66,12 @@ class Handeledituser
                 $result = $this->model->SetEditUserBlogMembers($username, $email, $memberID);
             }
 
-            if ($result->errorInfo) {
+            if (isset($result->errorInfo)) {
 
                 return header("Location: ./?action=users&error=" . $result->getMessage());
             }
 
-            if ($result) {
+            if (isset($result)) {
 
                 return header("Location: ./?action=users&output=User updated.");
             }
