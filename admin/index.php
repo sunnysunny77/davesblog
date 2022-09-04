@@ -14,7 +14,7 @@ if (!isset($_SESSION["loggedin"]) && isset($_GET['action']) && $_GET['action'] =
 }
 if (!isset($_SESSION["loggedin"])) {
 
-    isset($output) ? $output = $output : $output =  false;
+    $output = isset($output) ? $output : false;
 
     $view = new Login($output);
     $view->GetHead();
@@ -42,7 +42,7 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
 }
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "adduser") {
 
-    isset($output) ? $output = $output : $output =  false;
+    $output = isset($output) ? $output : false;
 
     $view = new Adduser($output);
     $view->GetHead();
@@ -60,7 +60,7 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
 }
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "edituser" && isset($_GET["id"])) {
 
-    isset($output) ? $output = $output : $output =  false;
+    $output = isset($output) ? $output : false;
 
     $model = new Blogmembers();
     $view = new Edituser($_GET["id"], $output, $model);
@@ -82,7 +82,7 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
 // users action 
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "users") {
 
-    isset($output) ? $output = $output : $output =  false;
+    $output = isset($output) ? $output : false;
 
     $model = new Blogmembers();
     $view = new Users($output, $model);
@@ -104,7 +104,7 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
 }
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "add") {
 
-    isset($output) ? $output = $output : $output =  false;
+    $output = isset($output) ? $output : false;
 
     $view = new Add($output);
     $view->GetHead();
@@ -122,7 +122,7 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
 }
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "edit" && isset($_GET["id"])) {
 
-    isset($output) ? $output = $output : $output =  false;
+    $output = isset($output) ? $output : false;
 
     $model = new Blogposts();
     $view = new Edit($_GET["id"], $output, $model);
@@ -143,7 +143,7 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["id"])) {
 // root
 if (isset($_SESSION["loggedin"])) {
 
-    isset($output) ? $output = $output : $output =  false;
+    $output = isset($output) ? $output : false;
     
     $model = new Blogposts();
     $view = new Admin($output, $model);

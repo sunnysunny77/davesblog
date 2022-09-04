@@ -33,7 +33,7 @@ class Handlelogin
             return $result->getMessage();
         }
 
-        if (password_verify($this->password, $result['password'])) {
+        if (isset($result['password']) && password_verify($this->password, $result['password'])) {
 
             $_SESSION['loggedin'] = true;
                    
