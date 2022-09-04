@@ -1,6 +1,6 @@
 <?php
 /**
- * Handeledit controlls the edit action
+ * Handleedit controlls the edit action
  *
  * @author Daniel Costello
  * @property private $model Holds the Blogposts model

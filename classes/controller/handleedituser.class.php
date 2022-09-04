@@ -1,6 +1,6 @@
 <?php
 /**
- * Handeledituser controlls the edituser action
+ * Handleedituser controlls the edituser action
  *
  * @author Daniel Costello
  * @property private $model Holds the Blogmembers model

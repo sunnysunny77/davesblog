@@ -1,6 +1,6 @@
 <?php
 /**
- * Handeladduser controlls the adduser action
+ * Handleadduser controlls the adduser action
  *
  * @author Daniel Costello
  * @property private $model Holds the Blogmembers model

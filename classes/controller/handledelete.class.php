@@ -1,13 +1,13 @@
 <?php
 /**
- * Handeldeleteuser controlls the deleteuser action
+ * Handledelete controlls the delete action
  *
  * @author Daniel Costello
- * @property private $model Holds the Blogmembers model
+ * @property private $model Holds the Blogposts model
  * @property private $postID Holds get value for postID
  *
  */
-class Handeldeleteuser
+class Handeldelete
 {
 
     private $model;
@@ -20,15 +20,10 @@ class Handeldeleteuser
         $this->postID = $postID;
     }
 
-    public function DeleteUserBlogMembers()
+    public function DeleteBlogPosts()
     {
 
-        if ($this->postID == 1) { 
-
-            return;
-        } 
-
-        $result = $this->model->SetDeleteUserBlogMembers($this->postID);
+        $result = $this->model->SetDeleteBlogPosts($this->postID);
 
         if (isset($result->errorInfo)) {
 
@@ -37,7 +32,7 @@ class Handeldeleteuser
 
         if (isset($result)) {
 
-            return "User deleted.";
+            return "Post deleted.";
         }
     }
 }

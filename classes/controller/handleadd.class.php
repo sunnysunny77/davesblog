@@ -1,6 +1,6 @@
 <?php
 /**
- * Handeladd controlls the add action
+ * Handleadd controlls the add action
  *
  * @author Daniel Costello
  * @property private $model Holds the Blogposts model

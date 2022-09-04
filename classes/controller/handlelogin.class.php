@@ -1,6 +1,6 @@
 <?php
 /**
- * Handellogin controlls the login action
+ * Handlelogin controlls the login action
  *
  * @author Daniel Costello
  * @property private $model Holds the Blogmembers model
