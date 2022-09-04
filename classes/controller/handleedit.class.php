@@ -7,7 +7,7 @@
  * @property private $post Holds the $_POST object
  *
  */
-class Handeledit
+class Handleedit
 {
 
     private $model;

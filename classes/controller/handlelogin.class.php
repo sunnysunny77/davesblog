@@ -8,7 +8,7 @@
  * @property private $password Holds post value for password
  *
  */
-class Handellogin
+class Handlelogin
 {
 
     private $model;

@@ -7,7 +7,7 @@
  * @property private $postID Holds get value for postID
  *
  */
-class Handeldelete
+class Handledelete
 {
 
     private $model;
