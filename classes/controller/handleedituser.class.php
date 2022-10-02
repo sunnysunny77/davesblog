@@ -29,7 +29,7 @@ class Handleedituser
 			$error[] = 'Please enter the username.';
 		}
 
-		if( strlen($password) > 0){
+		if(strlen($password) > 0){
 
 			if($password ==''){
 				$error[] = 'Please enter the password.';
