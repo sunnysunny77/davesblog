@@ -10,7 +10,7 @@
     <?php
     if (isset($this->result->errorInfo)) {
 
-        echo  $this->result->getMessage();
+        echo $this->result->getMessage();
         ?>
         </div>
         <?php
