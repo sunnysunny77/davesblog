@@ -70,7 +70,6 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
     exit();
 }
 
-
 //  users action delete 
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "users" && isset($_GET["id"])) {
 
@@ -91,7 +90,6 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
     $view->GetFoot();
     exit();    
 }
-
 
 //Bolgs
 
