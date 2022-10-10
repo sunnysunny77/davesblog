@@ -9,7 +9,7 @@
 	<h2>Add Post</h2>
 
     <?php
-    if (is_array($this->output)) {
+    if ($this->output) {
 
         foreach ($this->output as $output) {
 
