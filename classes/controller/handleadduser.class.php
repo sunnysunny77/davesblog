@@ -23,7 +23,7 @@ class Handleadduser
     public function AddBlogMembers()
     {
 
-        extract($_POST);
+        extract($this->post);
 
         if($username ==''){
 			$error[] = 'Please enter the username.';
