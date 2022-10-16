@@ -17,9 +17,9 @@ class Edituser
     private $title = "Admin - Edit User";
     private $output;
 
-    public function __construct($memberID, $output, $model)
+    public function __construct($output, $model)
     {
-        $this->result = $model->GetUserBlogMembers($memberID); 
+        $this->result = $model->GetUserBlogMembers($_GET["id"]); 
         $this->output = $output;
     }
 

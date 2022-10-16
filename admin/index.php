@@ -9,7 +9,7 @@ include_once "../includes/session.inc.php";
 if (!isset($_SESSION["loggedin"]) && isset($_GET['action']) && $_GET['action'] == "login" && isset($_POST['submit'])) {
 
     $model = new Blogmembers();
-    $controller = new Handlelogin($_POST['username'], $_POST['password'], $model);
+    $controller = new Handlelogin($model);
     $output = $controller->AuthorizeBlogMembers();
 }
 if (!isset($_SESSION["loggedin"])) {
@@ -37,7 +37,7 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "adduser" && isset($_POST['submit'])) {
 
     $model = new Blogmembers();
-    $controller = new Handleadduser($_POST, $model);
+    $controller = new Handleadduser($model);
     $output = $controller->AddBlogMembers();
 }
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "adduser") {
@@ -55,7 +55,7 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "edituser" && isset($_POST['submit']) && isset($_GET["id"])) {
 
     $model = new Blogmembers();
-    $controller = new Handleedituser($_POST, $model);
+    $controller = new Handleedituser($model);
     $output = $controller->EditUserBlogMembers();   
 }
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "edituser" && isset($_GET["id"])) {
@@ -63,7 +63,7 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
     $output = isset($output) ? $output : false;
 
     $model = new Blogmembers();
-    $view = new Edituser($_GET["id"], $output, $model);
+    $view = new Edituser($output, $model);
     $view->GetHead();
     $view->GetBody();
     $view->GetFoot();
@@ -74,7 +74,7 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "users" && isset($_GET["id"])) {
 
     $model = new Blogmembers();
-    $controller = new Handledeleteuser($_GET["id"], $model);
+    $controller = new Handledeleteuser($model);
     $output = $controller->DeleteUserBlogMembers();
 }
 
@@ -97,7 +97,7 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "add" && isset($_POST['submit'])) {
 
     $model = new Blogposts();
-    $controller = new Handleadd($_POST, $model);
+    $controller = new Handleadd($model);
     $output = $controller->AddBlogPosts();
 }
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "add") {
@@ -115,7 +115,7 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "edit" && isset($_POST['submit']) && isset($_GET["id"])) {
 
     $model = new Blogposts();
-    $controller = new Handleedit($_POST, $model);
+    $controller = new Handleedit($model);
     $output = $controller->EditBlogPosts();
 }
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "edit" && isset($_GET["id"])) {
@@ -123,7 +123,7 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
     $output = isset($output) ? $output : false;
 
     $model = new Blogposts();
-    $view = new Edit($_GET["id"], $output, $model);
+    $view = new Edit($output, $model);
     $view->GetHead();
     $view->GetBody();
     $view->GetFoot();
@@ -134,7 +134,7 @@ if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] ==
 if (isset($_SESSION["loggedin"]) && isset($_GET["id"])) {
 
     $model = new Blogposts();
-    $controller = new Handledelete($_GET["id"], $model);
+    $controller = new Handledelete($model);
     $output = $controller->DeleteBlogPosts();
 }
 

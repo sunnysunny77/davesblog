@@ -15,12 +15,12 @@ class Handlelogin
     private $username;
     private $password;
 
-    public function __construct($username, $password, $model)
+    public function __construct($model)
     {
 
         $this->model = $model;
-        $this->username = trim($username);
-        $this->password = trim($password);
+        $this->username = trim($_POST['username']);
+        $this->password = trim($_POST['password']);
     }
 
     public function AuthorizeBlogMembers()

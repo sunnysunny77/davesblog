@@ -13,11 +13,11 @@ class Handleadduser
     private $model;
     private $post;
 
-    public function __construct($post, $model)
+    public function __construct($model)
     {
 
         $this->model = $model;
-        $this->post = $post;
+        $this->post = $_POST;
     }
 
     public function AddBlogMembers()

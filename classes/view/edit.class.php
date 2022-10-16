@@ -17,9 +17,9 @@ class Edit
     private $title = "Admin - Edit Post";
     private $output;
 
-    public function __construct($postID, $output, $model)
+    public function __construct($output, $model)
     {
-        $this->result = $model->GetEditBlogPosts($postID); 
+        $this->result = $model->GetEditBlogPosts($_GET["id"]); 
         $this->output = $output;
     }
 

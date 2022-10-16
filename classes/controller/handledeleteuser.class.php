@@ -13,11 +13,11 @@ class Handledeleteuser
     private $model;
     private $postID;
 
-    public function __construct($postID, $model)
+    public function __construct($model)
     {
 
         $this->model = $model;
-        $this->postID = $postID;
+        $this->postID = $_GET["id"];
     }
 
     public function DeleteUserBlogMembers()
