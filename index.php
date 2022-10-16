@@ -7,7 +7,7 @@ include_once "includes/classes.inc.php";
 if (isset($_GET["action"]) && $_GET["action"] == "viewpost" && isset($_GET["id"])) {
 
     $model = new Blogposts();
-    $view = new Viewpost($_GET['id'], $model);
+    $view = new Viewpost($model);
     $view->GetHead();
     $view->GetBody();
     $view->GetFoot();

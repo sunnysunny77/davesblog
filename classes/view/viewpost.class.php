@@ -15,10 +15,10 @@ class Viewpost
     private $root = "./";
     private $title;
 
-    public function __construct($postID, $model)
+    public function __construct($model)
     {
 
-        $this->result = $model->GetViewPostBlogPosts($postID);
+        $this->result = $model->GetViewPostBlogPosts($_GET['id']);
 
         $id = isset($this->result->errorInfo) ? true : $this->result['postID'];
 
