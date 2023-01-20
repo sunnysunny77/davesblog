@@ -19,7 +19,7 @@
     ?>
 
     <div> 
-        <h1> <?php echo $this->result['postTitle'] ?> </h1>
+        <h2> <?php echo $this->result['postTitle'] ?> </h2>
         <p>Posted on <?php echo date('jS M Y', strtotime($this->result['postDate'])) ?> </p>
         <div> <?php echo $this->result['postCont'] ?> </div>
     </div>

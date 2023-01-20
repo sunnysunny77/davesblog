@@ -1,63 +1,129 @@
+body {
+	font-family: Arial, sans-serif;
+	color: #FFFFFF;
+}
+
 #wrapper {
-	margin:auto;
-	width:900px;
+	max-width: 1200px;
+	margin: auto;
+	background-color: #4C4D4D;
+	display: flex;
+	flex-direction: column;
 }
 
-#login {
-	border: 1px solid #AEAEAE;
-	margin: 100px auto 0;
-	padding: 0;
-	width: 300px;
+h1 {
+	color: white;
+	background-color: #7A7D7D;
+	margin: 0;
+	padding: 5% 2.5%;
 }
 
-#adminmenu {
-	padding-left: 0;
+h2 {
+	color: #C7F2FF;
+	padding-left: 25px;
 }
 
-#adminmenu li {
-	float: left;
-	list-style: none;
-	margin-right: 20px;
+h3 {
+	padding-left: 25px;
 }
 
-.clear {
-	clear: both;
+hr {
+	margin: 0;
 }
 
-.error {
-	padding: 0.75em;
-	margin: 0.75em;
-	border: 1px solid #990000;
-	max-width: 400px;
-	color: #990000;
-	background-color: #FDF0EB;
-	-moz-border-radius: 0.5em;
-	-webkit-border-radius: 0.5em;
-}
-
-p,li {
-	color: #555555;
-	font-size: 16px;
-	line-height: 1.5em;
+#wrapper div {
+	width: 95%;
+	margin: auto;
+	padding: 1%;
 }
 
 a {
-	color: #EF1F2F;
 	text-decoration: none;
+	color: #C7F2FF;
 }
 
-form input {
-	border: 1px solid #999999;
-	border-bottom-color: #cccccc;
-	border-right-color: #cccccc;
-	padding: 5px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 1.0em;
-	margin: 2px;
+a:hover,
+a:focus {
+	color: #D0CFCF;
 }
 
-table {width:98%; text-align:left; border:1px solid #DDDDDD; font-size:12px; color:#000;background:#fff; margin-bottom:10px;}
-table th {background-color:#E5E5E5; border:1px solid #BBBBBB; padding:3px 6px; font-weight:normal; color:#000;}
-table tr td {border:1px solid #DDDDDD; padding:5px 6px;}
-table tr.alt td {background-color:#E2E2E2;}
-table tr:hover {background-color:#F0F0F0; color:#000;}
+p a {
+	text-align: center;
+	display: block;
+}
+
+form {
+	background-color: #4C4D4D;
+	text-align: center;
+	padding: 2%;
+}
+
+label {
+	display: block;
+	text-align: left;
+}
+
+textarea {
+	resize: none;
+}
+
+input, textarea {
+	width: 80%;
+}
+
+input[type="submit"] {
+	width: fit-content;
+}
+
+#login {
+	display: flex;
+	flex-direction: column-reverse;
+	width: 200px;
+	margin: 25vh auto;
+}
+
+.error {
+	text-align: center;
+	margin-top: 0;
+	color: #FBEAEE;
+	background-color: #4C4D4D;
+}
+
+table {
+	width: 90%;
+	margin: auto;
+	padding: 1%;
+}
+
+th {
+	text-align: left;
+}
+
+@media only screen and (max-width: 64em) {
+	table th {
+		position: absolute;
+		clip: rect(0 0 0 0);
+	}
+
+	table tr {
+		display: block;
+	}
+
+	table thead tr,
+	table tr:nth-child(1) {
+		border: none;
+	}
+
+	table td {
+		display: block;
+		text-align: right;
+	}
+
+	table td::before {
+		content: attr(headers);
+		float: left;
+		font-weight: 600;
+		text-transform: capitalize;
+		padding-right: 5px;
+	}
+}

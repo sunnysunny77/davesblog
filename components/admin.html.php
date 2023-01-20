@@ -38,19 +38,19 @@
 
     <table>
         <tr>
-            <th>Title</th>
-            <th>Date</th>
-            <th>Action</th>
+            <th id="title">Title</th>
+            <th id="date">Date</th>
+            <th id="action">Action</th>
         </tr>
 
         <?php
         foreach ($this->result as $row) {
 
             echo '<tr>';
-            echo '<td>' . $row['postTitle'] . '</td>';
-            echo '<td>' . date('jS M Y', strtotime($row['postDate'])) . '</td>';
+            echo '<td headers="title">' . $row['postTitle'] . '</td>';
+            echo '<td headers="date">' . date('jS M Y', strtotime($row['postDate'])) . '</td>';
             ?>
-            <td>
+            <td headers="action">
                 <a href="./?action=edit&id=<?php echo $row['postID']; ?>">Edit</a> |
                 <a href="javascript:delpost('<?php echo $row['postID']; ?>','<?php echo $row['postTitle']; ?>')">Delete</a>   
             </td>

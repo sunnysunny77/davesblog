@@ -38,19 +38,19 @@
 
     <table>
 	<tr>
-		<th>Username</th>
-		<th>Email</th>
-		<th>Action</th>
+		<th id="username">Username</th>
+		<th id="email">Email</th>
+		<th id="action">Action</th>
 	</tr>
 
     <?php
     foreach ($this->result as $row) {
 
         echo '<tr>';
-        echo '<td>' . $row['username'] . '</td>';
-        echo '<td>' . $row['email'] . '</td>';
+        echo '<td headers="username">' . $row['username'] . '</td>';
+        echo '<td headers="email">' . $row['email'] . '</td>';
         ?>
-        <td>
+        <td headers="action">
             <a href="./?action=edituser&id=<?php echo $row['memberID']; ?>">Edit</a>
             <?php if ($row['memberID'] != 1) {?>
                 | <a href="javascript:deluser('<?php echo $row['memberID']; ?>','<?php echo $row['username']; ?>')">Delete</a>
