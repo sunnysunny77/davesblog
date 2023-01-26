@@ -1,6 +1,6 @@
 <div id='wrapper'>
     
-    <h1>Blog</h1>
+    <h1><span>Blog</span></h1>
     <hr />
 
     <?php

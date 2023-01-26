@@ -9,13 +9,14 @@ body {
 	background-color: #4C4D4D;
 	display: flex;
 	flex-direction: column;
+	min-height: 100vh;
 }
 
 h1 {
 	color: white;
-	background-color: #7A7D7D;
+	background-image: url(../images/social.jpg);
 	margin: 0;
-	padding: 5% 2.5%;
+	padding: 55px 2.5%;
 }
 
 h2 {
@@ -29,6 +30,14 @@ h3 {
 
 hr {
 	margin: 0;
+}
+
+h1 span {
+background-color: #4C4D4D;
+display: inline-block;
+border-radius: 15px;
+text-align: center;
+padding: 5px 10px;
 }
 
 #wrapper div {
@@ -91,7 +100,7 @@ input[type="submit"] {
 
 table {
 	width: 90%;
-	margin: auto;
+	margin: 5% auto;
 	padding: 1%;
 }
 
