@@ -2,11 +2,7 @@
     
     <?php echo file_get_contents("../components/menu.html"); ?>
 
-    <p>
-        <a href="./?action=users">User Admin Index</a>
-    </p>
-
-	<h2>Add User</h2>
+	<h2 class="m-3 p-3">Add User</h2>
 
     <?php
     if ($this->output) {
@@ -20,19 +16,23 @@
     
     <form action='?action=adduser' method='post'>
 
-        <p><label>Username</label><br />
-        <input type='text' name='username' value='<?php if($this->output){ echo $_POST['username'];}?>'></p>
+        <label>Username
+            <input type='text' name='username' value='<?php if($this->output){ echo $_POST['username'];}?>'>
+        </label><br />
 
-        <p><label>Password</label><br />
-        <input type='password' name='password' value='<?php if($this->output){ echo $_POST['password'];}?>'></p>
+        <label>Password
+            <input type='password' name='password' value='<?php if($this->output){ echo $_POST['password'];}?>'>
+        </label><br />
 
-        <p><label>Confirm Password</label><br />
-        <input type='password' name='passwordConfirm' value='<?php if($this->output){ echo $_POST['passwordConfirm'];}?>'></p>
+        <label>Confirm Password
+            <input type='password' name='passwordConfirm' value='<?php if($this->output){ echo $_POST['passwordConfirm'];}?>'>
+        </label><br />
 
-        <p><label>Email</label><br />
-        <input type='text' name='email' value='<?php if($this->output){ echo $_POST['email'];}?>'></p>
+        <label>Email
+            <input type='text' name='email' value='<?php if($this->output){ echo $_POST['email'];}?>'>
+        </label><br />
 
-        <p><input type='submit' name='submit' value='Add User'></p>
+        <input type='submit' name='submit' value='Add User'>
 
     </form>
 
