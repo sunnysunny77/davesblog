@@ -7,7 +7,7 @@
     <?php
      if (isset($this->result->errorInfo)) {
 
-        echo $this->result->getMessage() . '<br /><br />';
+        echo '<p class="error p-3">' . $this->result->getMessage() 
         ?>
         </div>
         <?php
@@ -17,7 +17,7 @@
 
         foreach ($this->output as $output) {
 
-            echo  $output . '<br />';
+            echo '<p class="error p-3">' . $output . '</p>';
         }
     }
     ?>

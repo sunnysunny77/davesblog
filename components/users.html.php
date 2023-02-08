@@ -5,7 +5,7 @@
     <?php 
     if (isset($this->result->errorInfo)) {
 
-        echo $this->result->getMessage() . '<br /><br />';
+        echo '<p class="error p-3">' . $this->result->getMessage() . '</p>';
         ?>
         </div>
         <?php
@@ -13,7 +13,7 @@
     }
     if (isset($this->output->errorInfo)) { 
 
-        echo $this->output->getMessage() . '<br /><br />';
+        echo '<p class="error p-3">' . $this->result->getMessage() . '</p>';
         ?>
         </div>
         <?php
@@ -24,7 +24,7 @@
     }
     if (isset($_GET["error"])) {
     
-        echo  $_GET["error"] . '<br /><br />';
+        echo '<p class="error p-3">' . $_GET["error"] . '</p>';
         ?>
         </div>
         <?php

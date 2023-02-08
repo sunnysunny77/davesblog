@@ -3,7 +3,7 @@
     <?php
     if (isset($this->result->errorInfo)) {
 
-        echo $this->result->getMessage();
+        echo '<p class="error p-3">' . $this->result->getMessage() . '</p>';
         ?>
         </div>
         <?php
