@@ -1,4 +1,4 @@
-<div id="wrapper">
+<div class="mt-3" id="wrapper">
     
     <?php echo file_get_contents("../components/menu.html"); ?>
 
