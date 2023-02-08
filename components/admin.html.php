@@ -36,6 +36,8 @@
     }
     ?>
 
+    <a class="text-center p-3" href='./?action=add'>Add Post</a>
+
     <table>
         <tr>
             <th id="title">Title</th>
@@ -60,7 +62,5 @@
         ?>
       
     </table>
-    
-    <a class="text-center p-3" href='./?action=add'>Add Post</a>
 
 </div>

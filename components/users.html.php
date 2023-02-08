@@ -36,6 +36,8 @@
     }
     ?>
 
+    <a class="text-center p-3" href='./?action=adduser'>Add User</a>
+
     <table>
 	<tr>
 		<th id="username">Username</th>
@@ -62,7 +64,5 @@
     ?>
 
     </table>
-
-    <a class="text-center p-3" href='./?action=adduser'>Add User</a>
 
 </div>
