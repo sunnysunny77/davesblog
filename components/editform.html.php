@@ -2,11 +2,7 @@
 
     <?php echo file_get_contents("../components/menu.html"); ?>
 
-    <p>
-        <a href="./">Blog Admin Index</a>
-    </p>
-
-	<h2>Edit Post</h2>
+	<h2 class="m-3 p-3">Edit Post</h2>
 
     <?php
      if (isset($this->result->errorInfo)) {
@@ -30,16 +26,19 @@
 
         <input type='hidden' name='postID' value='<?php echo $this->result['postID'];?>'>
 
-        <p><label>Title</label><br />
-        <input type='text' name='postTitle' value='<?php echo $this->result['postTitle'];?>'></p>
+        <label>Title
+            <input type='text' name='postTitle' value='<?php echo $this->result['postTitle'];?>'>
+        </label><br />
 
-        <p><label>Description</label><br />
-        <textarea name='postDesc' cols='60' rows='10'><?php echo $this->result['postDesc'];?></textarea></p>
+        <label>Description
+            <textarea name='postDesc' cols='60' rows='10'><?php echo $this->result['postDesc'];?></textarea>
+        </label><br />
 
-        <p><label>Content</label><br />
-        <textarea name='postCont' cols='60' rows='10'><?php echo $this->result['postCont'];?></textarea></p>
+        <label>Content
+            <textarea name='postCont' cols='60' rows='10'><?php echo $this->result['postCont'];?></textarea>
+        </label><br />
 
-        <p><input type='submit' name='submit' value='Update'></p>
+        <input type='submit' name='submit' value='Update'>
 
     </form>
 

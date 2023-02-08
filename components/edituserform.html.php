@@ -2,11 +2,7 @@
 
     <?php echo file_get_contents("../components/menu.html"); ?>
 
-    <p>
-        <a href="./?action=users">User Admin Index</a>
-    </p>
-
-	<h2>Edit User</h2>
+	<h2 class="m-3 p-3">Edit User</h2>
 
     <?php
      if (isset($this->result->errorInfo)) {
@@ -30,19 +26,23 @@
 
         <input type='hidden' name='memberID' value='<?php echo $this->result['memberID'];?>'>
 
-        <p><label>Username</label><br />
-        <input type='text' name='username' value='<?php echo $this->result['username'];?>'></p>
+        <label>Username
+            <input type='text' name='username' value='<?php echo $this->result['username'];?>'>
+        </label><br />
 
-        <p><label>Password (only to change)</label><br />
-        <input type='password' name='password' value=''></p>
+        <label>Password (only to change)
+            <input type='password' name='password' value=''>
+        </label><br />
 
-        <p><label>Confirm Password</label><br />
-        <input type='password' name='passwordConfirm' value=''></p>
+        <label>Confirm Password
+            <input type='password' name='passwordConfirm' value=''>
+        </label><br />
 
-        <p><label>Email</label><br />
-        <input type='text' name='email' value='<?php echo $this->result['email'];?>'></p>
+        <label>Email
+            <input type='text' name='email' value='<?php echo $this->result['email'];?>'>
+        </label><br />
 
-        <p><input type='submit' name='submit' value='Update User'></p>
+        <input type='submit' name='submit' value='Update User'>
 
     </form>
 
