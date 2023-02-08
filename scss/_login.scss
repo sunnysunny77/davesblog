@@ -1,0 +1,27 @@
+#login {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 60vh;
+ flex-direction: column;
+ border: 2px solid $c1;
+ border-radius: 20px;
+ margin-top: 1rem;
+ label {
+  width: 220px;
+  input {
+    width: 100%;
+  }
+ }
+ input[type="submit"] {
+    margin-top: 1rem;
+    background-color: transparent;
+    border: 2px solid $c1;
+    border-radius: 10px;
+    &:hover,
+    &:focus {
+        color: $c3;
+        background-color: $c4;
+    }
+ }
+}
