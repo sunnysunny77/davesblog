@@ -177,7 +177,7 @@ section article a:hover, section article a:focus {
 #login input[type=submit] {
   margin-top: 1rem;
   background-color: transparent;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 10px;
 }
 #login input[type=submit]:hover, #login input[type=submit]:focus {
@@ -188,6 +188,7 @@ section article a:hover, section article a:focus {
 #adminmenu {
   border-bottom: 2px solid black;
   list-style-type: none;
+  margin-bottom: 0;
 }
 
 #wrapper {
@@ -264,7 +265,7 @@ form label textarea {
 form input[type=submit] {
   margin-top: 1rem;
   background-color: transparent;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 10px;
   margin-bottom: 1rem;
 }

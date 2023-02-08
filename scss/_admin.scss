@@ -1,6 +1,7 @@
 #adminmenu {
     border-bottom: 2px solid $c1;
     list-style-type: none;
+	margin-bottom: 0;
 }
 
 #wrapper {
@@ -74,7 +75,7 @@ form {
 	input[type="submit"] {
 		margin-top: 1rem;
 		background-color: transparent;
-		border: 2px solid $c1;
+		border: 1px solid $c1;
 		border-radius: 10px;
 		margin-bottom: 1rem;
 		&:hover,
