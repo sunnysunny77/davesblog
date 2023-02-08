@@ -11,22 +11,23 @@ nav {
             border-right: 2px solid $c1;
             border-bottom: 2px solid $c1;
             position: relative;
-            font-weight: 900;
-            @media only Screen and (max-width: 767px) {
-                &:nth-child(2) {
-                    border-right: none;
-                }
-                border-bottom: 2px solid $c1;
+            &:nth-child(2) {
+                border-right: none;
+                 @media only Screen and (min-width: 768px) {
+                    border-right: 2px solid $c1;
+                 }
             }
             &:last-child {
                 border-right: none;
+                border-bottom: none;
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
+                margin-top: 1rem;
                 flex-wrap: wrap;
-                @media only Screen and (max-width: 767px) {
-                    margin-top: 1rem;
-                    border-bottom: none;
+                @media only Screen and (min-width: 768px) {
+                    margin-top: unset;
+                    border-bottom: 2px solid $c1;
                 }
                 &:hover::after,
                 &:focus::after {
@@ -52,20 +53,18 @@ nav {
                 transition: width 0.75s;
             }
             a {
-                font-size: medium;
+                font-size: smaller;
                 text-decoration: none;
                 color: $c1;
-                height: 8vh;
                 min-height: 50px;
                 width: 100%;
                 display: block;
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
-                @media only Screen and (max-width: 767px) {
-                    font-size: smaller;
-                    height: unset;
-                    min-height: unset;
+                @media only Screen and (min-width: 768px) {
+                    font-size: medium;
+                    height: 8vh;
                 }
                 &:hover,
                 &:focus {
@@ -104,15 +103,11 @@ header {
     border-left: 2px solid $c1;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    @media only Screen and (max-width: 1199px) {
-        height: unset;
-    }
     h1 {
-        font-weight: 900;
-        font-size: 4em;
+        font-size: 2em;
         color: $c1;
-        @media only Screen and (max-width: 1199px) {
-            font-size: 2em;
+        @media only Screen and (min-width: 1200px) {
+            font-size: 4em;
         }
     }
 }

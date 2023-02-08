@@ -4,14 +4,11 @@ section {
     article {
         border-radius: 20px;
         border: 2px solid $c1;
-        width: 49.5%;
-        @media only Screen and (max-width: 767px) {
-            width: 100%;
-        }
-        &:nth-child(odd) {
-            margin-right: 1%;
-            @media only Screen and (max-width: 767px) {
-                margin-right: unset;
+        width: 100%;
+        @media only Screen and (min-width: 768px) {
+            width: 49.5%;
+            &:nth-child(odd) {
+                margin-right: 1%;
             }
         }
         h2 {

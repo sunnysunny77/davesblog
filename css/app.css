@@ -16,27 +16,28 @@ nav ul li {
   border-right: 2px solid black;
   border-bottom: 2px solid black;
   position: relative;
-  font-weight: 900;
 }
-@media only Screen and (max-width: 767px) {
-  nav ul li {
-    border-bottom: 2px solid black;
-  }
+nav ul li:nth-child(2) {
+  border-right: none;
+}
+@media only Screen and (min-width: 768px) {
   nav ul li:nth-child(2) {
-    border-right: none;
+    border-right: 2px solid black;
   }
 }
 nav ul li:last-child {
   border-right: none;
+  border-bottom: none;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-top: 1rem;
   flex-wrap: wrap;
 }
-@media only Screen and (max-width: 767px) {
+@media only Screen and (min-width: 768px) {
   nav ul li:last-child {
-    margin-top: 1rem;
-    border-bottom: none;
+    margin-top: unset;
+    border-bottom: 2px solid black;
   }
 }
 nav ul li:last-child:hover::after, nav ul li:last-child:focus::after {
@@ -59,10 +60,9 @@ nav ul li::after {
   transition: width 0.75s;
 }
 nav ul li a {
-  font-size: medium;
+  font-size: smaller;
   text-decoration: none;
   color: black;
-  height: 8vh;
   min-height: 50px;
   width: 100%;
   display: block;
@@ -70,11 +70,10 @@ nav ul li a {
   justify-content: space-between;
   align-items: flex-start;
 }
-@media only Screen and (max-width: 767px) {
+@media only Screen and (min-width: 768px) {
   nav ul li a {
-    font-size: smaller;
-    height: unset;
-    min-height: unset;
+    font-size: medium;
+    height: 8vh;
   }
 }
 nav ul li a:hover, nav ul li a:focus {
@@ -108,19 +107,13 @@ header {
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }
-@media only Screen and (max-width: 1199px) {
-  header {
-    height: unset;
-  }
-}
 header h1 {
-  font-weight: 900;
-  font-size: 4em;
+  font-size: 2em;
   color: black;
 }
-@media only Screen and (max-width: 1199px) {
+@media only Screen and (min-width: 1200px) {
   header h1 {
-    font-size: 2em;
+    font-size: 4em;
   }
 }
 
@@ -131,19 +124,14 @@ section {
 section article {
   border-radius: 20px;
   border: 2px solid black;
-  width: 49.5%;
+  width: 100%;
 }
-@media only Screen and (max-width: 767px) {
+@media only Screen and (min-width: 768px) {
   section article {
-    width: 100%;
+    width: 49.5%;
   }
-}
-section article:nth-child(odd) {
-  margin-right: 1%;
-}
-@media only Screen and (max-width: 767px) {
   section article:nth-child(odd) {
-    margin-right: unset;
+    margin-right: 1%;
   }
 }
 section article h2 {
@@ -209,38 +197,52 @@ section article a:hover, section article a:focus {
 
 table {
   width: 90%;
-  margin: 5% auto;
+  margin: 4% auto;
   padding: 1%;
 }
-
-th {
-  text-align: left;
+table th {
+  position: absolute;
+  clip: rect(0 0 0 0);
 }
-
-@media only screen and (max-width: 64em) {
+@media only Screen and (min-width: 768px) {
   table th {
-    position: absolute;
-    clip: rect(0 0 0 0);
-  }
-  table tr {
-    display: block;
-  }
-  table thead tr,
-  table tr:nth-child(1) {
-    border: none;
-  }
-  table td {
-    display: block;
-    text-align: right;
-  }
-  table td::before {
-    content: attr(headers);
-    float: left;
-    font-weight: 600;
-    text-transform: capitalize;
-    padding-right: 5px;
+    position: unset;
+    clip: unset;
   }
 }
+table tr {
+  display: block;
+}
+@media only Screen and (min-width: 768px) {
+  table tr {
+    display: table-row;
+  }
+}
+table td {
+  display: block;
+  text-align: right;
+}
+table td::before {
+  content: attr(headers);
+  float: left;
+  text-transform: capitalize;
+  padding-right: 5px;
+}
+@media only Screen and (min-width: 768px) {
+  table td::before {
+    content: unset;
+    float: none;
+    text-transform: none;
+    padding-right: unset;
+  }
+}
+@media only Screen and (min-width: 768px) {
+  table td {
+    display: table-cell;
+    text-align: left;
+  }
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -249,11 +251,11 @@ form {
 }
 form label {
   max-width: 992px;
-  width: 100%;
+  width: 90%;
 }
-@media only Screen and (max-width: 1200px) {
+@media only Screen and (min-width: 1200px) {
   form label {
-    width: 90%;
+    width: 100%;
   }
 }
 form label input, form label textarea {

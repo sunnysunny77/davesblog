@@ -15,7 +15,7 @@
         echo '<article class="mb-3 p-3">';
         echo '<h2><a href="?action=viewpost&id=' . $row['postID'] . '">' . $row['postTitle'] . '</a></h2>';
         echo '<p>Posted on ' . date('jS M Y H:i:s', strtotime($row['postDate'])) . '</p>';
-        echo '<p>' . $row['postDesc'] . '</p>';
+        echo '<p class="p-md-3">' . $row['postDesc'] . '</p>';
         echo '<a href="?action=viewpost&id=' . $row['postID'] . '">Read More</a>';
         echo '</article>';
     }

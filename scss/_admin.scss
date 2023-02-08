@@ -23,36 +23,47 @@
 
 table {
 	width: 90%;
-	margin: 5% auto;
+	margin: 4% auto;
 	padding: 1%;
-}
-th {
-	text-align: left;
-}
-@media only screen and (max-width: 64em) {
-	table th {
+	th {
 		position: absolute;
 		clip: rect(0 0 0 0);
+		@media only Screen and (min-width: 768px) {
+			position: unset;
+			clip: unset;
+		}
 	}
-	table tr {
-		display: block;
+	tr {
+		display: block;	
+		@media only Screen and (min-width: 768px) {
+			display: table-row;
+		}
 	}
-	table thead tr,
-	table tr:nth-child(1) {
-		border: none;
-	}
-	table td {
+	td {
 		display: block;
 		text-align: right;
-	}
-	table td::before {
-		content: attr(headers);
-		float: left;
-		font-weight: 600;
-		text-transform: capitalize;
-		padding-right: 5px;
+		&::before {
+			content: attr(headers);
+			float: left;
+			text-transform: capitalize;
+			padding-right: 5px;
+			@media only Screen and (min-width: 768px) {
+				content: unset;
+				float: none;
+				text-transform: none;
+				padding-right: unset;
+			}
+		}
+		@media only Screen and (min-width: 768px) {
+			display: table-cell;
+			text-align: left;
+		}
 	}
 }
+
+
+
+
 
 form {
 	display: flex;
@@ -61,9 +72,9 @@ form {
 	align-items: center;
 	label {
 		max-width: 992px;
-		width: 100%;
-		@media only Screen and (max-width: 1200px) {
-			width: 90%;
+		width: 90%;
+		@media only Screen and (min-width: 1200px) {
+			width: 100%;
 		}
 		input, textarea {
 			width: 100%;

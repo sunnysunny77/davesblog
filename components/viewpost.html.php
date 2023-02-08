@@ -14,7 +14,7 @@
     <article class="col-12 p-3 me-0"> 
         <h2> <?php echo $this->result['postTitle'] ?> </h2>
         <p>Posted on <?php echo date('jS M Y', strtotime($this->result['postDate'])) ?> </p>
-        <p> <?php echo $this->result['postCont'] ?> </p>
+        <p class="p-md-3"> <?php echo $this->result['postCont'] ?> </p>
     </article>
     
 </section>
