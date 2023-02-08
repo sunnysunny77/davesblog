@@ -1,12 +1,8 @@
-<div id="wrapper">
+<div class="mt-3" id="wrapper">
 
     <?php echo file_get_contents("../components/menu.html"); ?>
 
-    <p>
-        <a href="./">Blog Admin Index</a>
-    </p>
-
-	<h2>Add Post</h2>
+	<h2 class="m-3 p-3">Add Post</h2>
 
     <?php
     if ($this->output) {
@@ -20,16 +16,19 @@
 
     <form action='?action=add' method='post'>
 
-        <p><label>Title</label><br />
-        <input type='text' name='postTitle' value='<?php if ($this->output) {echo $_POST['postTitle'];}?>'></p>
+        <label>Title
+            <input type='text' name='postTitle' value='<?php if ($this->output) {echo $_POST['postTitle'];}?>'>
+        </label><br />
 
-        <p><label>Description</label><br />
-        <textarea name='postDesc' cols='60' rows='10'><?php if ($this->output) {echo $_POST['postDesc'];}?></textarea></p>
+        <label>Description
+            <textarea name='postDesc' cols='60' rows='10'><?php if ($this->output) {echo $_POST['postDesc'];}?></textarea>
+        </label><br />
 
-        <p><label>Content</label><br />
-        <textarea name='postCont' cols='60' rows='10'><?php if ($this->output) {echo $_POST['postCont'];}?></textarea></p>
+        <label>Content
+            <textarea name='postCont' cols='60' rows='10'><?php if ($this->output) {echo $_POST['postCont'];}?></textarea>
+        </label><br />
 
-        <p><input type='submit' name='submit' value='Submit'></p>
+        <input type='submit' name='submit' value='Submit'>
 
     </form>
 

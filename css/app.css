@@ -240,6 +240,44 @@ th {
     padding-right: 5px;
   }
 }
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+form label {
+  max-width: 992px;
+  width: 100%;
+}
+@media only Screen and (max-width: 1200px) {
+  form label {
+    width: 90%;
+  }
+}
+form label input, form label textarea {
+  width: 100%;
+}
+form label textarea {
+  resize: none;
+}
+form input[type=submit] {
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+form input[type=submit]:hover, form input[type=submit]:focus {
+  color: white;
+  background-color: #595959;
+}
+
+.error {
+  text-align: center;
+  color: black;
+}
+
 body {
   margin: 0 auto;
   font-family: lato;

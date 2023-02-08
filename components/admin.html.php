@@ -20,7 +20,7 @@
         exit();
     } else if ($this->output) { 
 
-        echo '<h3>' . $this->output . '</h3>';  
+        echo '<h3 class="m-3 p-3">' . $this->output . '</h3>';  
     }
     if (isset($_GET["error"])) {
     
@@ -32,7 +32,7 @@
     }
     if (isset($_GET["output"])) {
     
-        echo  '<h3>' . $_GET["output"] . '</h3>'; 
+        echo  '<h3 class="m-3 p-3">' . $_GET["output"] . '</h3>'; 
     }
     ?>
 

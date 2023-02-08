@@ -52,3 +52,40 @@ th {
 		padding-right: 5px;
 	}
 }
+
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	label {
+		max-width: 992px;
+		width: 100%;
+		@media only Screen and (max-width: 1200px) {
+			width: 90%;
+		}
+		input, textarea {
+			width: 100%;
+		}
+		textarea {
+			resize: none;
+		}
+	}
+	input[type="submit"] {
+		margin-top: 1rem;
+		background-color: transparent;
+		border: 2px solid $c1;
+		border-radius: 10px;
+		margin-bottom: 1rem;
+		&:hover,
+		&:focus {
+			color: $c3;
+			background-color: $c4;
+		}
+	 }
+}
+
+.error {
+	text-align: center;
+	color: $c1;
+}
