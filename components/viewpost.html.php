@@ -1,12 +1,5 @@
-<div id='wrapper'>
+<section class="row pt-3 g-0">
     
-    <h1><span>Blog</span></h1>
-    <hr />
-
-    <p>
-        <a href='./'>Blog Index</a>
-    </p>
-
     <?php
     if (isset($this->result->errorInfo)) {
 
@@ -18,10 +11,10 @@
     }
     ?>
 
-    <div> 
+    <article class="col-12 p-3 me-0"> 
         <h2> <?php echo $this->result['postTitle'] ?> </h2>
         <p>Posted on <?php echo date('jS M Y', strtotime($this->result['postDate'])) ?> </p>
-        <div> <?php echo $this->result['postCont'] ?> </div>
-    </div>
+        <p> <?php echo $this->result['postCont'] ?> </p>
+    </article>
     
-</div>
+</section>
