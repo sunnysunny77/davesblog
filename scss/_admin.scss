@@ -1,0 +1,54 @@
+#adminmenu {
+    border-bottom: 2px solid $c1;
+    list-style-type: none;
+}
+
+#wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 60vh;
+    border-radius: 20px;
+    border: 2px solid $c1;
+    a {
+        color: $c4;
+        text-decoration: none;
+        &:hover,
+        &:focus {
+            color: $c2;
+            text-decoration: underline;
+        }
+    }
+}
+
+table {
+	width: 90%;
+	margin: 5% auto;
+	padding: 1%;
+}
+th {
+	text-align: left;
+}
+@media only screen and (max-width: 64em) {
+	table th {
+		position: absolute;
+		clip: rect(0 0 0 0);
+	}
+	table tr {
+		display: block;
+	}
+	table thead tr,
+	table tr:nth-child(1) {
+		border: none;
+	}
+	table td {
+		display: block;
+		text-align: right;
+	}
+	table td::before {
+		content: attr(headers);
+		float: left;
+		font-weight: 600;
+		text-transform: capitalize;
+		padding-right: 5px;
+	}
+}

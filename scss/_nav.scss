@@ -1,0 +1,118 @@
+nav {
+    border-top: 2px solid $c1;
+    border-right: 2px solid $c1;
+    border-left: 2px solid $c1;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+    ul {
+        list-style-type: none;
+        li {
+            border-right: 2px solid $c1;
+            border-bottom: 2px solid $c1;
+            position: relative;
+            font-weight: 900;
+            @media only Screen and (max-width: 767px) {
+                &:nth-child(2) {
+                    border-right: none;
+                }
+                border-bottom: 2px solid $c1;
+            }
+            &:last-child {
+                border-right: none;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+                @media only Screen and (max-width: 767px) {
+                    margin-top: 1rem;
+                    border-bottom: none;
+                }
+                &:hover::after,
+                &:focus::after {
+                    width: 0;
+                }
+            }
+            &:hover::after,
+            &:focus::after {
+                width: 100%;
+            }
+            &:hover::after,
+            &:focus::after {
+                width: 100%;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 10px;
+                width: 0;
+                background-color: $c1;
+                transition: width 0.75s;
+            }
+            a {
+                font-size: medium;
+                text-decoration: none;
+                color: $c1;
+                height: 8vh;
+                min-height: 50px;
+                width: 100%;
+                display: block;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                @media only Screen and (max-width: 767px) {
+                    font-size: smaller;
+                    height: unset;
+                    min-height: unset;
+                }
+                &:hover,
+                &:focus {
+                    color: $c2;
+                }
+                span {
+                    align-self: end;
+                }
+            }
+        }
+    }
+    #svg {
+        background-image: url(../images/atom.svg);
+        height: 23px;
+        width: 23px;
+        background-size: cover;
+        margin: auto 5px;
+    }
+    .svg-inline--fa {
+        border: 1px solid $c2;
+        border-radius: 100%;
+        padding: 2.5px;
+        margin: auto 5px;
+        &:hover,
+        &:focus {
+            background-color: $c1;
+            color: $c3;
+        }
+    }
+    
+}
+
+header {
+    border-right: 2px solid $c1;
+    border-bottom: 2px solid $c1;
+    border-left: 2px solid $c1;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    @media only Screen and (max-width: 1199px) {
+        height: unset;
+    }
+    h1 {
+        font-weight: 900;
+        font-size: 4em;
+        color: $c1;
+        @media only Screen and (max-width: 1199px) {
+            font-size: 2em;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-<div id="wrapper">
+<div class="mt-3" id="wrapper">
 
     <?php echo file_get_contents("../components/menu.html"); ?>
 
@@ -60,9 +60,7 @@
         ?>
       
     </table>
-
-    <p>
-        <a href='./?action=add'>Add Post</a>
-    </p>
+    
+    <a class="text-center p-3" href='./?action=add'>Add Post</a>
 
 </div>
