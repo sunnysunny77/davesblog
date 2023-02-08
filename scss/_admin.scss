@@ -9,10 +9,6 @@
 	flex-direction: column;
 	border-radius: 20px;
 	border: 2px solid $c1;
-	min-height: 74vh;
-	@media only Screen and (min-width: 768px) {
-		min-height: 60vh;
-	}
 	a {
 		color: $c4;
 		text-decoration: none;
