@@ -155,7 +155,7 @@ section article a:hover, section article a:focus {
   border-radius: 20px;
   margin-top: 1rem;
   position: relative;
-  min-height: 75.5vh;
+  min-height: 55.5vh;
 }
 @media only Screen and (min-width: 768px) {
   #login {
