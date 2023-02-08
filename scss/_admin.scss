@@ -1,24 +1,27 @@
 #adminmenu {
-    border-bottom: 2px solid $c1;
-    list-style-type: none;
+	border-bottom: 2px solid $c1;
+	list-style-type: none;
 	margin-bottom: 0;
 }
 
 #wrapper {
 	display: flex;
 	flex-direction: column;
-	min-height: 68vh;
-    border-radius: 20px;
-    border: 2px solid $c1;
-    a {
-        color: $c4;
-        text-decoration: none;
-        &:hover,
-        &:focus {
-            color: $c2;
-            text-decoration: underline;
-        }
-    }
+	border-radius: 20px;
+	border: 2px solid $c1;
+	min-height: 74vh;
+	@media only Screen and (min-width: 768px) {
+		min-height: 60vh;
+	}
+	a {
+		color: $c4;
+		text-decoration: none;
+		&:hover,
+		&:focus {
+			color: $c2;
+			text-decoration: underline;
+		}
+	}
 }
 
 table {
@@ -34,7 +37,7 @@ table {
 		}
 	}
 	tr {
-		display: block;	
+		display: block;
 		@media only Screen and (min-width: 768px) {
 			display: table-row;
 		}
@@ -61,10 +64,6 @@ table {
 	}
 }
 
-
-
-
-
 form {
 	display: flex;
 	flex-direction: column;
@@ -76,7 +75,8 @@ form {
 		@media only Screen and (min-width: 1200px) {
 			width: 100%;
 		}
-		input, textarea {
+		input,
+		textarea {
 			width: 100%;
 		}
 		textarea {
@@ -94,7 +94,7 @@ form {
 			color: $c3;
 			background-color: $c4;
 		}
-	 }
+	}
 }
 
 .error {

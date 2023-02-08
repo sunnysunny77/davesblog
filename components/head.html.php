@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?php echo $this->root; ?>css/fontawesome.min.css">
     <link rel="stylesheet" href="<?php echo $this->root; ?>css/app.css">
 </head>
-<body class="d-flex flex-column justify-content-start p-2 p-md-5">
+<body class="d-flex flex-column p-2 p-md-5">
     <nav class="container-fluid g-0">
         <ul class="row m-0 p-0">
             <li class="col-6 col-md-3 p-2"><a class="p-2" href="<?php echo $this->root; ?>index.php">Blog<span>01</span></a></li>

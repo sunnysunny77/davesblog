@@ -2,12 +2,15 @@
  display: flex;
  justify-content: center;
  align-items: center;
- height: 68vh;
  flex-direction: column;
  border: 2px solid $c1;
  border-radius: 20px;
  margin-top: 1rem;
  position: relative;
+ min-height: 74vh;
+ @media only Screen and (min-width: 768px) {
+  min-height: 60vh;
+}
  label {
   width: 220px;
   input {

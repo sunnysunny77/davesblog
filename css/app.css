@@ -150,12 +150,17 @@ section article a:hover, section article a:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 68vh;
   flex-direction: column;
   border: 2px solid black;
   border-radius: 20px;
   margin-top: 1rem;
   position: relative;
+  min-height: 74vh;
+}
+@media only Screen and (min-width: 768px) {
+  #login {
+    min-height: 60vh;
+  }
 }
 #login label {
   width: 220px;
@@ -187,9 +192,14 @@ section article a:hover, section article a:focus {
 #wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 68vh;
   border-radius: 20px;
   border: 2px solid black;
+  min-height: 74vh;
+}
+@media only Screen and (min-width: 768px) {
+  #wrapper {
+    min-height: 60vh;
+  }
 }
 #wrapper a {
   color: #595959;
@@ -263,7 +273,8 @@ form label {
     width: 100%;
   }
 }
-form label input, form label textarea {
+form label input,
+form label textarea {
   width: 100%;
 }
 form label textarea {
