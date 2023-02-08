@@ -40,6 +40,6 @@ class Users
     {
 
         echo file_get_contents("../components/deleteuserscript.html");
-        echo file_get_contents("../components/foot.html");
+        include_once "../components/foot.html.php";
     }
 }

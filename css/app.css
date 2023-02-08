@@ -1,0 +1,170 @@
+@font-face {
+  font-family: lato;
+  src: url(./Lato-Regular.ttf);
+}
+ul {
+  list-style-type: none;
+}
+ul li {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  position: relative;
+  font-weight: 900;
+}
+@media only Screen and (max-width: 767px) {
+  ul li {
+    border-bottom: 2px solid black;
+  }
+  ul li:nth-child(2) {
+    border-right: none;
+  }
+}
+ul li:last-child {
+  border-right: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+@media only Screen and (max-width: 767px) {
+  ul li:last-child {
+    margin-top: 1rem;
+    border-bottom: none;
+  }
+}
+ul li:last-child:hover::after, ul li:last-child:focus::after {
+  width: 0;
+}
+ul li:hover::after, ul li:focus::after {
+  width: 100%;
+}
+ul li:hover::after, ul li:focus::after {
+  width: 100%;
+}
+ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 10px;
+  width: 0;
+  background-color: black;
+  transition: width 0.75s;
+}
+ul li a {
+  font-size: medium;
+  text-decoration: none;
+  color: black;
+  height: 8vh;
+  min-height: 50px;
+  width: 100%;
+  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media only Screen and (max-width: 767px) {
+  ul li a {
+    font-size: smaller;
+    height: unset;
+    min-height: unset;
+  }
+}
+ul li a:hover, ul li a:focus {
+  color: slategrey;
+}
+ul li a span {
+  align-self: end;
+}
+
+#svg {
+  background-image: url(../images/atom.svg);
+  height: 23px;
+  width: 23px;
+  background-size: cover;
+  margin: auto 5px;
+}
+
+nav {
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.svg-inline--fa {
+  border: 1px solid slategrey;
+  border-radius: 100%;
+  padding: 2.5px;
+  margin: auto 5px;
+}
+.svg-inline--fa:hover, .svg-inline--fa:focus {
+  background-color: black;
+  color: white;
+}
+
+header {
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+@media only Screen and (max-width: 1199px) {
+  header {
+    height: unset;
+  }
+}
+header h1 {
+  font-weight: 900;
+  font-size: 4em;
+  color: black;
+}
+@media only Screen and (max-width: 1199px) {
+  header h1 {
+    font-size: 2em;
+  }
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+section article {
+  border-radius: 20px;
+  border: 2px solid black;
+  width: 49.5%;
+}
+@media only Screen and (max-width: 767px) {
+  section article {
+    width: 100%;
+  }
+}
+section article:nth-child(odd) {
+  margin-right: 1%;
+}
+@media only Screen and (max-width: 767px) {
+  section article:nth-child(odd) {
+    margin-right: unset;
+  }
+}
+section article h2 {
+  color: #595959;
+}
+section article a {
+  color: #595959;
+  text-decoration: none;
+}
+section article a:hover, section article a:focus {
+  color: slategrey;
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  font-family: lato;
+  min-height: 100vh;
+}
+
+/*# sourceMappingURL=app.css.map */

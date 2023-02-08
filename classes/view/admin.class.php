@@ -40,6 +40,6 @@ class Admin
     {
 
         echo file_get_contents("../components/deletescript.html");
-        echo file_get_contents("../components/foot.html");
+        include_once "../components/foot.html.php";
     }
 }

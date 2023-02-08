@@ -45,6 +45,6 @@ class Viewpost
     public function GetFoot()
     {
 
-        echo file_get_contents("components/foot.html");
+        include_once "components/foot.html.php";
     }
 }

@@ -1,0 +1,12 @@
+$c1: black;
+$c2: slategrey;
+$c3: white;
+$c4: #595959;
+
+@font-face {
+    font-family: lato;
+    src: url(./Lato-Regular.ttf);
+}
+
+@import "template/nav";
+@import "blog";
