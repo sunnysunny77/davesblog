@@ -150,7 +150,7 @@ section article a:hover, section article a:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vh;
+  height: 68vh;
   flex-direction: column;
   border: 2px solid black;
   border-radius: 20px;
@@ -187,7 +187,7 @@ section article a:hover, section article a:focus {
 #wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 60vh;
+  min-height: 68vh;
   border-radius: 20px;
   border: 2px solid black;
 }
