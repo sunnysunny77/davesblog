@@ -1,10 +1,3 @@
-<?php
-    if ($this->output) { 
-
-    echo '<p class="error">' . $this->output  . '</p>'; 
-    }
-?>
-
 <form id="login" action="?action=login" method="post">
 
     <label> Username 
@@ -16,5 +9,12 @@
     </label>
 
     <input type="submit" name="submit" value="Login">
-    
+
+    <?php
+    if ($this->output) { 
+
+    echo '<p class="error">' . $this->output  . '</p>'; 
+    }
+    ?>
+
 </form>
