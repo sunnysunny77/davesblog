@@ -292,6 +292,66 @@ form input[type=submit]:hover, form input[type=submit]:focus {
   color: black;
 }
 
+#aboutimg {
+  border-radius: 30px;
+  background-image: url(../images/about.webp);
+  background-size: cover;
+  background-position: center;
+  padding: 27vh 0;
+  filter: grayscale(100%);
+}
+
+#about {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  background-color: #595959;
+  color: white;
+  border-radius: 30px;
+}
+#about h2 {
+  width: 100%;
+  padding-top: 0;
+  text-align: center;
+}
+#about h2 + p {
+  width: 100%;
+}
+#about h2 + p + p + h3 {
+  text-align: right;
+}
+#about p {
+  width: 50%;
+  display: inline-block;
+  margin: 1.5% 0;
+}
+
+h3 {
+  width: 48%;
+  display: inline-block;
+  align-self: center;
+}
+h3 + p {
+  order: 2;
+  text-align: right;
+}
+@media only Screen and (max-width: 767px) {
+  h3 + p {
+    order: unset;
+    text-align: left;
+  }
+}
+h3 + p + h3 {
+  order: 1;
+}
+@media only Screen and (max-width: 767px) {
+  h3 + p + h3 {
+    order: unset;
+    text-align: right;
+  }
+}
+
 body {
   margin: 0 auto;
   font-family: lato;

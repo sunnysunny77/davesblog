@@ -1,0 +1,54 @@
+#aboutimg {
+    border-radius: 30px;
+    background-image: url(../images/about.webp);
+    background-size: cover;
+    background-position: center;
+    padding: 27vh 0;
+    filter: grayscale(100%);
+}
+
+#about {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    background-color: $c4;
+    color: $c3;
+    border-radius: 30px;
+    h2 {
+        width: 100%;
+        padding-top: 0;
+        text-align: center;
+        + p {
+            width: 100%;
+            + p + h3 {
+                text-align: right;
+            }
+        }
+    }
+    p {
+        width: 50%;
+        display: inline-block;
+        margin: 1.5% 0;
+    }
+}
+h3 {
+    width: 48%;
+    display: inline-block;
+    align-self: center;
+    + p {
+        order: 2;
+        text-align: right;
+        @media only Screen and (max-width: 767px) {
+            order: unset;
+            text-align: left;
+        }
+        + h3 {
+            order: 1;
+            @media only Screen and (max-width: 767px) {
+                order: unset;
+                text-align: right;
+            }
+        }
+    }
+}
