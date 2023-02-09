@@ -43,7 +43,7 @@ class Handleedit
             $error[] = 'Please enter the content.';
         }
 
-        $uploadbool = is_uploaded_file($_FILES["upload"]["tmp_name"]) ? true : null;;
+        $uploadbool = is_uploaded_file($_FILES["upload"]["tmp_name"]) ? true : null;
 
         if (isset($uploadbool)) {
 
