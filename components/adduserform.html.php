@@ -32,7 +32,7 @@
             <input type='text' name='email' value='<?php if($this->output){ echo $_POST['email'];}?>'>
         </label><br />
 
-        <button type='submit' name='submit'>Add User</button>
+        <input class="btn" type="submit"  name='submit' value="Add User">
 
     </form>
 

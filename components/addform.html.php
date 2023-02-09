@@ -32,7 +32,7 @@
             <input type="file" name="upload">
         </label><br />
 
-        <button type='submit' name='submit'>Add Post</button>
+        <input class="btn" type="submit"  name='submit' value="Add Post">
 
     </form>
 
