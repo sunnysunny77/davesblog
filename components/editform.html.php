@@ -38,7 +38,7 @@
             <textarea name='postCont' cols='60' rows='10'><?php echo $this->result['postCont'];?></textarea>
         </label><br />
 
-        <label>Image
+        <label>Image: <?php echo $this->result['filename'];?>
             <input type="file" name="upload" />
         </label><br />
 

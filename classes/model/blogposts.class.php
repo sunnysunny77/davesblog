@@ -57,7 +57,7 @@ class Blogposts extends Config
 
         try {
 
-            $sql = "SELECT postID, postTitle, postDesc, postCont FROM blog_posts WHERE postID = ?";
+            $sql = "SELECT postID, postTitle, postDesc, postCont, filename FROM blog_posts WHERE postID = ?";
             $stmt = $this->Connect()->prepare($sql);
             $stmt->execute([$postID]);
         } catch (PDOException $e) {
