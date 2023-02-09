@@ -352,6 +352,34 @@ h3 + p + h3 {
   }
 }
 
+#contactimg {
+  border-radius: 30px;
+  background-image: url(../images/contac.webp);
+  background-size: cover;
+  background-position: center;
+  padding: 27vh 0;
+  filter: grayscale(100%);
+}
+
+#contact {
+  background-color: #595959;
+  color: white;
+  border-radius: 30px;
+}
+#contact fieldset {
+  height: 100%;
+}
+#contact input {
+  width: 100%;
+}
+#contact textarea {
+  resize: none;
+}
+#contact input, #contact textarea {
+  border-radius: 10px;
+  border: none;
+}
+
 body {
   margin: 0 auto;
   font-family: lato;

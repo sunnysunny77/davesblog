@@ -1,0 +1,27 @@
+#contactimg {
+    border-radius: 30px;
+    background-image: url(../images/contac.webp);
+    background-size: cover;
+    background-position: center;
+    padding: 27vh 0;
+    filter: grayscale(100%);
+}
+
+#contact {
+    background-color: $c4;
+    color: $c3;
+    border-radius: 30px;
+    fieldset {
+        height: 100%;
+    }
+    input {
+        width: 100%;
+    }
+    textarea {
+        resize: none;
+    }
+    input, textarea {
+        border-radius: 10px;
+        border: none;
+    }
+}
