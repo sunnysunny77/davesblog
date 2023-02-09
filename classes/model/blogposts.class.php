@@ -25,14 +25,25 @@ class Blogposts extends Config
         return true;
     }
 
-    public function SetEditBlogPosts($postTitle, $postDesc, $postCont, $postID)
+    public function SetEditBlogPosts($postTitle, $postDesc, $postCont, $postID, $uploadtype, $uploadname, $uploaddata)
     {
 
         try {
+            $sql = "INSERT IGNORE INTO mimetypes (mimetype)
+                    VALUES (?)";
+            $pdo = $this->Connect();
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([ $uploadtype]);
+        } catch (PDOException $e) {
 
-            $sql = "UPDATE blog_posts SET postTitle = ?, postDesc = ?, postCont = ? WHERE postID = ?";
-            $stmt = $this->Connect()->prepare($sql);
-            $stmt->execute([$postTitle, $postDesc, $postCont, $postID]);
+            return $e;
+        }
+
+        try {
+
+            $sql = "UPDATE blog_posts SET postTitle = ?, postDesc = ?, postCont = ?, filename = ?, filedata = ?,  mimetype_id = (SELECT mimetype_id FROM mimetypes WHERE mimetype = ?) WHERE postID = ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$postTitle, $postDesc, $postCont, $uploadname, $uploaddata, $uploadtype, $postID]);
         } catch (PDOException $e) {
 
             return $e;

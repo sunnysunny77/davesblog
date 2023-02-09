@@ -22,7 +22,7 @@
     }
     ?>
 
-    <form action='<?php echo '?action=edit&id=' . $this->result['postID']?>' method='post'>
+    <form action='<?php echo '?action=edit&id=' . $this->result['postID']?>' method='post' enctype="multipart/form-data">
 
         <input type='hidden' name='postID' value='<?php echo $this->result['postID'];?>'>
 
@@ -36,6 +36,10 @@
 
         <label>Content
             <textarea name='postCont' cols='60' rows='10'><?php echo $this->result['postCont'];?></textarea>
+        </label><br />
+
+        <label>Image
+            <input type="file" name="upload" />
         </label><br />
 
         <input type='submit' name='submit' value='Update'>
