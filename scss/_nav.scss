@@ -11,7 +11,8 @@ nav {
             border-right: 2px solid $c1;
             border-bottom: 2px solid $c1;
             position: relative;
-            &:nth-child(2) {
+            &:nth-child(2),
+            &:nth-child(4) {
                 border-right: none;
                  @media only Screen and (min-width: 768px) {
                     border-right: 2px solid $c1;

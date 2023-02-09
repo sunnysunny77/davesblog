@@ -11,9 +11,11 @@
 <body class="d-flex flex-column p-2 p-md-5">
     <nav class="container-fluid g-0">
         <ul class="row m-0 p-0">
-            <li class="col-6 col-md-3 p-2"><a class="p-2" href="<?php echo $this->root; ?>index.php">Blog<span>01</span></a></li>
-            <li class="col-6 col-md-3 p-2"><a class="p-2" href="<?php echo $this->root; ?>admin/index.php">Admin<span>02</span></a></li>
-            <li class="col-12 col-md-6  p-1">
+            <li class="col-6 col-md-2 p-2"><a class="p-2" href="<?php echo $this->root; ?>index.php">Blog<span>01</span></a></li>
+            <li class="col-6 col-md-2 p-2"><a class="p-2" href="<?php echo $this->root; ?>about.php">About<span>02</span></a></li>
+            <li class="col-6 col-md-2 p-2"><a class="p-2" href="<?php echo $this->root; ?>contact.php">Contact<span>03</span></a></li>
+            <li class="col-6 col-md-2 p-2"><a class="p-2" href="<?php echo $this->root; ?>admin/index.php">Admin<span>04</span></a></li>
+            <li class="col-12 col-md-4  p-1">
                 <i class="fa-brands fa-facebook"></i>
                 <i class="fa-brands fa-twitter"></i>
                 <span role="img" aria-label="atom" id="svg"></span>
