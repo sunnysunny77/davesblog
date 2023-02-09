@@ -42,7 +42,7 @@
             <input type='text' name='email' value='<?php echo $this->result['email'];?>'>
         </label><br />
 
-        <input type='submit' name='submit' value='Update User'>
+        <button type='submit' name='submit'>Update User</button>
 
     </form>
 

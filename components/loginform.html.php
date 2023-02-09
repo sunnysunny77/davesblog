@@ -8,7 +8,7 @@
         <input type="password" name="password" value="">
     </label>
 
-    <input type="submit" name="submit" value="Login">
+    <button type="submit" name="submit">Login</button>
 
     <?php
     if ($this->output) { 
