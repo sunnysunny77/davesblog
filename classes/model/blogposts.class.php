@@ -25,22 +25,6 @@ class Blogposts extends Config
         return true;
     }
 
-    public function SetEditBlogPosts($postTitle, $postDesc, $postCont, $postID)
-    {
-
-        try {
-
-            $sql = "UPDATE blog_posts SET postTitle = ?, postDesc = ?, postCont = ? WHERE postID = ?";
-            $stmt = $this->Connect()->prepare($sql);
-            $stmt->execute([$postTitle, $postDesc, $postCont, $postID]);
-        } catch (PDOException $e) {
-
-            return $e;
-        }
-
-        return true;
-    }
-
     public function SetEditBlogPostsImage($postTitle, $postDesc, $postCont, $postID, $uploadtype, $uploadname, $uploaddata)
     {
 
@@ -60,6 +44,22 @@ class Blogposts extends Config
             $sql = "UPDATE blog_posts SET postTitle = ?, postDesc = ?, postCont = ?, filename = ?, filedata = ?,  mimetype_id = (SELECT mimetype_id FROM mimetypes WHERE mimetype = ?) WHERE postID = ?";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([$postTitle, $postDesc, $postCont, $uploadname, $uploaddata, $uploadtype, $postID]);
+        } catch (PDOException $e) {
+
+            return $e;
+        }
+
+        return true;
+    }
+
+    public function SetEditBlogPosts($postTitle, $postDesc, $postCont, $postID)
+    {
+
+        try {
+
+            $sql = "UPDATE blog_posts SET postTitle = ?, postDesc = ?, postCont = ? WHERE postID = ?";
+            $stmt = $this->Connect()->prepare($sql);
+            $stmt->execute([$postTitle, $postDesc, $postCont, $postID]);
         } catch (PDOException $e) {
 
             return $e;

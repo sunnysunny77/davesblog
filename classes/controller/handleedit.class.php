@@ -43,17 +43,15 @@ class Handleedit
             $error[] = 'Please enter the content.';
         }
 
-        if (is_uploaded_file($_FILES["upload"]["tmp_name"])) {
+        $uploadbool = is_uploaded_file($_FILES["upload"]["tmp_name"]) ? true : null;;
+
+        if (isset($uploadbool)) {
 
             $uploadfile = $_FILES["upload"]["tmp_name"];
             $uploadname = $_FILES["upload"]["name"];
             $uploadtype = $_FILES["upload"]["type"];
             $uploaddata = file_get_contents($uploadfile);
-            $uploadbool = true;
-        } else {
-
-            $uploadbool = null;
-        }
+        } 
 
         if (isset($error)) {
 
@@ -65,9 +63,7 @@ class Handleedit
             if (isset($uploadbool)) {
 
                 $result = $this->model->SetEditBlogPostsImage($postTitle, $postDesc, $postCont, $postID, $uploadtype, $uploadname, $uploaddata);
-            }
-
-            if (!isset($uploadbool)) {
+            } else {
 
                 $result = $this->model->SetEditBlogPosts($postTitle, $postDesc, $postCont, $postID);
             }
