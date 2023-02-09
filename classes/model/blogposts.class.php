@@ -25,7 +25,23 @@ class Blogposts extends Config
         return true;
     }
 
-    public function SetEditBlogPosts($postTitle, $postDesc, $postCont, $postID, $uploadtype, $uploadname, $uploaddata)
+    public function SetEditBlogPosts($postTitle, $postDesc, $postCont, $postID)
+    {
+
+        try {
+
+            $sql = "UPDATE blog_posts SET postTitle = ?, postDesc = ?, postCont = ? WHERE postID = ?";
+            $stmt = $this->Connect()->prepare($sql);
+            $stmt->execute([$postTitle, $postDesc, $postCont, $postID]);
+        } catch (PDOException $e) {
+
+            return $e;
+        }
+
+        return true;
+    }
+
+    public function SetEditBlogPostsImage($postTitle, $postDesc, $postCont, $postID, $uploadtype, $uploadname, $uploaddata)
     {
 
         try {

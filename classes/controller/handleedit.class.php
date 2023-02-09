@@ -49,7 +49,10 @@ class Handleedit
             $uploadname = $_FILES["upload"]["name"];
             $uploadtype = $_FILES["upload"]["type"];
             $uploaddata = file_get_contents($uploadfile);
+            $uploadbool = true;
+        } else {
 
+            $uploadbool = null;
         }
 
         if (isset($error)) {
@@ -59,7 +62,15 @@ class Handleedit
 
         if (!isset($error)) {
 
-            $result = $this->model->SetEditBlogPosts($postTitle, $postDesc, $postCont, $postID, $uploadtype, $uploadname, $uploaddata);
+            if (isset($uploadbool)) {
+
+                $result = $this->model->SetEditBlogPostsImage($postTitle, $postDesc, $postCont, $postID, $uploadtype, $uploadname, $uploaddata);
+            }
+
+            if (!isset($uploadbool)) {
+
+                $result = $this->model->SetEditBlogPosts($postTitle, $postDesc, $postCont, $postID);
+            }
 
             if (isset($result->errorInfo)) {
 
