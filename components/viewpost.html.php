@@ -15,6 +15,7 @@
         echo '<p>Posted on ' . date('jS M Y', strtotime($this->result['postDate'])) . '</p>';
         echo '<img alt="' .  pathinfo($this->result["filename"], PATHINFO_FILENAME) . '" src="data:' . $this->result["mimetype"] . ';base64,' . base64_encode($this->result['filedata']) . '" >';
         echo '<p class="p-md-3">' . $this->result['postCont'] . '</p>';
+        echo '<a href="./">Return to Blog</a>';
         echo '</article>';
     ?>
 
