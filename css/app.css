@@ -296,6 +296,7 @@ body {
   font-family: lato;
   min-height: 100vh;
   max-width: 1920px;
+  overflow-y: scroll;
 }
 
 /*# sourceMappingURL=app.css.map */

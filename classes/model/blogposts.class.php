@@ -101,8 +101,21 @@ class Blogposts extends Config
         try {
 
             $sql = "DELETE FROM blog_posts WHERE postID = ?";
-            $stmt = $this->Connect()->prepare($sql);
+            $pdo = $this->Connect();
+            $stmt = $pdo->prepare($sql);
             $stmt->execute([$postID]);
+        } catch (PDOException $e) {
+
+            return $e;
+        }
+
+        try {
+            
+            $sql = "DELETE FROM mimetypes WHERE 
+                    mimetype_id NOT IN 
+                    (SELECT mimetype_id FROM blog_posts)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
         } catch (PDOException $e) {
 
             return $e;

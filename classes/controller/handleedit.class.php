@@ -43,9 +43,7 @@ class Handleedit
             $error[] = 'Please enter the content.';
         }
 
-   
         if (is_uploaded_file($_FILES["upload"]["tmp_name"]) && !in_array($_FILES["upload"]["type"], ['image/png', 'image/jpeg'])) {
-
             $error[] =  "png OR jpg files allowed.";
         }
 
