@@ -5,6 +5,7 @@
  * @author Daniel Costello
  * @property private $model Holds the Blogposts model
  * @property private $post Holds the $_POST object
+ * @property private $files Holds the $_FILES object
  *
  */
 class Handleedit
@@ -12,12 +13,14 @@ class Handleedit
 
     private $model;
     private $post;
+    private $files;
 
     public function __construct($model)
     {
 
         $this->model = $model;
         $this->post = $_POST;
+        $this->files = $_FILES;
     }
 
     public function EditBlogPosts()
@@ -27,9 +30,9 @@ class Handleedit
 
         extract($_POST);
 
-        $uploadname = $_FILES["upload"]["name"];
-        $uploadtype = $_FILES["upload"]["type"];
-        $uploaddata = $_FILES["upload"]["tmp_name"] ? file_get_contents($_FILES["upload"]["tmp_name"]) : false;
+        $uploadname = $this->files["upload"]["name"];
+        $uploadtype = $this->files["upload"]["type"];
+        $uploaddata = $this->files["upload"]["tmp_name"] ? file_get_contents($this->files["upload"]["tmp_name"]) : false;
 
         if ($postID == '') {
             $error[] = 'This post is missing a valid id!.';
