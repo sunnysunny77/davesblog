@@ -137,6 +137,11 @@ section article {
 section article h2 {
   color: #595959;
 }
+section article img {
+  width: 10%;
+  filter: grayscale(100%);
+  border-radius: 10px;
+}
 section article a {
   color: #595959;
   text-decoration: none;

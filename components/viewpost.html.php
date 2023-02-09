@@ -9,12 +9,13 @@
         <?php
         exit();
     }
+
+        echo '<article class="col-12 p-3 me-0">';
+        echo '<h2>' . $this->result['postTitle'] . '</h2>';
+        echo '<p>Posted on ' . date('jS M Y', strtotime($this->result['postDate'])) . '</p>';
+        echo '<img alt="' .  pathinfo($this->result["filename"], PATHINFO_FILENAME) . '" src="data:' . $this->result["mimetype"] . ';base64,' . base64_encode($this->result['filedata']) . '" >';
+        echo '<p class="p-md-3">' . $this->result['postCont'] . '</p>';
+        echo '</article>';
     ?>
 
-    <article class="col-12 p-3 me-0"> 
-        <h2> <?php echo $this->result['postTitle'] ?> </h2>
-        <p>Posted on <?php echo date('jS M Y', strtotime($this->result['postDate'])) ?> </p>
-        <p class="p-md-3"> <?php echo $this->result['postCont'] ?> </p>
-    </article>
-    
 </section>

@@ -131,7 +131,7 @@ class Blogposts extends Config
 
         try {
 
-            $sql = "SELECT postID, postTitle, postCont, postDate FROM blog_posts WHERE postID = ?";
+            $sql = "SELECT postID, postTitle, postCont, postDate , filename, mimetype, filedata FROM blog_posts INNER JOIN mimetypes ON mimetypes.mimetype_id = blog_posts.mimetype_id WHERE postID = ?";
             $stmt = $this->Connect()->prepare($sql);
             $stmt->execute([$postID]);
         } catch (PDOException $e) {
@@ -145,9 +145,10 @@ class Blogposts extends Config
     public function GetIndexBlogPosts()
     {
 
+
         try {
 
-            $sql = "SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC";
+            $sql = "SELECT postID, postTitle, postDesc, postDate, filename, mimetype, filedata FROM blog_posts INNER JOIN mimetypes ON mimetypes.mimetype_id = blog_posts.mimetype_id ORDER BY postID DESC";
             $stmt = $this->Connect()->query($sql);
         } catch (PDOException $e) {
 
