@@ -327,26 +327,25 @@ form input[type=submit]:hover, form input[type=submit]:focus {
   display: inline-block;
   margin: 1.5% 0;
 }
-
-h3 {
+#about h3 {
   width: 48%;
   display: inline-block;
   align-self: center;
 }
-h3 + p {
+#about h3 + p {
   text-align: left;
 }
 @media only Screen and (min-width: 768px) {
-  h3 + p {
+  #about h3 + p {
     order: 2;
     text-align: right;
   }
 }
-h3 + p + h3 {
+#about h3 + p + h3 {
   text-align: right;
 }
 @media only Screen and (min-width: 768px) {
-  h3 + p + h3 {
+  #about h3 + p + h3 {
     order: unset;
     text-align: left;
   }

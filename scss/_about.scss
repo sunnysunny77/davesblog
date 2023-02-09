@@ -31,23 +31,23 @@
         display: inline-block;
         margin: 1.5% 0;
     }
-}
-h3 {
-    width: 48%;
-    display: inline-block;
-    align-self: center;
-    + p {
-        text-align: left;
-        @media only Screen and (min-width: 768px) {
-            order: 2;
-            text-align: right;
-        }
-        + h3 {
-            text-align: right;
+    h3 {
+        width: 48%;
+        display: inline-block;
+        align-self: center;
+        + p {
+            text-align: left;
             @media only Screen and (min-width: 768px) {
-                order: unset;
-                text-align: left;
+                order: 2;
+                text-align: right;
+            }
+            + h3 {
+                text-align: right;
+                @media only Screen and (min-width: 768px) {
+                    order: unset;
+                    text-align: left;
+                }
             }
         }
-    }
+    } 
 }
