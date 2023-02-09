@@ -37,17 +37,16 @@ h3 {
     display: inline-block;
     align-self: center;
     + p {
-        order: 2;
-        text-align: right;
-        @media only Screen and (max-width: 767px) {
-            order: unset;
-            text-align: left;
+        text-align: left;
+        @media only Screen and (min-width: 768px) {
+            order: 2;
+            text-align: right;
         }
         + h3 {
-            order: 1;
-            @media only Screen and (max-width: 767px) {
+            text-align: right;
+            @media only Screen and (min-width: 768px) {
                 order: unset;
-                text-align: right;
+                text-align: left;
             }
         }
     }

@@ -58,6 +58,7 @@ nav ul li::after {
   width: 0;
   background-color: black;
   transition: width 0.75s;
+  transition-delay: 250ms;
 }
 nav ul li a {
   font-size: smaller;
@@ -333,22 +334,21 @@ h3 {
   align-self: center;
 }
 h3 + p {
-  order: 2;
-  text-align: right;
+  text-align: left;
 }
-@media only Screen and (max-width: 767px) {
+@media only Screen and (min-width: 768px) {
   h3 + p {
-    order: unset;
-    text-align: left;
+    order: 2;
+    text-align: right;
   }
 }
 h3 + p + h3 {
-  order: 1;
+  text-align: right;
 }
-@media only Screen and (max-width: 767px) {
+@media only Screen and (min-width: 768px) {
   h3 + p + h3 {
     order: unset;
-    text-align: right;
+    text-align: left;
   }
 }
 

@@ -4,7 +4,6 @@ nav {
     border-left: 2px solid $c1;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-
     ul {
         list-style-type: none;
         li {
@@ -52,6 +51,7 @@ nav {
                 width: 0;
                 background-color: $c1;
                 transition: width 0.75s;
+                transition-delay: 250ms;
             }
             a {
                 font-size: smaller;
