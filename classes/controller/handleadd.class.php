@@ -27,6 +27,10 @@ class Handleadd
 
         extract($_POST);
 
+        $uploadname = $_FILES["upload"]["name"];
+        $uploadtype = $_FILES["upload"]["type"];
+        $uploaddata = $_FILES["upload"]["tmp_name"] ? file_get_contents($_FILES["upload"]["tmp_name"]) : false;
+
         if ($postTitle == '') {
             $error[] = 'Please enter the title.';
         }
@@ -39,11 +43,11 @@ class Handleadd
             $error[] = 'Please enter the content.';
         }
 
-        if (!is_uploaded_file($_FILES["upload"]["tmp_name"])) {
+        if (!$uploaddata) {
             $error[] =  "There was no file uploaded.";
         }
 
-        if (!in_array($_FILES["upload"]["type"], ['image/png', 'image/jpeg'])) {
+        if (!in_array($uploadtype, ['image/png', 'image/jpeg'])) {
             $error[] =  "png OR jpg files allowed.";
         }
 
@@ -54,10 +58,6 @@ class Handleadd
 
         if (!isset($error)) {
 
-            $uploadfile = $_FILES["upload"]["tmp_name"];
-            $uploadname = $_FILES["upload"]["name"];
-            $uploadtype = $_FILES["upload"]["type"];
-            $uploaddata = file_get_contents($uploadfile);
             $result = $this->model->SetAddBlogPosts($postTitle, $postDesc, $postCont, $uploadtype, $uploadname, $uploaddata);
 
             if (isset($result->errorInfo)) {

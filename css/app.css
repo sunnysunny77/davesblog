@@ -180,7 +180,7 @@ section article a:hover, section article a:focus {
 }
 #login .error {
   position: absolute;
-  top: 0;
+  top: 3rem;
 }
 
 #adminmenu {

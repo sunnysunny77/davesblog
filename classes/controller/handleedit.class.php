@@ -27,6 +27,10 @@ class Handleedit
 
         extract($_POST);
 
+        $uploadname = $_FILES["upload"]["name"];
+        $uploadtype = $_FILES["upload"]["type"];
+        $uploaddata = $_FILES["upload"]["tmp_name"] ? file_get_contents($_FILES["upload"]["tmp_name"]) : false;
+
         if ($postID == '') {
             $error[] = 'This post is missing a valid id!.';
         }
@@ -43,7 +47,7 @@ class Handleedit
             $error[] = 'Please enter the content.';
         }
 
-        if (is_uploaded_file($_FILES["upload"]["tmp_name"]) && !in_array($_FILES["upload"]["type"], ['image/png', 'image/jpeg'])) {
+        if ($uploaddata && !in_array($uploadtype, ['image/png', 'image/jpeg'])) {
             $error[] =  "png OR jpg files allowed.";
         }
 
@@ -54,12 +58,8 @@ class Handleedit
 
         if (!isset($error)) {
 
-            if (is_uploaded_file($_FILES["upload"]["tmp_name"])) {
+            if ($uploaddata) {
 
-                $uploadfile = $_FILES["upload"]["tmp_name"];
-                $uploadname = $_FILES["upload"]["name"];
-                $uploadtype = $_FILES["upload"]["type"];
-                $uploaddata = file_get_contents($uploadfile);
                 $result = $this->model->SetEditBlogPostsImage($postTitle, $postDesc, $postCont, $postID, $uploadtype, $uploadname, $uploaddata);
             } else {
 
