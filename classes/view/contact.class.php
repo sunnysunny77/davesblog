@@ -28,6 +28,7 @@ class Contact
     public function GetFoot()
     {
 
+        echo file_get_contents("./components/contactscript.html");
         include_once "components/foot.html.php";
     }
 }
