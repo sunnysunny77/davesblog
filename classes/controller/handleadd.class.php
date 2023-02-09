@@ -43,6 +43,10 @@ class Handleadd
             $error[] =  "There was no file uploaded.";
         }
 
+        if (!in_array($_FILES["upload"]["type"], ['image/png', 'image/jpeg'])) {
+            $error[] =  "png OR jpg files allowed.";
+        }
+
         if (isset($error)) {
 
             return $error;
