@@ -39,7 +39,7 @@
         </label><br />
 
         <label>Image: <?php echo $this->result['filename'];?>
-            <input type="file" name="upload" />
+            <input type="file" name="upload" >
         </label><br />
 
         <input type='submit' name='submit' value='Update'>

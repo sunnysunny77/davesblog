@@ -39,6 +39,10 @@ class Handleadd
             $error[] = 'Please enter the content.';
         }
 
+        if (!is_uploaded_file($_FILES["upload"]["tmp_name"])) {
+            $error[] =  "There was no file uploaded.";
+        }
+
         if (isset($error)) {
 
             return $error;
@@ -46,7 +50,11 @@ class Handleadd
 
         if (!isset($error)) {
 
-            $result = $this->model->SetAddBlogPosts($postTitle, $postDesc, $postCont);
+            $uploadfile = $_FILES["upload"]["tmp_name"];
+            $uploadname = $_FILES["upload"]["name"];
+            $uploadtype = $_FILES["upload"]["type"];
+            $uploaddata = file_get_contents($uploadfile);
+            $result = $this->model->SetAddBlogPosts($postTitle, $postDesc, $postCont, $uploadtype, $uploadname, $uploaddata);
 
             if (isset($result->errorInfo)) {
 

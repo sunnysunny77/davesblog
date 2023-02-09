@@ -14,7 +14,7 @@
     }
     ?>
 
-    <form action='?action=add' method='post'>
+    <form action='?action=add' method='post'  enctype="multipart/form-data">
 
         <label>Title
             <input type='text' name='postTitle' value='<?php if ($this->output) {echo $_POST['postTitle'];}?>'>
@@ -26,6 +26,10 @@
 
         <label>Content
             <textarea name='postCont' cols='60' rows='10'><?php if ($this->output) {echo $_POST['postCont'];}?></textarea>
+        </label><br />
+
+        <label>Image: 
+            <input type="file" name="upload">
         </label><br />
 
         <input type='submit' name='submit' value='Submit'>

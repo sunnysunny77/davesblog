@@ -9,14 +9,25 @@ require_once  __DIR__ . "/../libs/config.class.php";
 class Blogposts extends Config
 {
 
-    public function SetAddBlogPosts($postTitle, $postDesc, $postCont)
+    public function SetAddBlogPosts($postTitle, $postDesc, $postCont, $uploadtype, $uploadname, $uploaddata)
     {
 
         try {
+            $sql = "INSERT IGNORE INTO mimetypes (mimetype)
+                    VALUES (?)";
+            $pdo = $this->Connect();
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$uploadtype]);
+        } catch (PDOException $e) {
 
-            $sql = "INSERT INTO blog_posts (postTitle,postDesc,postCont,postDate) VALUES (?, ?, ?, ?)";
-            $stmt = $this->Connect()->prepare($sql);
-            $stmt->execute([$postTitle, $postDesc, $postCont, date('Y-m-d H:i:s')]);
+            return $e;
+        }
+
+        try {
+
+            $sql = "INSERT INTO blog_posts (postTitle,postDesc,postCont,postDate,filename,filedata,mimetype_id) VALUES (?, ?, ?, ?, ?, ?, (SELECT mimetype_id FROM mimetypes WHERE mimetype = ?))";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$postTitle, $postDesc, $postCont, date('Y-m-d H:i:s'), $uploadname, $uploaddata, $uploadtype]);
         } catch (PDOException $e) {
 
             return $e;
