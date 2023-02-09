@@ -41,7 +41,7 @@ class Blogposts extends Config
     {
 
         try {
-            
+
             $sql = "INSERT IGNORE INTO mimetypes (mimetype)
                     VALUES (?)";
             $pdo = $this->Connect();
@@ -159,7 +159,6 @@ class Blogposts extends Config
 
     public function GetIndexBlogPosts()
     {
-
 
         try {
 
