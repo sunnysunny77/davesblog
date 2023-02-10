@@ -1,6 +1,7 @@
 @font-face {
   font-family: lato;
   src: url(./Lato-Regular.ttf);
+  font-display: swap;
 }
 nav {
   border-top: 2px solid black;
@@ -140,6 +141,7 @@ section article h2 {
 }
 section article img {
   width: 10%;
+  height: max-content;
   min-width: 50px;
   filter: grayscale(100%);
   border-radius: 10px;
