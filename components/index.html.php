@@ -1,4 +1,4 @@
-<section class="pt-3">
+<div class="d-flex flex-wrap pt-3">
     
     <?php
     
@@ -23,4 +23,4 @@
     }
     ?>
     
-</section>
+</div>

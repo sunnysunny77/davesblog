@@ -119,38 +119,34 @@ header h1 {
   }
 }
 
-section {
-  display: flex;
-  flex-wrap: wrap;
-}
-section article {
+article {
   border-radius: 20px;
   border: 2px solid black;
   width: 100%;
 }
 @media only Screen and (min-width: 768px) {
-  section article {
+  article {
     width: 49.5%;
   }
-  section article:nth-child(odd) {
+  article:nth-child(odd) {
     margin-right: 1%;
   }
 }
-section article h2 {
+article h2 {
   color: #595959;
 }
-section article img {
+article img {
   width: 10%;
   height: max-content;
   min-width: 50px;
   filter: grayscale(100%);
   border-radius: 10px;
 }
-section article a {
+article a {
   color: #595959;
   text-decoration: none;
 }
-section article a:hover, section article a:focus {
+article a:hover, article a:focus {
   color: slategrey;
   text-decoration: underline;
 }

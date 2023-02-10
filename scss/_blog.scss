@@ -1,34 +1,30 @@
-section {
-    display: flex;
-    flex-wrap: wrap;
-    article {
-        border-radius: 20px;
-        border: 2px solid $c1;
-        width: 100%;    
-        @media only Screen and (min-width: 768px) {
-            width: 49.5%;
-            &:nth-child(odd) {
-                margin-right: 1%;
-            }
+article {
+    border-radius: 20px;
+    border: 2px solid $c1;
+    width: 100%;    
+    @media only Screen and (min-width: 768px) {
+        width: 49.5%;
+        &:nth-child(odd) {
+            margin-right: 1%;
         }
-        h2 {
-            color: $c4;
-        }
-        img {
-            width: 10%;
-            height: max-content;
-            min-width: 50px;
-            filter: grayscale(100%);
-            border-radius: 10px;
-        }
-        a {
-            color: $c4;
-            text-decoration: none;
-            &:hover,
-            &:focus {
-                color: $c2;
-                text-decoration: underline;
-            }
+    }
+    h2 {
+        color: $c4;
+    }
+    img {
+        width: 10%;
+        height: max-content;
+        min-width: 50px;
+        filter: grayscale(100%);
+        border-radius: 10px;
+    }
+    a {
+        color: $c4;
+        text-decoration: none;
+        &:hover,
+        &:focus {
+            color: $c2;
+            text-decoration: underline;
         }
     }
 }

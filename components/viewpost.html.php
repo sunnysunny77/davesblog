@@ -1,4 +1,4 @@
-<section class="row pt-3 g-0">
+<div class="row pt-3 g-0">
     
     <?php
     if (isset($this->result->errorInfo)) {
@@ -19,4 +19,4 @@
         echo '</article>';
     ?>
 
-</section>
+</div>
