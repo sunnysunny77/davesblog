@@ -5,8 +5,8 @@
     <title><?php echo $this->title; ?></title>
     <meta name="description" content="<?php echo $this->title; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo $this->root; ?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $this->root; ?>css/fontawesome.min.css">
+    <link rel="stylesheet" href="<?php echo $this->root; ?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $this->root; ?>css/app.css">
 </head>
 <body class="d-flex flex-column p-2 p-md-5">
