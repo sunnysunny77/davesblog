@@ -96,6 +96,7 @@ nav .svg-inline--fa {
   border-radius: 100%;
   padding: 2.5px;
   margin: auto 5px;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 nav .svg-inline--fa:hover, nav .svg-inline--fa:focus {
   background-color: black;
@@ -383,6 +384,10 @@ body {
   min-height: 100vh;
   max-width: 1920px;
   overflow-y: scroll;
+}
+
+a {
+  transition: color 0.3s ease;
 }
 
 /*# sourceMappingURL=app.css.map */
