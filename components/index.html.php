@@ -24,6 +24,7 @@
         echo '<a href="?action=viewpost&id=' . $row['postID'] . '">Read Article</a>';
         echo '</article>';
     }
+
     ?>
 
     <div class="pages">
@@ -31,6 +32,7 @@
         page:
 
         <?php
+
         for ($i = 1; $i <= count($this->result); $i++) {
             
             $current = "";
@@ -45,6 +47,7 @@
                 echo '<a class="' . $current . '" href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';
             }
         }
+        
         ?>
 
     </div>
