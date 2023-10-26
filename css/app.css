@@ -305,7 +305,7 @@ form input[type=submit]:hover, form input[type=submit]:focus {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: center;
   background-color: #595959;
   color: white;
   border-radius: 30px;
