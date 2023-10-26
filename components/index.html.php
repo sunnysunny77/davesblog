@@ -12,7 +12,7 @@
     }
 
 
-    foreach ($this->result[isset($_GET["page"]) ? $_GET["page"] : 0] as $row) {
+    foreach ($this->result[isset($_GET["page"]) ? $_GET["page"] - 1 : 0] as $row) {
         
         echo '<article class="mb-3 p-3 d-flex flex-column justify-content-between">';
         echo '<div>';
@@ -33,19 +33,16 @@
         page:
 
         <?php
-        for ($i = 0; $i < count($this->result); $i++) {
+        for ($i = 1; $i <= count($this->result); $i++) {
             
-            $page = $i + 1;
+            $current = "current";
 
-            if (isset($_GET["page"]) && $_GET["page"] == $i || !isset($_GET["page"]) && $i == 0) {
-
-                $current = "current";
-            } else {
+            if (isset($_GET["page"]) && $_GET["page"] != $i ) {
 
                 $current = "";
-            }
-
-            echo '<a class="' . $current . '" href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $page . '</a>';
+            } 
+            
+             echo '<a class="' . $current . '" href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';
         }
         ?>
 
