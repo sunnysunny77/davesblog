@@ -35,13 +35,13 @@
         <?php
         for ($i = 1; $i <= count($this->result); $i++) {
             
-            $current = "current";
+            $current = false;
 
-            if (isset($_GET["page"]) && $_GET["page"] != $i ) {
+            if (isset($_GET["page"]) && $_GET["page"] == $i || !isset($_GET["page"]) && $i == 1) {
 
-                $current = "";
-            } 
-            
+                $current = "current";
+            }
+
              echo '<a class="' . $current . '" href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';
         }
         ?>
