@@ -395,6 +395,23 @@ form input[type=submit]:hover, form input[type=submit]:focus {
   border: none;
 }
 
+footer {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  background-color: #595959;
+  border-radius: 30px;
+}
+footer a {
+  color: white;
+  font-size: medium;
+  text-decoration: none;
+}
+footer a:hover, footer a:focus {
+  color: white;
+  text-decoration: underline;
+}
+
 body {
   margin: 0 auto;
   font-family: lato;

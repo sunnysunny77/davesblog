@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<?php echo $this->root; ?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $this->root; ?>css/app.css">
 </head>
-<body class="d-flex flex-column p-2 px-md-5 py-md-4">
+<body id="top" class="d-flex flex-column p-2 px-md-5 py-md-4">
     <nav class="container-fluid g-0">
         <ul class="row m-0 p-0">
             <li class="col-6 col-md-2 p-2"><a class="p-2" href="<?php echo $this->root; ?>index.php">Blog<span>01</span></a></li>
