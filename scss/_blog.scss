@@ -1,7 +1,7 @@
 article {
     border-radius: 20px;
     border: 2px solid $c1;
-    width: 100%;    
+    width: 100%;
     @media only Screen and (min-width: 768px) {
         width: 49.5%;
         &:nth-child(odd) {
@@ -25,6 +25,24 @@ article {
         &:focus {
             color: $c2;
             text-decoration: underline;
+        }
+    }
+}
+
+.pages {
+    width: 100%;
+    text-align: center;
+    a {
+        padding: 10px;
+        font-size: medium;
+        text-decoration: none;
+        color: $c1;
+        &.current {
+            text-decoration: underline;
+        }
+        &:hover,
+        &:focus {
+            color: $c2;
         }
     }
 }

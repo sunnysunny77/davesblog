@@ -152,6 +152,23 @@ article a:hover, article a:focus {
   text-decoration: underline;
 }
 
+.pages {
+  width: 100%;
+  text-align: center;
+}
+.pages a {
+  padding: 10px;
+  font-size: medium;
+  text-decoration: none;
+  color: black;
+}
+.pages a.current {
+  text-decoration: underline;
+}
+.pages a:hover, .pages a:focus {
+  color: slategrey;
+}
+
 #login {
   display: flex;
   justify-content: center;
