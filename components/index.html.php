@@ -33,7 +33,7 @@
         <?php
         for ($i = 1; $i <= count($this->result); $i++) {
             
-            $current = false;
+            $current = "";
 
             if (isset($_GET["page"]) && $_GET["page"] == $i || !isset($_GET["page"]) && $i == 1) {
 
