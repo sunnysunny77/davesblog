@@ -42,7 +42,10 @@
                 $current = "current";
             }
 
-             echo '<a class="' . $current . '" href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';
+            if (isset($_GET["page"]) && $i == $_GET["page"] + 1 || $i == $_GET["page"] + 2 || $i == $_GET["page"] - 1 || $i == $_GET["page"] - 2  || $i == $_GET["page"] || !isset($_GET["page"]) && $i <= 3) {
+
+                echo '<a class="' . $current . '" href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';
+            }
         }
         ?>
 
