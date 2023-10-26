@@ -297,7 +297,7 @@ form input[type=submit]:hover, form input[type=submit]:focus {
   background-image: url(../images/about.webp);
   background-size: cover;
   background-position: center;
-  padding: 27vh 0;
+  padding: 30vh 0;
   filter: grayscale(100%);
 }
 
@@ -355,7 +355,7 @@ form input[type=submit]:hover, form input[type=submit]:focus {
   background-image: url(../images/contac.webp);
   background-size: cover;
   background-position: center;
-  padding: 27vh 0;
+  padding: 30vh 0;
   filter: grayscale(100%);
 }
 
