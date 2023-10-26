@@ -3,9 +3,7 @@
 <head>
     <meta charset="utf-8">
     <?php echo $this->preload ?? ""; ?>
-    <link rel="preload" href="/webfonts/fa-regular-400.woff2" as="font" type="font/woff" crossorigin="">
     <link rel="preload" href="/webfonts/fa-brands-400.woff2" as="font" type="font/woff" crossorigin="">
-    <link rel="preload" href="/webfonts/fa-solid-900.woff2" as="font" type="font/woff" crossorigin="">
     <title><?php echo $this->title; ?></title>
     <meta name="description" content="<?php echo $this->title; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
