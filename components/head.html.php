@@ -2,27 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <script>
-
-        const preload_image = (im_url) => {
-
-          if (!im_url) {
-            return;
-          }
-
-          let img = new Image();
-          const root = "<?php echo $this->root . 'images/'; ?>";
-          img.src = root + im_url;
-        };
-
-        const arr = ["<?php echo $this->preload ?? ""; ?>","atom.svg"];
-
-        for (const item of arr) {
-
-          preload_image(item);
-        }
-
-    </script>
+    <link rel="preload" href="<?php echo $this->root; ?>images/about.webp" as="image">
+    <link rel="preload" href="<?php echo $this->root; ?>images/contac.webp" as="image">
     <link rel="preload" href="<?php echo $this->root; ?>webfonts/fa-brands-400.woff2" as="font" type="font/woff" crossorigin="">
     <link rel="preload" href="<?php echo $this->root; ?>css/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin="">
     <title><?php echo $this->title; ?></title>

@@ -5,7 +5,6 @@
  * @author Daniel Costello
  * @property private $root Holds root directory for the head
  * @property private $title Holds title for the head
- * @property private $preload Holds image preload value for the head
  *
  */
 class About
@@ -13,7 +12,6 @@ class About
 
     private $root = "./";
     private $title = "Blog";
-    private $preload = "about.webp";
 
     public function GetHead()
     {
