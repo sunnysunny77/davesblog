@@ -15,6 +15,7 @@ class About
 
     public function GetHead()
     {
+        
         include_once "components/head.html.php";
     }
 
