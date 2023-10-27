@@ -13,7 +13,7 @@ class Contact
 
     private $root = "./";
     private $title = "Blog";
-    private $preload = "<link rel='preload' as='image' href='../images/contac.webp'>";
+    private $preload = "contac.webp";
 
     public function GetHead()
     {

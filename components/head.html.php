@@ -2,8 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <?php echo $this->preload ?? ""; ?>
-    <link rel="preload" href="/webfonts/fa-brands-400.woff2" as="font" type="font/woff" crossorigin="">
+    <script>
+
+        const preload_image = (im_url) => {
+
+          if (!im_url) {
+            return;
+          }
+
+          let img = new Image();
+          const root = "<?php echo $this->root . 'images/'; ?>";
+          img.src = root + im_url;
+        };
+
+        const arr = ["<?php echo $this->preload ?? ""; ?>","atom.svg"];
+
+        for (const item of arr) {
+
+          preload_image(item);
+        }
+
+    </script>
+    <link rel="preload" href="<?php echo $this->root; ?>webfonts/fa-brands-400.woff2" as="font" type="font/woff" crossorigin="">
+    <link rel="preload" href="<?php echo $this->root; ?>css/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin="">
     <title><?php echo $this->title; ?></title>
     <meta name="description" content="<?php echo $this->title; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,8 +40,8 @@
             <li class="col-6 col-md-2 p-2"><a class="p-2" href="<?php echo $this->root; ?>contact.php">Contact<span>03</span></a></li>
             <li class="col-6 col-md-2 p-2"><a class="p-2" href="<?php echo $this->root; ?>admin/index.php">Admin<span>04</span></a></li>
             <li class="col-12 col-md-4  p-1">
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-twitter"></i>
+                <i style="border: 1px solid;" class="fa-brands fa-facebook rounded-circle p-1 mx-1"></i>
+                <i style="border: 1px solid;" class="fa-brands fa-twitter rounded-circle p-1 mx-1"></i>
                 <span role="img" aria-label="atom" id="svg"></span>
             </li>
         </ul>

@@ -92,10 +92,6 @@ nav #svg {
   margin: auto 5px;
 }
 nav .svg-inline--fa {
-  border: 1px solid slategrey;
-  border-radius: 100%;
-  padding: 2.5px;
-  margin: auto 5px;
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 nav .svg-inline--fa:hover, nav .svg-inline--fa:focus {

@@ -13,7 +13,7 @@ class About
 
     private $root = "./";
     private $title = "Blog";
-    private $preload = "<link rel='preload' as='image' href='../images/about.webp'>";
+    private $preload = "about.webp";
 
     public function GetHead()
     {

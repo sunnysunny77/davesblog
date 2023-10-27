@@ -85,10 +85,6 @@ nav {
         margin: auto 5px;
     }
     .svg-inline--fa {
-        border: 1px solid $c2;
-        border-radius: 100%;
-        padding: 2.5px;
-        margin: auto 5px;
         transition: color 0.3s ease, background-color 0.3s ease;
         &:hover,
         &:focus {
