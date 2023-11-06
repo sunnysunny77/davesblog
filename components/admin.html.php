@@ -46,7 +46,7 @@
         </tr>
 
         <?php
-        foreach ($this->result as $row) {
+        foreach ($this->result[isset($_GET["page"]) ? $_GET["page"] - 1 : 0] as $row) {
 
             echo '<tr>';
             echo '<td headers="title">' . $row['postTitle'] . '</td>';
@@ -62,5 +62,32 @@
         ?>
       
     </table>
+
+    <div class="pages">
+
+        page:
+
+        <?php
+
+        for ($i = 1; $i <= count($this->result); $i++) {
+            
+            $current = "";
+
+            if (isset($_GET["page"]) && $_GET["page"] == $i || !isset($_GET["page"]) && $i == 1) {
+
+                $current = "current";
+            }
+
+            if (isset($_GET["page"]) && $i <= $_GET["page"] + 2 && $i >= $_GET["page"] - 2 || !isset($_GET["page"]) && $i <= 3) {
+
+                echo '<a class="' . $current . '" href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';
+            }
+        }
+
+        ?>
+
+    </div>
+
+    <br>
 
 </div>

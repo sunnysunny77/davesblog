@@ -28,21 +28,3 @@ article {
         }
     }
 }
-
-.pages {
-    width: 100%;
-    text-align: center;
-    a {
-        padding: 10px;
-        font-size: medium;
-        text-decoration: none;
-        color: $c1;
-        &.current {
-            text-decoration: underline;
-        }
-        &:hover,
-        &:focus {
-            color: $c2;
-        }
-    }
-}
