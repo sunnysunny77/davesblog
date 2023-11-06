@@ -63,7 +63,7 @@
       
     </table>
 
-    <div class="pages">
+    <div id="pages">
 
         page:
 
