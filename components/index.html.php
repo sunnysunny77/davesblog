@@ -11,6 +11,11 @@
         exit();
     }
 
+    $page = '';
+
+    if (isset($_GET["page"])) {
+        $page = '&page=' . $_GET["page"];
+    }
 
     foreach ($this->result[isset($_GET["page"]) ? $_GET["page"] - 1 : 0] as $row) {
         
@@ -21,7 +26,7 @@
         echo '<img width="50" height="50" alt="' . pathinfo($row["filename"], PATHINFO_FILENAME)  . '" src="data:' . $row["mimetype"] . ';base64,' . base64_encode($row['filedata']) . '" >';
         echo '<p class="p-md-3">' . $row['postDesc'] . '</p>';
         echo '</div>';
-        echo '<a href="?action=viewpost&id=' . $row['postID'] . '">Read Article</a>';
+        echo '<a href="?action=viewpost&id=' . $row['postID'] . $page . '">Read Article</a>';
         echo '</article>';
     }
 
