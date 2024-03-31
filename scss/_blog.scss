@@ -20,11 +20,12 @@ article {
     }
     a {
         color: $c4;
-        text-decoration: none;
+        transition: text-decoration 0.2s ease;
+        text-decoration: underline transparent;
         &:hover,
         &:focus {
             color: $c2;
-            text-decoration: underline;
+            text-decoration: underline $c2;
         }
     }
 }

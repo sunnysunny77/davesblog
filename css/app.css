@@ -141,11 +141,12 @@ article img {
 }
 article a {
   color: #595959;
-  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+  text-decoration: underline transparent;
 }
 article a:hover, article a:focus {
   color: slategrey;
-  text-decoration: underline;
+  text-decoration: underline slategrey;
 }
 
 #login {
@@ -401,11 +402,12 @@ footer {
 footer a {
   color: white;
   font-size: medium;
-  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+  text-decoration: underline transparent;
 }
 footer a:hover, footer a:focus {
   color: white;
-  text-decoration: underline;
+  text-decoration: underline white;
 }
 
 body {
