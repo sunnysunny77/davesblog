@@ -141,12 +141,13 @@ article img {
 }
 article a {
   color: #595959;
-  transition: color 0.2s ease, text-decoration 0.2s ease;
-  text-decoration: underline transparent;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
 }
 article a:hover {
   color: slategrey;
-  text-decoration: underline slategrey;
+  text-decoration-color: slategrey;
 }
 
 #login {
@@ -402,12 +403,13 @@ footer {
 footer a {
   color: white;
   font-size: medium;
-  transition: text-decoration 0.2s ease;
-  text-decoration: underline transparent;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
 }
 footer a:hover, footer a:focus {
   color: white;
-  text-decoration: underline white;
+  text-decoration-color: slategrey;
 }
 
 body {

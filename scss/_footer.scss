@@ -7,12 +7,13 @@ footer {
     a {
         color: $c3;
         font-size: medium;
-        transition: text-decoration 0.2s ease;
-        text-decoration: underline transparent;
+        transition: color 0.2s ease, text-decoration-color 0.2s ease;
+        text-decoration-line: underline;
+        text-decoration-color: transparent;
         &:hover,
         &:focus {
             color: $c3;
-            text-decoration: underline $c3;
+            text-decoration-color: $c2;
         }
     }
 }
