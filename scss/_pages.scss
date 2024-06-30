@@ -2,17 +2,18 @@
 #pages {
     width: 100%;
     text-align: center;
+    color: $c4;
     a {
         padding: 10px;
         font-size: medium;
         text-decoration: none;
-        color: $c1;
+        color: $c4;
         &.current {
             text-decoration: underline;
         }
         &:hover,
         &:focus {
-            color: $c2;
+            color: $c1;
         }
     }
 }

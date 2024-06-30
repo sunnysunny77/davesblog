@@ -379,18 +379,19 @@ form input[type=submit]:hover, form input[type=submit]:focus {
 #pages {
   width: 100%;
   text-align: center;
+  color: #595959;
 }
 #pages a {
   padding: 10px;
   font-size: medium;
   text-decoration: none;
-  color: black;
+  color: #595959;
 }
 #pages a.current {
   text-decoration: underline;
 }
 #pages a:hover, #pages a:focus {
-  color: slategrey;
+  color: black;
 }
 
 footer {
