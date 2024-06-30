@@ -55,7 +55,7 @@
         <td headers="action">
             <a href="./?action=edituser&id=<?php echo $row['memberID']; ?>">Edit</a>
             <?php if ($row['memberID'] != 1) {?>
-                | <a href="javascript:deluser('<?php echo $row['memberID']; ?>','<?php echo $row['username']; ?>')">Delete</a>
+                | <a id="deluser" memberID="<?php echo $row['memberID']; ?>" userName="<?php echo $row['username']; ?>">Delete</a>
             <?php }?>
         </td>
         <?php

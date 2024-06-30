@@ -54,7 +54,7 @@
             ?>
             <td headers="action">
                 <a href="./?action=edit&id=<?php echo $row['postID']; ?>">Edit</a> |
-                <a href="javascript:delpost('<?php echo $row['postID']; ?>','<?php echo $row['postTitle']; ?>')">Delete</a>   
+                <a id="delpost" postID="<?php echo $row['postID']; ?>" postTitle="<?php echo $row['postTitle']; ?>" >Delete</a>   
             </td>
             <?php
             echo '</tr>';
