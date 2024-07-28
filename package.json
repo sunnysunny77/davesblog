@@ -1,7 +1,7 @@
 {
-  "name": "template",
+  "name": "davesblog",
   "version": "1.0.0",
-  "description": "template",
+  "description": "davesblog",
   "main": "./js/app.js",
   "scripts": {
     "build": "node ./node_modules/sass/sass.js ./scss:./css",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sunnysunny77/template.git"
+    "url": "git+https://github.com/sunnysunny77/davesblog.git"
   },
   "author": "D.C",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sunnysunny77/template/issues"
+    "url": "https://github.com/sunnysunny77/davesblog/issues"
   },
-  "homepage": "https://github.com/sunnysunny77/template#readme",
+  "homepage": "https://github.com/sunnysunny77/davesblog#readme",
   "dependencies": {
     "sass": "latest"
   }
