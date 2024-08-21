@@ -15,7 +15,7 @@ class Config
     private $host = "localhost";
     private $dbname = "databasedb";
     private $user = "root";
-    private $pass = "";
+    private $pass = "password";
 
     protected function Connect()
     {

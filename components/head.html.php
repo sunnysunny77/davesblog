@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="preload" href="<?php echo $this->root; ?>images/about.webp" as="image" crossorigin="">
-    <link rel="preload" href="<?php echo $this->root; ?>images/contac.webp" as="image" crossorigin="">
+    <link rel="preload" href="<?php echo $this->root; ?>images/about.png" as="image" crossorigin="">
+    <link rel="preload" href="<?php echo $this->root; ?>images/contact.png" as="image" crossorigin="">
     <link rel="preload" href="<?php echo $this->root; ?>images/atom.svg" as="image" crossorigin="">
     <link rel="preload" href="<?php echo $this->root; ?>webfonts/fa-brands-400.woff2" as="font" type="font/woff" crossorigin="">
     <link rel="preload" href="<?php echo $this->root; ?>css/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin="">

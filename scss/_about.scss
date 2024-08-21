@@ -1,10 +1,44 @@
-#aboutimg {
+#aboutimg  {
     border-radius: 30px;
-    background-image: url(../images/about.webp);
-    background-size: cover;
-    background-position: center;
-    padding: 30vh 0;
+    background-image: url(../images/about.png);
+    background-size: max(100px, 17vh);
+    background-position: 50% 10%;
+    background-repeat: no-repeat;
+    border: 2px solid $c1;
+    height: 60vh;
+    min-height: 355px;
+    overflow: hidden;
     filter: grayscale(100%);
+    @media only Screen and (min-width: 1200px) {
+        background-position: 87.5% 50%;
+        background-size: 25%;
+    }
+    .after {
+        background-color: $c4;
+        color: $c3;
+        position: relative;
+        height: 33%;
+        @media only Screen and (min-width: 1200px) {
+            height: 100%;
+        }
+        &::after {
+            position: absolute;
+            content: " ";
+            border: 100px solid;
+            border-color: $c4 transparent transparent transparent;
+            border-radius: 50%;
+            right: -100px;
+            bottom: calc(100% - 100px);
+            left: -100px;
+            @media only Screen and (min-width: 1200px) {
+                border-color: transparent $c4 transparent transparent;
+                top: -100px;
+                right: initial;
+                bottom: -100px;
+                left: calc(100% - 100px);
+            }
+        }
+    }
 }
 
 #about {

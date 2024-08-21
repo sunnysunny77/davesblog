@@ -1,10 +1,44 @@
 #contactimg {
     border-radius: 30px;
-    background-image: url(../images/contac.webp);
-    background-size: cover;
-    background-position: center;
-    padding: 30vh 0;
+    background-image: url(../images/contact.png);
+    background-size: max(100px, 17vh);
+    background-position: 50% 10%;
+    background-repeat: no-repeat;
+    border: 2px solid $c1;
+    height: 60vh;
+    min-height: 355px;
+    overflow: hidden;
     filter: grayscale(100%);
+    @media only Screen and (min-width: 1200px) {
+        background-position: 12.5% 50%;
+        background-size: 25%;
+    }
+    .after {
+        background-color: $c4;
+        color: $c3;
+        position: relative;
+        height: 33%;
+        @media only Screen and (min-width: 1200px) {
+            height: 100%;
+        }
+        &::after {
+            position: absolute;
+            content: " ";
+            border: 100px solid;
+            border-color: $c4 transparent transparent transparent;
+            border-radius: 50%;
+            right: -100px;
+            bottom: calc(100% - 100px);
+            left: -100px;
+            @media only Screen and (min-width: 1200px) {
+                border-color: transparent transparent transparent $c4;
+                top: -100px;
+                right: calc(100% - 100px);
+                bottom: -100px;
+                left: initial;
+            }
+        }
+    }
 }
 
 #contact {
@@ -12,7 +46,10 @@
     color: $c3;
     border-radius: 30px;
     fieldset {
-        height: 100%;
+        width: 88%;
+        @media only Screen and (min-width: 1200px) {
+            width: 67%;
+        }
     }
     input {
         width: 100%;
@@ -21,8 +58,20 @@
     textarea {
         resize: none;
         margin: 5px 0 0 0;
+        overflow-y: scroll;
+        scrollbar-color: $c4 transparent;
+        &::-webkit-scrollbar {
+          width: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: $c4;
+        }
+        &::-webkit-scrollbar-track {
+          background: transparent;
+        }
     }
-    input, textarea {
+    input,
+    textarea {
         border-radius: 10px;
         border: none;
     }
@@ -30,7 +79,7 @@
         transition: color 0.3s ease;
         &:hover,
         &:focus {
-            color: transparentize($c3, 0.2); 
+            color: transparentize($c3, 0.2);
         }
     }
 }

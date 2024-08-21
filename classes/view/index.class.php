@@ -18,7 +18,8 @@ class Index
     public function __construct($model)
     {
     
-        $this->result = array_chunk($model->GetIndexBlogPosts(), 4, true);
+        $result = $model->GetIndexBlogPosts();
+        $this->result = is_array($result) ? array_chunk($result, 4, true) : $result;
     }
 
     public function GetHead()

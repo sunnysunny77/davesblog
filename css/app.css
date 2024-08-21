@@ -292,11 +292,51 @@ form input[type=submit]:hover, form input[type=submit]:focus {
 
 #aboutimg {
   border-radius: 30px;
-  background-image: url(../images/about.webp);
-  background-size: cover;
-  background-position: center;
-  padding: 30vh 0;
+  background-image: url(../images/about.png);
+  background-size: max(100px, 17vh);
+  background-position: 50% 10%;
+  background-repeat: no-repeat;
+  border: 2px solid black;
+  height: 60vh;
+  min-height: 355px;
+  overflow: hidden;
   filter: grayscale(100%);
+}
+@media only Screen and (min-width: 1200px) {
+  #aboutimg {
+    background-position: 87.5% 50%;
+    background-size: 25%;
+  }
+}
+#aboutimg .after {
+  background-color: #595959;
+  color: white;
+  position: relative;
+  height: 33%;
+}
+@media only Screen and (min-width: 1200px) {
+  #aboutimg .after {
+    height: 100%;
+  }
+}
+#aboutimg .after::after {
+  position: absolute;
+  content: " ";
+  border: 100px solid;
+  border-color: #595959 transparent transparent transparent;
+  border-radius: 50%;
+  right: -100px;
+  bottom: calc(100% - 100px);
+  left: -100px;
+}
+@media only Screen and (min-width: 1200px) {
+  #aboutimg .after::after {
+    border-color: transparent #595959 transparent transparent;
+    top: -100px;
+    right: initial;
+    bottom: -100px;
+    left: calc(100% - 100px);
+  }
 }
 
 #about {
@@ -350,11 +390,51 @@ form input[type=submit]:hover, form input[type=submit]:focus {
 
 #contactimg {
   border-radius: 30px;
-  background-image: url(../images/contac.webp);
-  background-size: cover;
-  background-position: center;
-  padding: 30vh 0;
+  background-image: url(../images/contact.png);
+  background-size: max(100px, 17vh);
+  background-position: 50% 10%;
+  background-repeat: no-repeat;
+  border: 2px solid black;
+  height: 60vh;
+  min-height: 355px;
+  overflow: hidden;
   filter: grayscale(100%);
+}
+@media only Screen and (min-width: 1200px) {
+  #contactimg {
+    background-position: 12.5% 50%;
+    background-size: 25%;
+  }
+}
+#contactimg .after {
+  background-color: #595959;
+  color: white;
+  position: relative;
+  height: 33%;
+}
+@media only Screen and (min-width: 1200px) {
+  #contactimg .after {
+    height: 100%;
+  }
+}
+#contactimg .after::after {
+  position: absolute;
+  content: " ";
+  border: 100px solid;
+  border-color: #595959 transparent transparent transparent;
+  border-radius: 50%;
+  right: -100px;
+  bottom: calc(100% - 100px);
+  left: -100px;
+}
+@media only Screen and (min-width: 1200px) {
+  #contactimg .after::after {
+    border-color: transparent transparent transparent #595959;
+    top: -100px;
+    right: calc(100% - 100px);
+    bottom: -100px;
+    left: initial;
+  }
 }
 
 #contact {
@@ -363,7 +443,12 @@ form input[type=submit]:hover, form input[type=submit]:focus {
   border-radius: 30px;
 }
 #contact fieldset {
-  height: 100%;
+  width: 88%;
+}
+@media only Screen and (min-width: 1200px) {
+  #contact fieldset {
+    width: 67%;
+  }
 }
 #contact input {
   width: 100%;
@@ -372,8 +457,20 @@ form input[type=submit]:hover, form input[type=submit]:focus {
 #contact textarea {
   resize: none;
   margin: 5px 0 0 0;
+  overflow-y: scroll;
+  scrollbar-color: #595959 transparent;
 }
-#contact input, #contact textarea {
+#contact textarea::-webkit-scrollbar {
+  width: 10px;
+}
+#contact textarea::-webkit-scrollbar-thumb {
+  background: #595959;
+}
+#contact textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+#contact input,
+#contact textarea {
   border-radius: 10px;
   border: none;
 }
@@ -406,19 +503,27 @@ footer {
   display: flex;
   align-items: center;
   align-self: center;
-  background-color: #595959;
   border-radius: 30px;
 }
 footer a {
   color: white;
-  font-size: medium;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
-  text-decoration-line: underline;
-  text-decoration-color: transparent;
+  height: 27px;
+  width: 27px;
+  font-size: smaller;
+  background-color: #595959;
+  transition: border-color 0.4s ease-out;
+  border: 1px solid;
+  border-color: #595959;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  line-height: 1;
+  border-radius: 50%;
 }
 footer a:hover, footer a:focus {
   color: white;
-  text-decoration-color: slategrey;
+  border-color: white;
 }
 
 body {
