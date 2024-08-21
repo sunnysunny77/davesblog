@@ -377,6 +377,9 @@ form input[type=submit]:hover, form input[type=submit]:focus {
   border-radius: 10px;
   border: none;
 }
+#contact input[type=submit] {
+  transition: color 0.3s ease;
+}
 #contact input[type=submit]:hover, #contact input[type=submit]:focus {
   color: rgba(255, 255, 255, 0.8);
 }

@@ -27,6 +27,7 @@
         border: none;
     }
     input[type="submit"] {
+        transition: color 0.3s ease;
         &:hover,
         &:focus {
             color: transparentize($c3, 0.2); 
