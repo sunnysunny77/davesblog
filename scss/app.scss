@@ -11,3 +11,63 @@ body {
 a {
     transition: color 0.3s ease;
 }
+
+.pagefull {
+    .before {
+        padding: max(112.5px, 19vh);
+        background-color: $c3;
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-bottom: 2px solid $c1;
+        border-right: 2px solid $c1;
+        border-left: 2px solid $c1;
+        @media only Screen and (min-width: 1200px) {
+            border-top: 2px solid $c1;
+            border-bottom: initial;
+            border-bottom-right-radius: initial;
+            border-bottom-left-radius: initial;
+            border-top-right-radius: 30px;
+            border-top-left-radius: 30px;
+        }
+        &::before {
+            position: absolute;
+            content: " ";
+            border: 100px solid;
+            border-color: transparent transparent $c4 transparent;
+            border-radius: 50%;
+            right: -100px;
+            bottom: calc(100% - 100px);
+            left: -100px;
+            @media only Screen and (min-width: 1200px) {
+                border-color: $c4 transparent transparent transparent;
+                top: calc(100% - 100px);
+                right: -100px;
+                left: -100px;
+                bottom: initial;
+            }
+        }
+    }
+    .content {
+        color: $c3;
+        background-color: $c4;
+        border-top-right-radius: 30px;
+        border-top-left-radius: 30px;
+        border-right: 2px solid $c1;
+        border-left: 2px solid $c1;
+        border-top: 2px solid $c1;
+        @media only Screen and (min-width: 1200px) {
+            border-bottom: 2px solid $c1;
+            border-top: initial;
+            border-top-right-radius: initial;
+            border-top-left-radius: initial;
+            border-bottom-right-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+        > span {
+            font-weight: 600;
+            + span {
+                font-weight: initial;
+            }
+        }
+    }
+}

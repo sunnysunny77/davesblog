@@ -1,5 +1,5 @@
     </main>
-    <footer class="d-xl-none mt-3">
+    <footer class="mt-3">
         <a href="#top">&#8593;</a>
     </footer>
     <script src="<?php echo $this->root; ?>js/bootstrap.min.js"></script>

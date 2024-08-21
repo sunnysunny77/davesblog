@@ -1,4 +1,4 @@
-<form id="login" action="?action=login" method="post">
+<form class="p-5" id="login" action="?action=login" method="post">
 
     <label> Username 
         <input  type="text" name="username" value="">

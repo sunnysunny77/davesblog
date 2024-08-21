@@ -1,32 +1,32 @@
 #login {
- display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: column;
- border: 2px solid $c1;
- border-radius: 20px;
- margin-top: 1rem;
- position: relative;
- min-height: 60vh;
- label {
-  width: 220px;
-  input {
-    width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid $c1;
+  border-radius: 20px;
+  position: relative;
+  width: fit-content;
+  margin: 1rem auto auto auto;
+  label {
+    width: 220px;
+    input {
+      width: 100%;
+    }
   }
- }
- input[type="submit"] {
+  input[type="submit"] {
     margin-top: 1rem;
     background-color: transparent;
     border: 1px solid $c1;
     border-radius: 10px;
     &:hover,
     &:focus {
-        color: $c3;
-        background-color: $c4;
+      color: $c3;
+      background-color: $c4;
     }
- }
- .error {
-  position: absolute;
-  top: 3rem;
- }
+  }
+  .error {
+    position: absolute;
+    top: 3rem;
+  }
 }

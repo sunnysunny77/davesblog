@@ -75,7 +75,7 @@ nav ul li a {
 @media only Screen and (min-width: 768px) {
   nav ul li a {
     font-size: medium;
-    height: 8vh;
+    min-height: 70px;
   }
 }
 nav ul li a:hover, nav ul li a:focus {
@@ -152,14 +152,14 @@ article a:hover {
 
 #login {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   border: 2px solid black;
   border-radius: 20px;
-  margin-top: 1rem;
   position: relative;
-  min-height: 60vh;
+  width: fit-content;
+  margin: 1rem auto auto auto;
 }
 #login label {
   width: 220px;
@@ -536,6 +536,70 @@ body {
 
 a {
   transition: color 0.3s ease;
+}
+
+.pagefull .before {
+  padding: max(112.5px, 19vh);
+  background-color: white;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+}
+@media only Screen and (min-width: 1200px) {
+  .pagefull .before {
+    border-top: 2px solid black;
+    border-bottom: initial;
+    border-bottom-right-radius: initial;
+    border-bottom-left-radius: initial;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+  }
+}
+.pagefull .before::before {
+  position: absolute;
+  content: " ";
+  border: 100px solid;
+  border-color: transparent transparent #595959 transparent;
+  border-radius: 50%;
+  right: -100px;
+  bottom: calc(100% - 100px);
+  left: -100px;
+}
+@media only Screen and (min-width: 1200px) {
+  .pagefull .before::before {
+    border-color: #595959 transparent transparent transparent;
+    top: calc(100% - 100px);
+    right: -100px;
+    left: -100px;
+    bottom: initial;
+  }
+}
+.pagefull .content {
+  color: white;
+  background-color: #595959;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+}
+@media only Screen and (min-width: 1200px) {
+  .pagefull .content {
+    border-bottom: 2px solid black;
+    border-top: initial;
+    border-top-right-radius: initial;
+    border-top-left-radius: initial;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+}
+.pagefull .content > span {
+  font-weight: 600;
+}
+.pagefull .content > span + span {
+  font-weight: initial;
 }
 
 /*# sourceMappingURL=app.css.map */
