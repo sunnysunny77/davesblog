@@ -367,13 +367,18 @@ form input[type=submit]:hover, form input[type=submit]:focus {
 }
 #contact input {
   width: 100%;
+  margin: 5px 0;
 }
 #contact textarea {
   resize: none;
+  margin: 5px 0 0 0;
 }
 #contact input, #contact textarea {
   border-radius: 10px;
   border: none;
+}
+#contact input[type=submit]:hover, #contact input[type=submit]:focus {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 #pages {

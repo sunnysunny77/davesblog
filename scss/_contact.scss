@@ -16,12 +16,20 @@
     }
     input {
         width: 100%;
+        margin: 5px 0;
     }
     textarea {
         resize: none;
+        margin: 5px 0 0 0;
     }
     input, textarea {
         border-radius: 10px;
         border: none;
+    }
+    input[type="submit"] {
+        &:hover,
+        &:focus {
+            color: transparentize($c3, 0.2); 
+        }
     }
 }
