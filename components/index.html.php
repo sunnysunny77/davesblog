@@ -10,6 +10,11 @@
         <?php
         exit();
     }
+    if ($this->result === false) {
+    
+        echo  '<h3 class="m-3 p-3"> No posts yet </h3>';
+        exit(); 
+    }
 
     $page = '';
 
@@ -58,3 +63,5 @@
     </div>
 
 </div>
+
+<a href="#top">&#8593;</a>

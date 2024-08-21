@@ -20,7 +20,8 @@ class Admin
     public function __construct($output, $model)
     {
 
-        $this->result = array_chunk($model->GetAdminBlogPosts(), 4, true);
+        $result = $model->GetAdminBlogPosts();
+        $this->result = empty($result) ? false : array_chunk($result, 4, true);
         $this->output = $output;
     }
 

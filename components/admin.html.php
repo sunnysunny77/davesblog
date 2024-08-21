@@ -38,6 +38,14 @@
 
     <a class="text-center p-3" href='./?action=add'>Add Post</a>
 
+    <?php
+    if ($this->result === false) {
+    
+        echo  '<h3 class="m-3 p-3"> No posts yet </h3>';
+        exit(); 
+    }
+    ?>
+
     <table>
         <tr>
             <th id="title">Title</th>
@@ -46,6 +54,7 @@
         </tr>
 
         <?php
+        
         foreach ($this->result[isset($_GET["page"]) ? $_GET["page"] - 1 : 0] as $row) {
 
             echo '<tr>';

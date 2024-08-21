@@ -3,6 +3,108 @@
   src: url(./Lato-Regular.ttf);
   font-display: swap;
 }
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0 auto;
+  font-family: lato;
+  min-height: 100vh;
+  max-width: 1920px;
+  overflow-y: scroll;
+}
+
+a {
+  transition: color 0.3s ease;
+}
+
+.pagefull .before {
+  padding: max(112.5px, 19vh);
+  background-color: white;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+}
+@media only Screen and (min-width: 1200px) {
+  .pagefull .before {
+    border-top: 2px solid black;
+    border-bottom: initial;
+    border-bottom-right-radius: initial;
+    border-bottom-left-radius: initial;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+  }
+}
+.pagefull .before::before {
+  position: absolute;
+  content: " ";
+  border: 100px solid;
+  border-color: transparent transparent #595959 transparent;
+  border-radius: 50%;
+  right: -100px;
+  bottom: calc(100% - 100px);
+  left: -100px;
+}
+@media only Screen and (min-width: 1200px) {
+  .pagefull .before::before {
+    border-color: #595959 transparent transparent transparent;
+    top: calc(100% - 100px);
+    right: -100px;
+    left: -100px;
+    bottom: initial;
+  }
+}
+.pagefull .content {
+  color: white;
+  background-color: #595959;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+}
+@media only Screen and (min-width: 1200px) {
+  .pagefull .content {
+    border-bottom: 2px solid black;
+    border-top: initial;
+    border-top-right-radius: initial;
+    border-top-left-radius: initial;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+}
+.pagefull .content > span {
+  font-weight: 600;
+}
+.pagefull .content > span + span {
+  font-weight: initial;
+}
+
+a[href="#top"] {
+  color: white;
+  height: 27px;
+  width: 27px;
+  font-size: smaller;
+  background-color: #595959;
+  transition: border-color 0.4s ease-out;
+  border: 1px solid;
+  border-color: #595959;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  line-height: 1;
+  border-radius: 50%;
+  margin: 1.5rem auto auto auto;
+}
+a[href="#top"]:hover, a[href="#top"]:focus {
+  color: white;
+  border-color: white;
+}
+
 nav {
   border-top: 2px solid black;
   border-right: 2px solid black;
@@ -497,109 +599,6 @@ form input[type=submit]:hover, form input[type=submit]:focus {
 }
 #pages a:hover, #pages a:focus {
   color: black;
-}
-
-footer {
-  display: flex;
-  align-items: center;
-  align-self: center;
-  border-radius: 30px;
-}
-footer a {
-  color: white;
-  height: 27px;
-  width: 27px;
-  font-size: smaller;
-  background-color: #595959;
-  transition: border-color 0.4s ease-out;
-  border: 1px solid;
-  border-color: #595959;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  line-height: 1;
-  border-radius: 50%;
-}
-footer a:hover, footer a:focus {
-  color: white;
-  border-color: white;
-}
-
-body {
-  margin: 0 auto;
-  font-family: lato;
-  min-height: 100vh;
-  max-width: 1920px;
-  overflow-y: scroll;
-}
-
-a {
-  transition: color 0.3s ease;
-}
-
-.pagefull .before {
-  padding: max(112.5px, 19vh);
-  background-color: white;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-  border-bottom: 2px solid black;
-  border-right: 2px solid black;
-  border-left: 2px solid black;
-}
-@media only Screen and (min-width: 1200px) {
-  .pagefull .before {
-    border-top: 2px solid black;
-    border-bottom: initial;
-    border-bottom-right-radius: initial;
-    border-bottom-left-radius: initial;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
-  }
-}
-.pagefull .before::before {
-  position: absolute;
-  content: " ";
-  border: 100px solid;
-  border-color: transparent transparent #595959 transparent;
-  border-radius: 50%;
-  right: -100px;
-  bottom: calc(100% - 100px);
-  left: -100px;
-}
-@media only Screen and (min-width: 1200px) {
-  .pagefull .before::before {
-    border-color: #595959 transparent transparent transparent;
-    top: calc(100% - 100px);
-    right: -100px;
-    left: -100px;
-    bottom: initial;
-  }
-}
-.pagefull .content {
-  color: white;
-  background-color: #595959;
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
-  border-right: 2px solid black;
-  border-left: 2px solid black;
-  border-top: 2px solid black;
-}
-@media only Screen and (min-width: 1200px) {
-  .pagefull .content {
-    border-bottom: 2px solid black;
-    border-top: initial;
-    border-top-right-radius: initial;
-    border-top-left-radius: initial;
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-  }
-}
-.pagefull .content > span {
-  font-weight: 600;
-}
-.pagefull .content > span + span {
-  font-weight: initial;
 }
 
 /*# sourceMappingURL=app.css.map */
