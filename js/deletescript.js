@@ -1,15 +1,24 @@
-const button = document.querySelectorAll(".delpost");
+import { events } from "./utillites.js";
 
-for (const index of button) {
+export const deletescript = () => {
 
-  index.addEventListener("click", (e) => {
+  const button = document.querySelectorAll(".delpost");
 
-    const id = e.currentTarget.getAttribute("postID");
-    const title = e.currentTarget.getAttribute("postTitle");
+  if (button.length === 0) {
+    return;
+  }
 
-    if (confirm(`Are you sure you want to delete '${  title  }'`))
-    {
-      window.location.href = `./?&id=${  id}`;
-    }
-  },null);
-}
+  for (const index of button) {
+ 
+    events(index, "click", (e) => {
+
+      const id = e.currentTarget.getAttribute("postID");
+      const title = e.currentTarget.getAttribute("postTitle");
+  
+      if (confirm(`Are you sure you want to delete '${  title  }'`))
+      {
+        window.location.href = `./?&id=${  id}`;
+      }
+    },null);
+  }
+};

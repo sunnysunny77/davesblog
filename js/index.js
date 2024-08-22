@@ -1,0 +1,25 @@
+//import "../node_modules/bootstrap/js/dist/alert";
+//import "../node_modules/bootstrap/js/dist/button";
+//import "../node_modules/bootstrap/js/dist/carousel";
+//import "../node_modules/bootstrap/js/dist/collapse";
+//import "../node_modules/bootstrap/js/dist/dropdown";
+//import "../node_modules/ootstrap/js/dist/modal";
+//import "../node_modules/bootstrap/js/dist/offcanvas";
+//import "../node_modules/bootstrap/js/dist/popover";
+//import "../node_modules/bootstrap/js/dist/scrollspy";
+//import "../node_modules/bootstrap/js/dist/tab";
+///import "../node_modules/bootstrap/js/dist/toast";
+//import "../node_modules/bootstrap/js/dist/tooltip";
+import { events } from "./utillites.js";
+import { preload } from "./preload.js";
+import { deleteuserscript } from "./deleteuserscript.js";
+import { deletescript } from "./deletescript.js";
+import { contactscript } from "./contactscript.js";
+
+events(window, "load", () => {
+
+    contactscript();
+    deletescript();
+    deleteuserscript();
+    preload();
+});
