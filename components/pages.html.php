@@ -32,9 +32,15 @@
     
     for ($i = 1; $i <= $count; $i++) {
 
-        if ($i != $page && $i < $page + 3 && $i > $page - 3) {
+        if ($i != $page && $i == $page + 1 || $i != $page && $i == $page - 1 || $i != $page && $i == $page + 2 || $i != $page && $i == $page - 2 ) {
 
                echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';   
+        } else if ($i == $count - 3 && $i != $page || $i == $count - 4 && $i != $page) {
+
+            echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';   
+        } else if ($i == 4 && $i != $page || $i == 5 && $i != $page) {
+
+            echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';   
         }
     }
 
