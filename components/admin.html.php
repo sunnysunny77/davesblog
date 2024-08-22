@@ -73,21 +73,31 @@
     </table>
 
     <div id="pages">
-
+        
         <?php
 
-        $index = 1;
+        $prev = 1;
+        $next = 2;
 
-        if (isset($_GET["page"])) {
+        if (isset($_GET["page"]) && $_GET["page"] > 1) {
 
-            $index = $_GET["page"];
+            $prev = $_GET["page"] - 1;
         }
 
+        if (isset($_GET["page"]) && $_GET["page"] < count($this->result)) {
 
-        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' .  $index - 1 . '"> < </a>';
+            $next = $_GET["page"] + 1;
+        }
+
+        if (isset($_GET["page"]) && $_GET["page"] == count($this->result)) {
+
+            $next = 1;
+        }
+
+        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' .  $prev . '"> < </a>';
 
         for ($i = 1; $i <= count($this->result); $i++) {
-            
+
             $current = "";
 
             if (isset($_GET["page"]) && $_GET["page"] == $i || !isset($_GET["page"]) && $i == 1) {
@@ -101,7 +111,7 @@
             }
         }
 
-        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . $index + 1  . '"> > </a>';
+        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . $next . '"> > </a>';
 
         ?>
 
