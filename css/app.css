@@ -281,7 +281,7 @@ article a:hover {
 }
 #login .error {
   position: absolute;
-  top: 3rem;
+  top: 5px;
 }
 
 #adminmenu {
