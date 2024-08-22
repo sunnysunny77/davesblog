@@ -92,6 +92,22 @@ form {
 			background-color: $c4;
 		}
 	}
+	input[type="file"] {
+		border: 1px solid $c1;
+		padding: 4px 8px;
+		color: $c4;
+		background-color: transparent;
+		display: block;
+		width: 75%;
+		max-width: 300px;
+		cursor: pointer;
+		&::file-selector-button {
+		  background-color: transparent;
+		  border: 1px solid $c1;
+		  color: $c4;
+		  padding: 8px;
+		}
+	  }
 }
 
 .error {

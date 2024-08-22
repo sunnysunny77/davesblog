@@ -387,6 +387,22 @@ form input[type=submit]:hover, form input[type=submit]:focus {
   color: white;
   background-color: #595959;
 }
+form input[type=file] {
+  border: 1px solid black;
+  padding: 4px 8px;
+  color: #595959;
+  background-color: transparent;
+  display: block;
+  width: 75%;
+  max-width: 300px;
+  cursor: pointer;
+}
+form input[type=file]::file-selector-button {
+  background-color: transparent;
+  border: 1px solid black;
+  color: #595959;
+  padding: 8px;
+}
 
 .error {
   text-align: center;
