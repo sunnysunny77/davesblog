@@ -299,6 +299,7 @@ article a:hover {
 #wrapper a {
   color: #595959;
   text-decoration: none;
+  cursor: pointer;
 }
 #wrapper a:hover, #wrapper a:focus {
   color: slategrey;

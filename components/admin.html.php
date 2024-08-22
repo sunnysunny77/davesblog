@@ -63,7 +63,7 @@
             ?>
             <td headers="action">
                 <a href="./?action=edit&id=<?php echo $row['postID']; ?>">Edit</a> |
-                <a id="delpost" postID="<?php echo $row['postID']; ?>" postTitle="<?php echo $row['postTitle']; ?>" >Delete</a>   
+                <a class="delpost" postID="<?php echo $row['postID']; ?>" postTitle="<?php echo $row['postTitle']; ?>" >Delete</a>   
             </td>
             <?php
             echo '</tr>';
