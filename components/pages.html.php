@@ -1,4 +1,5 @@
 <p class="text-center">Page</p>
+
 <div aria-label="pages" id="pages">
 
     <?php
