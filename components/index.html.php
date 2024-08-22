@@ -39,9 +39,9 @@
 
     <div id="pages">
 
-        page:
-
         <?php
+
+        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=1"> < </a>';
 
         for ($i = 1; $i <= count($this->result); $i++) {
             
@@ -57,6 +57,8 @@
                 echo '<a class="' . $current . '" href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';
             }
         }
+
+        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . count($this->result) . '"> > </a>';
         
         ?>
 
