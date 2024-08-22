@@ -37,7 +37,7 @@
 
     ?>
 
-    <div id="pages">
+    <div aria-label="pages" id="pages">
 
         <?php
 
@@ -59,7 +59,7 @@
             $next = 1;
         }
 
-        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' .  $prev . '"> < </a>';
+        echo '<a aria-label="previous" href="' .  $_SERVER['PHP_SELF'] . '?page=' .  $prev . '"> < </a>';
 
         for ($i = 1; $i <= count($this->result); $i++) {
 
@@ -76,7 +76,7 @@
             }
         }
 
-        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . $next . '"> > </a>';
+        echo '<a aria-label="next" href="' .  $_SERVER['PHP_SELF'] . '?page=' . $next . '"> > </a>';
 
         ?>
 
