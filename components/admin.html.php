@@ -76,7 +76,7 @@
 
         <?php
 
-        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=1"> < </a>';
+        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . $_GET["page"] - 1 . '"> < </a>';
 
         for ($i = 1; $i <= count($this->result); $i++) {
             
@@ -93,7 +93,7 @@
             }
         }
 
-        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . count($this->result) . '"> > </a>';
+        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . $_GET["page"] + 1 . '"> > </a>';
 
         ?>
 
