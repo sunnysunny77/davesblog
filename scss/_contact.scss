@@ -58,7 +58,7 @@
     textarea {
         resize: none;
         margin: 5px 0 0 0;
-        overflow-y: scroll;
+        overflow-y: auto;
         scrollbar-color: $c4 transparent;
         &::-webkit-scrollbar {
             width: 10px;
