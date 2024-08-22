@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="preload" href="<?php echo $this->root; ?>images/atom.svg" as="image" type="image/svg+xml">
     <link rel="preload" href="<?php echo $this->root; ?>webfonts/fa-brands-400.woff2" as="font" type="font/woff" crossorigin="">
-    <link rel="preload" href="<?php echo $this->root; ?>css/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin="">
+    <link rel="preload" href="<?php echo $this->root; ?>css/OpenSans.ttf" as="font" type="font/ttf" crossorigin="">
     <script src="<?php echo $this->root; ?>js/preload.js"></script>
     <title><?php echo $this->title; ?></title>
     <meta name="description" content="<?php echo $this->title; ?>">

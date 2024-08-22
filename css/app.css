@@ -1,6 +1,6 @@
 @font-face {
-  font-family: lato;
-  src: url(./Lato-Regular.ttf);
+  font-family: "OpenSans";
+  src: url(./OpenSans.ttf);
   font-display: swap;
 }
 html {
@@ -9,7 +9,7 @@ html {
 
 body {
   margin: 0 auto;
-  font-family: lato;
+  font-family: "OpenSans";
   min-height: 100vh;
   max-width: 1920px;
   overflow-y: scroll;
