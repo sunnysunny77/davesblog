@@ -28,14 +28,14 @@ table {
 	th {
 		position: absolute;
 		clip: rect(0 0 0 0);
-		@media only Screen and (min-width: 768px) {
+		@include min_md {
 			position: unset;
 			clip: unset;
 		}
 	}
 	tr {
 		display: block;
-		@media only Screen and (min-width: 768px) {
+		@include min_md {
 			display: table-row;
 		}
 	}
@@ -47,14 +47,14 @@ table {
 			float: left;
 			text-transform: capitalize;
 			padding-right: 5px;
-			@media only Screen and (min-width: 768px) {
+			@include min_md {
 				content: unset;
 				float: none;
 				text-transform: none;
 				padding-right: unset;
 			}
 		}
-		@media only Screen and (min-width: 768px) {
+		@include min_md {
 			display: table-cell;
 			text-align: left;
 		}
@@ -69,7 +69,7 @@ form {
 	label {
 		max-width: 992px;
 		width: 90%;
-		@media only Screen and (min-width: 1200px) {
+		@include min_xl {
 			width: 100%;
 		}
 		input,

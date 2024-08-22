@@ -13,7 +13,7 @@ nav {
             &:nth-child(2),
             &:nth-child(4) {
                 border-right: none;
-                 @media only Screen and (min-width: 768px) {
+                 @include min_md {
                     border-right: 2px solid $c1;
                  }
             }
@@ -25,7 +25,7 @@ nav {
                 justify-content: flex-end;
                 margin-top: 1rem;
                 flex-wrap: wrap;
-                @media only Screen and (min-width: 768px) {
+                @include min_md {
                     margin-top: unset;
                     border-bottom: 2px solid $c1;
                 }
@@ -63,7 +63,7 @@ nav {
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
-                @media only Screen and (min-width: 768px) {
+                @include min_md {
                     font-size: medium;
                     min-height: 70px;
                 }
@@ -104,7 +104,7 @@ header {
     h1 {
         font-size: 2em;
         color: $c1;
-        @media only Screen and (min-width: 1200px) {
+        @include min_xl {
             font-size: 4em;
         }
     }

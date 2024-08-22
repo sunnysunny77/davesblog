@@ -23,7 +23,7 @@ a {
         border-bottom: 2px solid $c1;
         border-right: 2px solid $c1;
         border-left: 2px solid $c1;
-        @media only Screen and (min-width: 1200px) {
+        @include min_xl {
             border-top: 2px solid $c1;
             border-bottom: initial;
             border-bottom-right-radius: initial;
@@ -40,7 +40,7 @@ a {
             right: -100px;
             bottom: calc(100% - 100px);
             left: -100px;
-            @media only Screen and (min-width: 1200px) {
+            @include min_xl {
                 border-color: $c4 transparent transparent transparent;
                 top: calc(100% - 100px);
                 right: -100px;
@@ -57,7 +57,7 @@ a {
         border-right: 2px solid $c1;
         border-left: 2px solid $c1;
         border-top: 2px solid $c1;
-        @media only Screen and (min-width: 1200px) {
+        @include min_xl {
             border-bottom: 2px solid $c1;
             border-top: initial;
             border-top-right-radius: initial;

@@ -2,7 +2,7 @@ article {
     border-radius: 20px;
     border: 2px solid $c1;
     width: 100%;
-    @media only Screen and (min-width: 768px) {
+    @include min_md {
         width: 49.5%;
         &:nth-child(odd) {
             margin-right: 1%;

@@ -9,7 +9,7 @@
     min-height: 355px;
     overflow: hidden;
     filter: grayscale(100%);
-    @media only Screen and (min-width: 1200px) {
+    @include min_xl {
         background-position: 87.5% 50%;
         background-size: 25%;
     }
@@ -18,7 +18,7 @@
         color: $c3;
         position: relative;
         height: 33%;
-        @media only Screen and (min-width: 1200px) {
+        @include min_xl {
             height: 100%;
         }
         &::after {
@@ -30,7 +30,7 @@
             right: -100px;
             bottom: calc(100% - 100px);
             left: -100px;
-            @media only Screen and (min-width: 1200px) {
+            @include min_xl {
                 border-color: transparent $c4 transparent transparent;
                 top: -100px;
                 right: initial;
@@ -71,13 +71,13 @@
         align-self: center;
         + p {
             text-align: left;
-            @media only Screen and (min-width: 768px) {
+            @include min_md {
                 order: 2;
                 text-align: right;
             }
             + h3 {
                 text-align: right;
-                @media only Screen and (min-width: 768px) {
+                @include min_md {
                     order: unset;
                     text-align: left;
                 }
