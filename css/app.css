@@ -594,9 +594,6 @@ form input[type=submit]:hover, form input[type=submit]:focus {
   text-decoration: none;
   color: #595959;
 }
-#pages a.current {
-  text-decoration: underline;
-}
 #pages a:hover, #pages a:focus {
   color: black;
 }

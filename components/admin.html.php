@@ -1,4 +1,4 @@
-<div class="mt-3" id="wrapper">
+<div class="mt-3 mb-3" id="wrapper">
 
     <?php echo file_get_contents("../components/menu.html"); ?>
 
@@ -71,52 +71,5 @@
         ?>
       
     </table>
-
-    <div aria-label="pages" id="pages">
-
-        <?php
-
-        $prev = 1;
-        $next = 2;
-
-        if (isset($_GET["page"]) && $_GET["page"] > 1) {
-
-            $prev = $_GET["page"] - 1;
-        }
-
-        if (isset($_GET["page"]) && $_GET["page"] < count($this->result)) {
-
-            $next = $_GET["page"] + 1;
-        }
-
-        if (isset($_GET["page"]) && $_GET["page"] == count($this->result)) {
-
-            $next = 1;
-        }
-
-        echo '<a aria-label="previous" href="' .  $_SERVER['PHP_SELF'] . '?page=' .  $prev . '"> < </a>';
-
-        for ($i = 1; $i <= count($this->result); $i++) {
-
-            $current = "";
-
-            if (isset($_GET["page"]) && $_GET["page"] == $i || !isset($_GET["page"]) && $i == 1) {
-
-                $current = "current";
-            }
-
-            if (isset($_GET["page"]) && $i <= $_GET["page"] + 2 && $i >= $_GET["page"] - 2 || !isset($_GET["page"]) && $i <= 3) {
-
-                echo '<a class="' . $current . '" href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';
-            }
-        }
-
-        echo '<a aria-label="next" href="' .  $_SERVER['PHP_SELF'] . '?page=' . $next . '"> > </a>';
-
-        ?>
-
-    </div>
-
-    <br>
 
 </div>

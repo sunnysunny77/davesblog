@@ -35,6 +35,7 @@ class Admin
     {
     
         include_once "../components/admin.html.php";
+        include_once "../components/pages.html.php";
     }
 
     public function GetFoot()
