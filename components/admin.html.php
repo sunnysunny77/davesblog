@@ -76,7 +76,15 @@
 
         <?php
 
-        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . $_GET["page"] - 1 . '"> < </a>';
+        $index = 1;
+
+        if (isset($_GET["page"])) {
+
+            $index = $_GET["page"];
+        }
+
+
+        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' .  $index - 1 . '"> < </a>';
 
         for ($i = 1; $i <= count($this->result); $i++) {
             
@@ -93,7 +101,7 @@
             }
         }
 
-        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . $_GET["page"] + 1 . '"> > </a>';
+        echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . $index + 1  . '"> > </a>';
 
         ?>
 
