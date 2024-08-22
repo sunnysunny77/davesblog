@@ -23,6 +23,7 @@ class About
     {
 
         include_once "components/about.html";
+        include_once "components/top.html";
     }
 
     public function GetFoot()

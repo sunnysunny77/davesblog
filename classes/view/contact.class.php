@@ -23,6 +23,7 @@ class Contact
     {
 
         include_once "components/contact.html";
+        include_once "components/top.html";
     }
 
     public function GetFoot()
