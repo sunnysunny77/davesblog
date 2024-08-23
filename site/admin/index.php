@@ -27,7 +27,7 @@ if (!isset($_SESSION["loggedin"])) {
 if (isset($_SESSION["loggedin"]) && isset($_GET["action"]) && $_GET["action"] == "logout") {
 
     session_destroy();
-    header('Location: ./index.php');
+    header('Location: ./');
     exit();
 }
 
