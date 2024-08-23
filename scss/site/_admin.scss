@@ -75,9 +75,20 @@ form {
 		input,
 		textarea {
 			width: 100%;
+			overflow-y: auto;
 		}
 		textarea {
 			resize: none;
+			scrollbar-color: $c4 transparent;
+			&::-webkit-scrollbar {
+				width: 10px;
+			}
+			&::-webkit-scrollbar-thumb {
+				background: $c4;
+			}
+			&::-webkit-scrollbar-track {
+				background: transparent;
+			}
 		}
 	}
 	input[type="submit"] {
