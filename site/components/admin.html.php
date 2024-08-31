@@ -54,6 +54,8 @@
         </tr>
 
         <?php
+
+        $page = isset($_GET["page"]) ? '&page=' . $_GET["page"] : '&page=' . 1;
         
         foreach ($this->result[isset($_GET["page"]) ? $_GET["page"] - 1 : 0] as $row) {
 
@@ -62,7 +64,7 @@
             echo '<td headers="date">' . date('jS M Y', strtotime($row['postDate'])) . '</td>';
             ?>
             <td headers="action">
-                <a href="./?action=edit&id=<?php echo $row['postID']; ?>">Edit</a> |
+                <a href="./?action=edit<?php echo $page; ?>&id=<?php echo $row['postID']; ?>">Edit</a> |
                 <a class="delpost" postID="<?php echo $row['postID']; ?>" postTitle="<?php echo $row['postTitle']; ?>" >Delete</a>   
             </td>
             <?php

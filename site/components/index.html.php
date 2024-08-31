@@ -16,17 +16,13 @@
         exit(); 
     }
 
-    $page = '';
-
-    if (isset($_GET["page"])) {
-        $page = '&page=' . $_GET["page"];
-    }
+    $page = isset($_GET["page"]) ? '&page=' . $_GET["page"] : '&page=' . 1;
 
     foreach ($this->result[isset($_GET["page"]) ? $_GET["page"] - 1 : 0] as $row) {
         
         echo '<article class="mb-3 p-3 d-flex flex-column justify-content-between">';
         echo '<div>';
-        echo '<h2><a href="?action=viewpost&id=' . $row['postID'] . $page . '">' . $row['postTitle'] . '</a></h2>';
+        echo '<h2><a href="?action=viewpost' . $page . '&id=' . $row['postID'] . '">' . $row['postTitle'] . '</a></h2>';
         echo '<p>Posted on ' . date('jS M Y H:i:s', strtotime($row['postDate'])) . '</p>';
         echo '<img width="50" height="50" alt="' . pathinfo($row["filename"], PATHINFO_FILENAME)  . '" src="data:' . $row["mimetype"] . ';base64,' . base64_encode($row['filedata']) . '" >';
         echo '<p class="p-md-3">' . $row['postDesc'] . '</p>';

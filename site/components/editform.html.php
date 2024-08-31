@@ -5,7 +5,7 @@
 	<h2 class="m-3 p-3">Edit Post</h2>
 
     <?php
-     if (isset($this->result->errorInfo)) {
+    if (isset($this->result->errorInfo)) {
 
         echo '<p class="error p-3">' . $this->result->getMessage() . '</p>';
         ?>
@@ -20,9 +20,10 @@
             echo '<p class="error p-3">' . $output . '</p>';
         }
     }
+    $page = isset($_GET["page"]) ? '&page=' . $_GET["page"] : '&page=' . 1;
     ?>
 
-    <form action='<?php echo '?action=edit&id=' . $this->result['postID']?>' method='post' enctype="multipart/form-data">
+    <form action='<?php echo '?action=edit' . $page .'&id=' . $this->result['postID'];?>' method='post' enctype="multipart/form-data">
 
         <input type='hidden' name='postID' value='<?php echo $this->result['postID'];?>'>
 

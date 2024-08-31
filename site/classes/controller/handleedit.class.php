@@ -5,6 +5,7 @@
  * @author Daniel Costello
  * @property private $model Holds the Blogposts model
  * @property private $post Holds the $_POST object
+ * @property private $page Holds the $_GET object
  * @property private $files Holds the $_FILES object
  *
  */
@@ -13,6 +14,7 @@ class Handleedit
 
     private $model;
     private $post;
+    private $page;
     private $files;
 
     public function __construct($model)
@@ -20,6 +22,7 @@ class Handleedit
 
         $this->model = $model;
         $this->post = $_POST;
+        $this->page = $_GET["page"];
         $this->files = $_FILES;
     }
 
@@ -76,7 +79,7 @@ class Handleedit
 
             if (isset($result)) {
 
-                return header("Location: ./?output=Post updated.");
+                return header("Location: ./?output=Post updated.&page=" . $this->page);
             }
         }
     }
