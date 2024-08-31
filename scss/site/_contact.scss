@@ -78,6 +78,7 @@
     input[type="submit"] {
         color: $c3;
         transition: color 0.3s ease;
+        font-weight: 400;
         &:hover,
         &:focus {
             color: transparentize($c3, 0.2);
