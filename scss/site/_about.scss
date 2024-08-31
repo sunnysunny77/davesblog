@@ -5,8 +5,7 @@
     background-position: 50% 10%;
     background-repeat: no-repeat;
     border: 2px solid $c1;
-    height: 60vh;
-    min-height: 355px;
+    min-height: 60vh;
     overflow: hidden;
     filter: grayscale(100%);
     @include min_xl {
@@ -17,7 +16,7 @@
         background-color: $c4;
         color: $c3;
         position: relative;
-        height: 33%;
+        min-height: 33%;
         @include min_xl {
             height: 100%;
         }
