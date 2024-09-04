@@ -146,7 +146,7 @@ class Blogposts extends Config
 
         try {
 
-            $sql = "SELECT postID, postTitle, postDesc, postDate, filename, mimetype, filedata FROM blog_posts INNER JOIN mimetypes ON mimetypes.mimetype_id = blog_posts.mimetype_id WHERE postTitle LIKE ? ORDER BY postID DESC";
+            $sql = "SELECT postID, postTitle, postDesc, postDate, filename, mimetype, filedata FROM blog_posts INNER JOIN mimetypes ON mimetypes.mimetype_id = blog_posts.mimetype_id WHERE postTitle LIKE CONCAT( '%',?,'%') ORDER BY postID DESC";
             $stmt = $this->Connect()->prepare($sql);
             $stmt->execute([$search]);
         } catch (PDOException $e) {
