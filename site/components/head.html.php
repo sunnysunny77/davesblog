@@ -27,6 +27,6 @@
         </ul>
     </nav>
     <header class="container-fluid d-flex justify-content-end">
-        <h1 class="m-4">Daves Blog</h1>
+        <h1 class="mx-3 my-4 m-md-4">Daves Blog</h1>
     </header>
     <main class="row g-0">
