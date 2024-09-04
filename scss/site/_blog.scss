@@ -33,6 +33,10 @@ article {
 }
 
 #blog-form {
+    width: 50%;
+    @include min_md {
+        width: initial;
+    }
     button {
         background-color: transparent;
         border: none;
