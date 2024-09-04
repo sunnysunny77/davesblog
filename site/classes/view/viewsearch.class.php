@@ -1,6 +1,6 @@
 <?php
 /**
- * Index View for index.php
+ * Viewsearch View for index.php
  *
  * @author Daniel Costello
  * @property private $result Holds result from the Blogposts model
@@ -8,18 +8,17 @@
  * @property private $title Holds title for the head
  *
  */
-class Index
+class Viewsearch
 {
 
     private $result;
     private $root = "./";
-    private $title = "Blog";
+    private $title = "Blog - Search";
 
-    public function __construct($model)
+    public function __construct($output)
     {
-    
-        $result = $model->GetIndexBlogPosts();
-        $this->result = empty($result) ? false : array_chunk($result, 4, true);
+
+        $this->result = empty($output) ? false : $output;
     }
 
     public function GetHead()
@@ -31,14 +30,17 @@ class Index
     public function GetBody()
     {
 
-        include_once "components/index.html.php";
-        include_once "components/pages.html.php";
-        include_once "components/top.html";
+        include_once "components/viewsearch.html.php";
+
+        if (!empty($this->result)) {
+
+            include_once "components/top.html";
+        }
     }
 
     public function GetFoot()
     {
-
+        
         include_once "components/foot.html.php";
     }
 }

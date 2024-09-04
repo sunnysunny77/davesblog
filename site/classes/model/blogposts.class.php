@@ -141,6 +141,22 @@ class Blogposts extends Config
         return $stmt->fetchAll();
     }
 
+    public function GetViewLikeBlogPosts($search)
+    {
+
+        try {
+
+            $sql = "SELECT postID, postTitle, postDesc, postDate, filename, mimetype, filedata FROM blog_posts INNER JOIN mimetypes ON mimetypes.mimetype_id = blog_posts.mimetype_id WHERE postTitle LIKE ? ORDER BY postID DESC";
+            $stmt = $this->Connect()->prepare($sql);
+            $stmt->execute([$search]);
+        } catch (PDOException $e) {
+
+            return $e;
+        }
+
+        return $stmt->fetchAll();
+    }
+
     public function GetViewPostBlogPosts($postID)
     {
 

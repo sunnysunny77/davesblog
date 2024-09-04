@@ -7,18 +7,17 @@ export const preload = () => {
   if(path.includes("admin")) {
 
     preload_image("../images/atom.svg");
-  } else {
+  } else if(path.includes("about")) {
 
-    preload_image("images/atom.svg");
-  }
-
-  if(path.includes("about")) {
-
-    preload_image("images/about.png");
-  }
-
-  if(path.includes("contact")) {
+    preload_image("./images/about.png");
+    preload_image("./images/atom.svg");
+  } else if(path.includes("contact")) {
     
-    preload_image("images/contact.png");
+    preload_image("./images/contact.png");
+    preload_image("./images/atom.svg");
+  } else {
+    
+    preload_image("./images/atom.svg");
+    preload_image("./images/search.svg");
   }
 };
