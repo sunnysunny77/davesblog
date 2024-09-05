@@ -18,7 +18,7 @@ class Viewsearch
     public function __construct($output)
     {
 
-        $this->result = empty($output) ? false : $output;
+        $this->result = empty($output[0][0]) ? false : $output;
     }
 
     public function GetHead()

@@ -23,7 +23,14 @@ class Handlesearch
     public function GetLikeBlogPosts()
     {
 
-        $result = $this->model->GetViewLikeBlogPosts($this->search);
+        $result = [];
+        $search = explode(" ", $this->search);
+        $count = count($search) - 1;
+
+        for ($index = 0; $index <= $count; $index++) {
+
+            $result[$index] = $this->model->GetViewLikeBlogPosts($search[$index]);
+        }
 
         if (isset($result->errorInfo)) {
 
