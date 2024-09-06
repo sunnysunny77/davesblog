@@ -7,6 +7,8 @@
     <meta name="description" content="<?php echo $this->title; ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo $this->root; ?>css/app.min.css">
+    <link rel="manifest" href="<?php echo $this->root; ?>manifest.json" />
+    <link rel="apple-touch-icon" href="<?php echo $this->root; ?>images/pwa-logo-small.png" />
 </head>
 <body id="top" class="d-flex flex-column p-2 p-md-3 px-xxl-5 py-xxl-4">
     <nav class="container-fluid g-0">
