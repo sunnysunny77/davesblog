@@ -14,6 +14,9 @@ self.addEventListener("install", (event) => {
     addResourcesToCache([
       "./",
       "./index.php",
+      "./about.php",
+      "./contact.php",
+      "./admin/index.php",
       "./css/app.min.css",
       "./js/app.min.js",
     ])
