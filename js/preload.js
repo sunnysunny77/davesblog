@@ -18,6 +18,5 @@ export const preload = () => {
   } else {
     
     preload_image("./images/atom.svg");
-    preload_image("./images/search.svg");
   }
 };
