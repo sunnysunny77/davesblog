@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <script src="<?php echo $this->root; ?>js/preload.js"></script>
     <link rel="preload" href="<?php echo $this->root; ?>font/OpenSans.ttf" as="font" type="font/ttf" crossorigin="">
     <title><?php echo $this->title; ?></title>
     <meta name="description" content="<?php echo $this->title; ?>">

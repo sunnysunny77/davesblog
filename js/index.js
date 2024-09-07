@@ -12,7 +12,6 @@
 //import "../node_modules/bootstrap/js/dist/tooltip";
 import { service_worker } from "./service_worker.js";
 import { events } from "./utillites.js";
-import { preload } from "./preload.js";
 import { deleteuserscript } from "./deleteuserscript.js";
 import { deletescript } from "./deletescript.js";
 import { contactscript } from "./contactscript.js";
@@ -22,6 +21,5 @@ events(window, "load", () => {
     contactscript();
     deletescript();
     deleteuserscript();
-    preload();
     service_worker();
 });
