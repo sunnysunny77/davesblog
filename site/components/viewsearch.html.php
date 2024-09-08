@@ -12,7 +12,7 @@
     }
     if ($this->result === false) {
     
-        echo  '<h3 class="m-3 p-3">Lost in space, No posts found </h3>';
+        echo  '<h3 class="m-3 p-3">Lost in space.. <br><br> No posts found </h3>';
         exit(); 
     }
 
