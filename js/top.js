@@ -10,7 +10,6 @@ export const top = () => {
       return;
     }
 
-    console.log(html.scrollHeight - 50, window.innerHeight)
     const height = () => {
 
         if (html.scrollHeight > window.innerHeight + 50) {
