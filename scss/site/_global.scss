@@ -15,8 +15,9 @@ a {
 }
 
 .pagefull {
+    max-height: 720px;
     .before {
-        padding: max(112.5px, 19vh);
+        padding: clamp(112.5px, 19vh, 205.2px);
         background-color: $c3;
         border-bottom-right-radius: 30px;
         border-bottom-left-radius: 30px;
