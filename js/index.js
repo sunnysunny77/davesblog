@@ -15,9 +15,11 @@ import { events } from "./utillites.js";
 import { deleteuserscript } from "./deleteuserscript.js";
 import { deletescript } from "./deletescript.js";
 import { contactscript } from "./contactscript.js";
+import { top } from "./top.js";
 
 events(window, "load", () => {
 
+    top();
     contactscript();
     deletescript();
     deleteuserscript();

@@ -40,6 +40,7 @@ class Viewpost
     {
 
         include_once "components/viewpost.html.php";
+        include_once "components/top.html";
     }
 
     public function GetFoot()
