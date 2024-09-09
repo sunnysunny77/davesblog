@@ -10,9 +10,9 @@ self.addEventListener("install", function(event) {
         "./admin/index.php",
         "./css/app.min.css",
         "./js/app.min.js",
-        "font/OpenSans.ttf",
-        "webfonts/fa-brands-400.woff2",
-        "webfonts/fa-solid-900.woff2",
+        "./font/OpenSans.ttf",
+        "./webfonts/fa-brands-400.woff2",
+        "./webfonts/fa-solid-900.woff2",
         "./images/about.webp",
         "./images/contact.webp",
       ]);
