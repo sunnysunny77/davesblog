@@ -1,9 +1,9 @@
 @import "variables";
-@import "font/font";
 @import "partials/breakpoints";
+@import "partials/boostrap-settings";
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
-//@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/variables-dark";
 @import "../node_modules/bootstrap/scss/maps";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/utilities";
@@ -40,6 +40,10 @@
 //@import "../node_modules/bootstrap/scss/placeholders";
 @import "../node_modules/bootstrap/scss/helpers";
 @import "../node_modules/bootstrap/scss/utilities/api";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "font/font";
 @import "site/global";
 @import "site/nav";
 @import "site/blog";

@@ -13,9 +13,9 @@ nav {
             &:nth-child(2),
             &:nth-child(4) {
                 border-right: none;
-                 @include min_md {
+                @include min_md {
                     border-right: 2px solid $c1;
-                 }
+                }
             }
             &:last-child {
                 border-right: none;
@@ -80,20 +80,17 @@ nav {
     .atom,
     .facebook,
     .twitter {
-        transition: fill 0.3s ease, background-color 0.3s ease;
-        width: 26px;
-        height: 26px;
-        padding: 3px;
+        transition:
+            color 0.3s ease,
+            background-color 0.3s ease;
+        font-size: 24px;
+        box-sizing: content-box;
         background-color: $c3;
-        path {
-            fill: $c4;
-        }
+        color: $c4;
         &:hover,
         &:focus {
             background-color: $c4;
-            path {
-                fill: $c3;
-            }
+            color: $c3;
         }
     }
 }

@@ -36,6 +36,7 @@
   },
   "homepage": "https://github.com/sunnysunny77/davesblog#readme",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "latest",
     "@rollup/plugin-babel": "latest",
     "@rollup/plugin-commonjs": "latest",
     "@rollup/plugin-terser": "latest",

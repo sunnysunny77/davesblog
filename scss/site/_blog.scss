@@ -41,20 +41,15 @@ article {
         background-color: transparent;
         border: none;
         outline: none;
-        svg {
-            transition: fill 0.3s ease;
-            width: 17px;
-            height: 17px;
+        .magnifying-glass {
+            transition: color 0.3s ease;
+            font-size: 21px;
             overflow: visible;
             vertical-align: text-top;
-            path {
-                fill: $c4;
-            }
+            color: $c4;
             &:hover,
             &:focus {
-                path {
-                    fill: $c2;
-                }
+                color: lighten($c2, 12%);
             }
         }
     }
