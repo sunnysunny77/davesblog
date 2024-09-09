@@ -11,7 +11,6 @@ const preload = (href, as) => {
 
 const path = location.pathname;
 
-
 const fonts = [
   "font/OpenSans.ttf",
   "webfonts/fa-brands-400.woff2",
