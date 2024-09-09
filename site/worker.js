@@ -9,7 +9,12 @@ self.addEventListener("install", function(event) {
         "./contact.php",
         "./admin/index.php",
         "./css/app.min.css",
-        "./js/app.min.js"
+        "./js/app.min.js",
+        "font/OpenSans.ttf",
+        "webfonts/fa-brands-400.woff2",
+        "webfonts/fa-solid-900.woff2",
+        "./images/about.webp",
+        "./images/contact.webp",
       ]);
     })
   );
@@ -17,28 +22,16 @@ self.addEventListener("install", function(event) {
 
 self.addEventListener("fetch", event => {
 
-  if (event.request.destination === "document") {
+  event.respondWith(caches.open("v1").then((cache) => {
 
-    event.respondWith(fetch(event.request).catch(() => {
+      return fetch(event.request).then((networkResponse) => {
 
-          return caches.match(event.request);
-      })
-    );
-  } else {
+        cache.put(event.request, networkResponse.clone());
 
-    event.respondWith(caches.open("v1").then((cache) => {
+        return networkResponse;
+      }).catch(() => {
 
-      return cache.match(event.request).then((cachedResponse) => {
-
-        const fetchedResponse = fetch(event.request).then((networkResponse) => {
-
-          cache.put(event.request, networkResponse.clone());
-
-          return networkResponse;
-        });
-
-        return cachedResponse || fetchedResponse;
-      });
-    }));
-  }
+        return caches.match(event.request);
+    } );
+  }));
 });
