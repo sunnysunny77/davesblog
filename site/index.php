@@ -4,7 +4,7 @@ include_once "includes/classes.inc.php";
 // index page
 
 // search action
-if (isset($_GET["action"]) && $_GET["action"] == "search" && isset($_POST['submit'])) {
+if (isset($_GET["action"]) && $_GET["action"] == "search" && isset($_GET['search'])) {
 
     $model = new Blogposts();
     $controller = new Handlesearch($model);

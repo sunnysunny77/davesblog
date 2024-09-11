@@ -10,12 +10,7 @@
         exit();
     }
 
-    $page = '';
-
-    if (isset($_GET["page"])) {
-        $page = '?&page=' . $_GET["page"];
-    }
-
+    $page = isset($_GET["page"]) ? '?page=' . $_GET["page"] : '?page=' . 1;
 
         echo '<article class="col-12 p-3 me-0">';
         echo '<h2>' . $this->result['postTitle'] . '</h2>';

@@ -25,9 +25,9 @@
         </ul>
     </nav>
     <header class="container-fluid d-flex flex-column-reverse flex-md-row justify-content-md-between">
-        <form id="blog-form" class="d-flex flex-row-reverse flex-md-row align-self-end mb-1" action="?action=search" method="post">
+        <form id="blog-form" class="d-flex flex-row-reverse flex-md-row align-self-end mb-1" method="get">
             <label for="search" class="d-none">Search title</label>
-            <button aria-label="Search title" class="p-0 ms-2 me-2 ms-md-0" type="submit" name="submit">
+            <button aria-label="Search title" class="p-0 ms-2 me-2 ms-md-0" type="submit" name="action" value="search">
                 <i class="magnifying-glass fa-solid fa-magnifying-glass rounded-circle"></i>
             </button>
             <input aria-label="Search title" class="text-end text-md-start w-100" id="search" type="text" name="search" placeholder="Search title" />

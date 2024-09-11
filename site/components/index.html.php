@@ -27,7 +27,7 @@
         echo '<img width="50" height="50" alt="' . pathinfo($row["filename"], PATHINFO_FILENAME)  . '" src="data:' . $row["mimetype"] . ';base64,' . base64_encode($row['filedata']) . '" >';
         echo '<p class="p-md-3">' . $row['postDesc'] . '</p>';
         echo '</div>';
-        echo '<a href="?action=viewpost&id=' . $row['postID'] . $page . '">Read Article</a>';
+        echo '<a href="?action=viewpost' . $page . '&id=' . $row['postID'] . '">Read Article</a>';
         echo '</article>';
     }
 

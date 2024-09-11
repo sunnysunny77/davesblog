@@ -4,7 +4,7 @@
  *
  * @author Daniel Costello
  * @property private $model Holds the Blogposts model
- * @property private $search Holds post value for search
+ * @property private $search Holds get value for search
  *
  */
 class Handlesearch
@@ -17,7 +17,7 @@ class Handlesearch
     {
 
         $this->model = $model;
-        $this->search = trim($_POST['search']);
+        $this->search = trim($_GET['search']);
     }
 
     public function GetLikeBlogPosts()

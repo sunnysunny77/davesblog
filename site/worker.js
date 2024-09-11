@@ -3,6 +3,8 @@ const cacheName = `davesblog-v${version}`;
 
 const cacheAssets = [
   "./",
+  "./favicon.ico",
+  "./manifest.json",
   "./index.php",
   "./about.php",
   "./contact.php",
@@ -14,6 +16,8 @@ const cacheAssets = [
   "./webfonts/fa-solid-900.woff2",
   "./images/about.webp",
   "./images/contact.webp",
+  "./images/pwa-logo-small.webp",
+  "./images/pwa-logo.webp"
 ];
 
 self.addEventListener("install", (event) => {
