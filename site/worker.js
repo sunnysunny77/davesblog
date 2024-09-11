@@ -1,7 +1,7 @@
 const version = 1;
 const cacheName = `davesblog-v${version}`;
 
-const cacheAssets = [
+const resources = [
   "./",
   "./favicon.ico",
   "./manifest.json",
@@ -21,55 +21,90 @@ const cacheAssets = [
   "./error.php"
 ];
 
+const installResources = async (resources) => {
+
+  const cache = await caches.open(cacheName);
+  await cache.addAll(resources);
+};
+
 self.addEventListener("install", (event) => {
 
   console.log("Service worker is installed");
+  
+  self.skipWaiting();
 
-  event.waitUntil(caches.open(cacheName).then((cache) => {
-
-    console.log("Caching assets");
-    cache.addAll(cacheAssets);
-  }).then(() => {
-
-    self.skipWaiting();
-  }));
+  event.waitUntil(installResources(resources));
 });
+
+const admin = async (req) => {
+
+  try {
+
+    const res = await fetch(req);
+
+    if (res) {
+      
+      return res;
+    }
+
+  } catch (error) {
+
+    console.log(error);
+
+    return caches.match("./error.php");
+  }
+};
+
+const first = async (req) => {
+
+  try {
+
+    const res = await fetch(req);
+
+    if (res) {
+
+      const cache = await caches.open(cacheName);
+
+      if (cache) {
+
+        cache.put(req, res.clone());
+      }
+
+      return res;
+    }
+
+  } catch (error) {
+
+    console.log(error);
+
+    const cache = await caches.match(req);
+      
+    if (cache) {
+
+      return cache;
+    }
+
+    if (req.mode === "navigate") {
+
+      return caches.match("./error.php");
+    }
+
+    return new Response("Network error happened", {
+      status: 408,
+      headers: { "Content-Type": "text/plain" },
+    });
+  }
+};
 
 self.addEventListener("fetch", (event) => {
 
   console.log("Fetching via Service worker");
 
   if (event.request.url.match(/admin/)) {
-    
-    event.respondWith(fetch(event.request).then((networkResponse) => {
-  
-    return networkResponse;   
- 
-    }).catch(() => {
-      
-      return caches.open(cacheName).then((cache) => {
 
-        return cache.match("./error.php");
-      });
-    }));
+    event.respondWith(admin(event.request));
   } else {
-
-    event.respondWith(fetch(event.request).then((networkResponse) => {
-
-      return caches.open(cacheName).then((cache) => {
-
-        cache.put(event.request, networkResponse.clone());
-        return networkResponse;
-      });
-    }).catch( async () => {
-      
-      const match = await caches.match(event.request);
-      
-      if (match) {
-        return match;
-      }
-      
-      return caches.match("./error.php");
-    }));
+    
+    event.respondWith(first(event.request));
   }
 });

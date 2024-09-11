@@ -12,5 +12,6 @@
     </p>
 
     <?php header( "refresh:3;url=../" ); ?>
+    
 </body>
 </html>

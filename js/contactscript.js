@@ -9,24 +9,32 @@ export const contactscript = () => {
     return;
   }
 
-  events(contact, "submit", (e) => {
-
-    const formData = new FormData(e.currentTarget);
-
-    fetch(
-      "./cont.php",
-      {
-        method: "POST",
-        body: formData
-      }
-    ).then((res) => {
-      return res.text();
-    }).then((value) => {
-      sent.innerHTML = value;
-    }).catch(() => {
-      sent.innerHTML = "Sorry, mail offline";
-    });
+  events(contact, "submit", async (e) => {
 
     e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+    const url = "./cont.php";
+
+    try {
+
+      const res = await fetch(url, { method: "POST", body: formData });
+
+      if (!res.ok) {
+
+        throw new Error("Offline");
+      }
+  
+      const text = await res.text();
+
+       if (text) {
+
+        sent.innerHTML =  text;
+       }
+
+    } catch (error) {
+
+      sent.innerHTML = error;
+    }
   },null);
 };

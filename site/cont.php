@@ -2,7 +2,7 @@
 <html>
 <body>
 <?php
-$res;
+$res = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_REQUEST["name"];
     $email = $_REQUEST["email"];
