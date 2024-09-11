@@ -8,7 +8,6 @@ const cacheAssets = [
   "./index.php",
   "./about.php",
   "./contact.php",
-  "./admin/index.php",
   "./css/app.min.css",
   "./js/app.min.js",
   "./font/OpenSans.ttf",
@@ -37,6 +36,11 @@ self.addEventListener("install", (event) => {
 self.addEventListener("fetch", (event) => {
 
   console.log("Fetching via Service worker");
+
+  if (event.request.url.match(/admin/)) {
+    
+    return;
+  }
 
   event.respondWith(fetch(event.request).then((networkResponse) => {
     
