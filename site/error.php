@@ -8,7 +8,7 @@
 <body style="display: flex; justify-content: center; font-family: sans-serif; padding: 5rem 1rem;">
     
     <p style="text-align: center;">
-        Admin area not available offline.. Please wait to be redirected
+        Area not available offline.. Please wait to be redirected
     </p>
 
     <?php header( "refresh:3;url=../" ); ?>

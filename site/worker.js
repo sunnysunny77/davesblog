@@ -61,9 +61,15 @@ self.addEventListener("fetch", (event) => {
         cache.put(event.request, networkResponse.clone());
         return networkResponse;
       });
-    }).catch(() => {
+    }).catch( async () => {
       
-      return caches.match(event.request);
+      const match = await caches.match(event.request);
+      
+      if (match) {
+        return match;
+      }
+      
+      return caches.match("./error.php");
     }));
   }
 });
