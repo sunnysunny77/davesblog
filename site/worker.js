@@ -17,7 +17,8 @@ const cacheAssets = [
   "./images/about.webp",
   "./images/contact.webp",
   "./images/pwa-logo-small.webp",
-  "./images/pwa-logo.webp"
+  "./images/pwa-logo.webp",
+  "./error.php"
 ];
 
 self.addEventListener("install", (event) => {
@@ -40,18 +41,29 @@ self.addEventListener("fetch", (event) => {
 
   if (event.request.url.match(/admin/)) {
     
-    return;
+    event.respondWith(fetch(event.request).then((networkResponse) => {
+  
+    return networkResponse;   
+ 
+    }).catch(() => {
+      
+      return caches.open(cacheName).then((cache) => {
+
+        return cache.match("./error.php");
+      });
+    }));
+  } else {
+
+    event.respondWith(fetch(event.request).then((networkResponse) => {
+
+      return caches.open(cacheName).then((cache) => {
+
+        cache.put(event.request, networkResponse.clone());
+        return networkResponse;
+      });
+    }).catch(() => {
+      
+      return caches.match(event.request);
+    }));
   }
-
-  event.respondWith(fetch(event.request).then((networkResponse) => {
-    
-    return caches.open(cacheName).then((cache) => {
-
-      cache.put(event.request, networkResponse.clone());
-      return networkResponse;
-    });
-  }).catch(() => {
-    
-    return caches.match(event.request);
-  }));
 });
