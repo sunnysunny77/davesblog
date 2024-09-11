@@ -10,6 +10,7 @@ const cacheAssets = [
   "./contact.php",
   "./css/app.min.css",
   "./js/app.min.js",
+  "./js/preload.js",
   "./font/OpenSans.ttf",
   "./webfonts/fa-brands-400.woff2",
   "./webfonts/fa-solid-900.woff2",
