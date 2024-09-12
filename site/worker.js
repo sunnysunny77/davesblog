@@ -18,7 +18,7 @@ const resources = [
   "./images/contact.webp",
   "./images/pwa-logo-small.webp",
   "./images/pwa-logo.webp",
-  "./error.php"
+  "./fallback.php"
 ];
 
 const installResources = async (resources) => {
@@ -51,7 +51,17 @@ const admin = async (req) => {
 
     console.log(error);
 
-    return caches.match("./error.php");
+    const fallback = await caches.match("./fallback.php");
+
+    if (fallback) {
+
+      return fallback;
+    }
+
+    return new Response("Network error happened", {
+      status: 408,
+      headers: { "Content-Type": "text/plain" },
+    });
   }
 };
 
@@ -86,7 +96,12 @@ const first = async (req) => {
 
     if (req.mode === "navigate") {
 
-      return caches.match("./error.php");
+      const fallback = await caches.match("./fallback.php");
+
+      if (fallback) {
+
+        return fallback;
+      }
     }
 
     return new Response("Network error happened", {
