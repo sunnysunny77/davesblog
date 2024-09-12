@@ -4,12 +4,34 @@
     <meta charset="utf-8">
     <title>Offline</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/app.min.css">
+    <style>
+        div {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            padding: 0 1.5rem;
+        }
+        img {
+            display: block;
+            margin: auto;
+        }
+        h1{
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;  
+        }
+    </style>
 </head>
-<body style="display: flex; justify-content: center; font-family: sans-serif; padding: 5rem 1rem;">
+<body>
     
-    <p style="text-align: center;">
-        Area not available offline.. Please wait to be redirected
-    </p>
+    <div style="text-align: center;">
+
+        <img width="192" height="192" src="/images/pwa-logo-small.webp" alt="app logo"/>
+
+        <h1> Area not available offline.. Please wait to be redirected </h1>
+
+    </div>
 
     <?php header( "refresh:3;url=../" ); ?>
     
