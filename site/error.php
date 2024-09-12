@@ -9,12 +9,14 @@
         div {
             display: flex;
             flex-direction: column; 
-            align-items: center; 
+            align-items: center;
+            justify-content: center; 
             padding: 0 1.5rem;
+            min-height: 100vh;
         }
         img {
             display: block;
-            margin: auto;
+            margin: 0 auto;
         }
         h1{
             text-align: center;
