@@ -36,16 +36,19 @@ self.addEventListener("install", (event) => {
   event.waitUntil(installResources(resources));
 });
 
+const cache = async (req, res) => {
+
+  const cache = await caches.open(cacheName);
+  await cache.put(req, res);
+};
+
 const admin = async (req) => {
 
   try {
 
     const res = await fetch(req);
-
-    if (res) {
       
-      return res;
-    }
+    return res;
 
   } catch (error) {
 
@@ -71,17 +74,9 @@ const first = async (req) => {
 
     const res = await fetch(req);
 
-    if (res) {
+    cache(req, res.clone());
 
-      const cache = await caches.open(cacheName);
-
-      if (cache) {
-
-        cache.put(req, res.clone());
-      }
-
-      return res;
-    }
+    return res;
 
   } catch (error) {
 
