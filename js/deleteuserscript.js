@@ -17,7 +17,7 @@ export const deleteuserscript = () => {
   
       if (confirm(`Are you sure you want to delete '${  title  }'`))
       {
-        window.location.href = `./?action=users&id=${  id}`;
+        window.location.href = `./?action=users&id=${id}`;
       }
     },null);
   }
