@@ -1,13 +1,9 @@
-<p class="text-center">Page</p>
+<?php    
 
-<div aria-label="pages" id="pages">
-
-    <?php
-
-    $page = 1;
-    $prev = 1;
-    $next = 2;
     $count = count($this->result);
+    $page = 1;
+    $prev = $count;
+    $next = 2;
 
     if (isset($_GET["page"])) {
 
@@ -28,6 +24,14 @@
 
         $next = 1;
     }
+
+?>
+
+<p class="text-center">Page</p>
+
+<div aria-label="pages" id="pages">
+
+    <?php
 
     echo '<a aria-label="previous" href="' .  $_SERVER['PHP_SELF'] . '?page=' .  $prev . '"> < </a>';
     
