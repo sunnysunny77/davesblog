@@ -33,13 +33,11 @@
     
     for ($i = 1; $i <= $count; $i++) {
 
-        if ($i != $page && $i == $page + 1 || $i != $page && $i == $page - 1 || $i != $page && $i == $page + 2 || $i != $page && $i == $page - 2 ) {
+        if ($i == $page)  {
 
-            echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';   
-        } else if ($i == $count - 3 && $i != $page || $i == $count - 4 && $i != $page) {
+            echo '<a class="current" href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';   
 
-            echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';   
-        } else if ($i != $page && $i == 4 || $i != $page && $i == 5) {
+        } else if (($i <= 3 && $page < 2) || ($i >= $count - 2 && $i < $page) || ($i >= $page - 1 && $i <= $page + 1)) {
 
             echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';   
         }
