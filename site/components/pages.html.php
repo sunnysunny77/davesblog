@@ -4,6 +4,7 @@
     $page = 1;
     $prev = $count;
     $next = 2;
+    $self = $_SERVER['PHP_SELF'];
 
     if (isset($_GET["page"])) {
 
@@ -24,7 +25,7 @@
 
         $next = 1;
     }
-
+    
 ?>
 
 <p class="text-center">Page</p>
@@ -33,21 +34,46 @@
 
     <?php
 
-    echo '<a aria-label="previous" href="' .  $_SERVER['PHP_SELF'] . '?page=' .  $prev . '"> < </a>';
-    
-    for ($i = 1; $i <= $count; $i++) {
+        echo '<a aria-label="previous" href="' .  $self . '?page=' .  $prev . '"> < </a>';
 
-        if ($i == $page)  {
+        if ($count < 3) {
 
-            echo '<a class="current" href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';   
+            for ($i = 1; $i <= $count; $i++) {
 
-        } else if (($i <= 3 && $page < 2) || ($i >= $count - 2 && $i < $page) || ($i >= $page - 1 && $i <= $page + 1)) {
+                if ($i == $page) {
 
-            echo '<a href="' .  $_SERVER['PHP_SELF'] . '?page=' . $i . '">' . $i . '</a>';   
+                    echo '<a class="current" href="' .  $self . '?page=' . $i . '">' . $i . '</a>';
+                } else {
+
+                    echo '<a href="' .  $self . '?page=' . $i . '">' . $i . '</a>';
+                }
+            }
+        } else {
+
+            if ($page == $count) {
+
+                echo '<a href="' .  $self . '?page=' . $page - 2 . '">' . $page - 2 . '</a>';
+            }
+
+            if ($page - 1 != 0) {
+
+                echo '<a href="' .  $self . '?page=' . $page - 1 . '">' . $page - 1 . '</a>';   
+            }
+
+            echo '<a class="current" href="' .  $self . '?page=' . $page . '">' . $page . '</a>';
+
+            if ($page != $count) {
+
+                echo '<a href="' .  $self . '?page=' . $page + 1 . '">' . $page + 1 . '</a>';
+            }
+            
+            if ($page - 1 == 0) {
+
+                echo '<a href="' .  $self . '?page=' . $page + 2 . '">' . $page + 2 . '</a>';   
+            }
         }
-    }
 
-    echo '<a aria-label="next" href="' .  $_SERVER['PHP_SELF'] . '?page=' . $next . '"> > </a>';
+        echo '<a aria-label="next" href="' .  $self . '?page=' . $next . '"> > </a>';
 
     ?>
 
