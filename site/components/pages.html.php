@@ -1,6 +1,7 @@
 <?php    
 
-    $count = count($this->result);
+    $result = $this->result;
+    $count = count($result);
     $page = 1;
     $prev = $count;
     $next = 2;
@@ -25,6 +26,11 @@
 
         $next = 1;
     }
+
+    function is_page($result, $page) {
+
+        return array_key_exists($page - 1, $result);
+    }
     
 ?>
 
@@ -36,43 +42,48 @@
 
         echo '<a aria-label="previous" href="' .  $self . '?page=' .  $prev . '"> < </a>';
 
-        if ($count < 3) {
+            if (!is_page($result, $page + 1) && is_page($result, $page - 4)) {
 
-            for ($i = 1; $i <= $count; $i++) {
-
-                if ($i == $page) {
-
-                    echo '<a class="current" href="' .  $self . '?page=' . $i . '">' . $i . '</a>';
-                } else {
-
-                    echo '<a href="' .  $self . '?page=' . $i . '">' . $i . '</a>';
-                }
+                echo '<a href="' .  $self . '?page=' . $page - 4 . '">' . $page - 4 . '</a>';
             }
-        } else {
 
-            if ($page == $count) {
+            if (!is_page($result, $page + 2) && is_page($result, $page - 3)) {
+                
+                echo '<a href="' .  $self . '?page=' . $page - 3  . '">' . $page - 3 . '</a>';
+            }
+
+            if (is_page($result, $page - 2)) {
 
                 echo '<a href="' .  $self . '?page=' . $page - 2 . '">' . $page - 2 . '</a>';
             }
 
-            if ($page - 1 != 0) {
-
-                echo '<a href="' .  $self . '?page=' . $page - 1 . '">' . $page - 1 . '</a>';   
+            if (is_page($result, $page - 1)) {
+                
+                echo '<a href="' .  $self . '?page=' . $page - 1 . '">' . $page - 1 . '</a>';
             }
-
+      
             echo '<a class="current" href="' .  $self . '?page=' . $page . '">' . $page . '</a>';
 
-            if ($page != $count) {
+            if (is_page($result, $page + 1)) {
 
                 echo '<a href="' .  $self . '?page=' . $page + 1 . '">' . $page + 1 . '</a>';
             }
-            
-            if ($page - 1 == 0) {
 
-                echo '<a href="' .  $self . '?page=' . $page + 2 . '">' . $page + 2 . '</a>';   
+            if (is_page($result, $page + 2)) {
+                
+                echo '<a href="' .  $self . '?page=' . $page + 2 . '">' . $page + 2 . '</a>';
             }
-        }
 
+            if (!is_page($result, $page - 2) && is_page($result, $page + 3)) {
+
+                echo '<a href="' .  $self . '?page=' . $page + 3 . '">' . $page + 3 . '</a>';
+            }
+
+            if (!is_page($result, $page - 1) && is_page($result, $page + 4)) {
+                
+                echo '<a href="' .  $self . '?page=' . $page + 4 . '">' . $page + 4 . '</a>';
+            }
+ 
         echo '<a aria-label="next" href="' .  $self . '?page=' . $next . '"> > </a>';
 
     ?>
