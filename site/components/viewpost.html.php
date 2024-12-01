@@ -12,7 +12,7 @@
 
     $page = isset($_GET["page"]) ? '?page=' . $_GET["page"] : '?page=' . 1;
 
-        echo '<article class="col-12 row justify-content-end me-0 p-5 g-0">';
+        echo '<article class="col-12 row justify-content-end me-0 p-4 p-sm-5 g-0">';
         echo '<div class="col-12 order-1">';
         echo '<h2>' . $this->result['postTitle'] . '</h2>';
         echo '<p>Posted on ' . date('jS M Y', strtotime($this->result['postDate'])) . '</p>';

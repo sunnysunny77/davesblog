@@ -20,7 +20,7 @@
 
     foreach ($this->result[isset($_GET["page"]) ? $_GET["page"] - 1 : 0] as $row) {
         
-        echo '<article class="row justify-content-end mb-3 p-5 g-0">';
+        echo '<article class="row justify-content-end mb-3 p-4 p-sm-5 g-0">';
         echo '<div class="col-12 order-1">';
         echo '<h2><a href="?action=viewpost' . $page . '&id=' . $row['postID'] . '">' . $row['postTitle'] . '</a></h2>';
         echo '<p>Posted on ' . date('jS M Y H:i:s', strtotime($row['postDate'])) . '</p>';
