@@ -12,7 +12,6 @@ export const top = () => {
 
     const height = () => {
 
-        console.log(html.scrollHeight,  window.innerHeight)
         if (html.scrollHeight > window.innerHeight) {
 
             top.style.display = "flex";

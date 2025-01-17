@@ -21,7 +21,7 @@
 
     foreach ($this->result[isset($_GET["page"]) ? $_GET["page"] - 1 : 0] as $key => $row) {
         
-        if ($key === 0) {
+        if ($key % 5 === 0) {
 
             $width = "full";
         } else {
