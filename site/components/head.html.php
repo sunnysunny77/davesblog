@@ -10,7 +10,7 @@
     <link rel="manifest" href="<?php echo $this->root; ?>manifest.json" />
     <link rel="apple-touch-icon" href="<?php echo $this->root; ?>images/pwa-logo-small.webp" />
 </head>
-<body id="top" class="d-flex flex-column p-2 p-md-3 px-xxl-5 py-xxl-4">
+<body id="top" class="d-flex flex-column p-2 p-md-3">
     <nav class="container-fluid g-0">
         <ul class="row m-0 p-0">
             <li class="col-6 col-md-2 p-2"><a class="p-2" href="<?php echo $this->root; ?>index.php">Blog<span>01</span></a></li>
