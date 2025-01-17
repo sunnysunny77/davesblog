@@ -1,4 +1,4 @@
-<div class="d-flex flex-wrap pt-3">
+<div class="d-flex flex-wrap justify-content-between">
     
     <?php
     
@@ -22,7 +22,8 @@
 
         foreach ($this->result[$index] as $row) {
             
-            echo '<article class="mb-3 p-3 d-flex flex-column justify-content-between">';
+            echo '<div class="blog">';
+            echo '<article class="p-3 d-flex flex-column justify-content-between">';
             echo '<div>';
             echo '<h2><a href="?action=viewpost&id=' . $row['postID'] . '">' . $row['postTitle'] . '</a></h2>';
             echo '<p>Posted on ' . date('jS M Y H:i:s', strtotime($row['postDate'])) . '</p>';
@@ -31,6 +32,7 @@
             echo '</div>';
             echo '<a href="?action=viewpost&id=' . $row['postID'] . '">Read Article</a>';
             echo '</article>';
+            echo '</div>';
 
         }
 

@@ -1,5 +1,4 @@
 #contactimg {
-    border-radius: 30px;
     background-image: url(../images/contact.webp);
     background-size: max(100px, 17vh);
     background-position: 50% 10%;
@@ -13,6 +12,8 @@
     @include min_xl {
         background-position: 12.5% 50%;
         background-size: 25%;
+        border-left: none;
+        border-top: none;
     }
     .after {
         background-color: $c4;
@@ -45,7 +46,12 @@
 #contact {
     background-color: $c4;
     color: $c3;
-    border-radius: 30px;
+    border-left: 2px solid $c1;
+    border-right: 2px solid $c1;
+    border-bottom: 2px solid $c1;
+    @include min_xl {
+        border-right: none;
+    }
     fieldset {
         width: 88%;
         @include min_xl {
@@ -73,7 +79,6 @@
     }
     input,
     textarea {
-        border-radius: 10px;
         border: none;
     }
     input[type="submit"] {

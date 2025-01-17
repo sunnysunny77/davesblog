@@ -19,7 +19,7 @@ class Index
     {
     
         $result = $model->GetIndexBlogPosts();
-        $this->result = empty($result) ? false : array_chunk($result, 4, true);
+        $this->result = empty($result) ? false : array_chunk($result, 5, true);
     }
 
     public function GetHead()

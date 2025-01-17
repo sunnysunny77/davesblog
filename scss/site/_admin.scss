@@ -7,8 +7,9 @@
 #wrapper {
 	display: flex;
 	flex-direction: column;
-	border-radius: 20px;
-	border: 2px solid $c1;
+    border-left: 2px solid $c1;
+    border-right: 2px solid $c1;
+    border-bottom: 2px solid $c1;
 	a {
 		color: $c4;
 		text-decoration: none;
@@ -95,7 +96,6 @@ form {
 		margin-top: 1rem;
 		background-color: transparent;
 		border: 1px solid $c1;
-		border-radius: 10px;
 		margin-bottom: 1rem;
 		color: $c1;
 		font-weight: 400;

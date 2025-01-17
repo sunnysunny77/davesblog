@@ -34,7 +34,7 @@
     
 ?>
 
-<p class="text-center">Page</p>
+<p class="text-center my-5 mb-1">Page</p>
 
 <div aria-label="pages" id="pages">
 

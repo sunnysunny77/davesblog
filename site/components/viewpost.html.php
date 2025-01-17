@@ -1,4 +1,4 @@
-<div class="row pt-3 g-0">
+<div>
     
     <?php
     if (isset($this->result->errorInfo)) {
@@ -12,7 +12,8 @@
 
     $page = isset($_GET["page"]) ? '?page=' . $_GET["page"] : '?page=' . 1;
 
-        echo '<article class="col-12 row justify-content-end me-0 p-4 p-sm-5 g-0">';
+        echo '<div class="blog full">';
+        echo '<article class="row justify-content-end me-0 p-4 p-sm-5 g-0">';
         echo '<div class="col-12 order-1">';
         echo '<h2>' . $this->result['postTitle'] . '</h2>';
         echo '<div class="d-flex justify-content-between">';
@@ -27,6 +28,7 @@
         echo '<p class="w-100 text-end m-0">' . $this->result['postCont'] . '</p>';
         echo '</div>';
         echo '</article>';
+        echo '</div>';
     ?>
 
 </div>

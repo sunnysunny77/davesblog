@@ -21,7 +21,7 @@ class Admin
     {
 
         $result = $model->GetAdminBlogPosts();
-        $this->result = empty($result) ? false : array_chunk($result, 4, true);
+        $this->result = empty($result) ? false : array_chunk($result, 5, true);
         $this->output = $output;
     }
 

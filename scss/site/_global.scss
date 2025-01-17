@@ -19,18 +19,12 @@ a {
     .before {
         padding: clamp(112.5px, 19vh, 205.2px);
         background-color: $c3;
-        border-bottom-right-radius: 30px;
-        border-bottom-left-radius: 30px;
         border-bottom: 2px solid $c1;
         border-right: 2px solid $c1;
         border-left: 2px solid $c1;
         @include min_xl {
             border-top: 2px solid $c1;
             border-bottom: initial;
-            border-bottom-right-radius: initial;
-            border-bottom-left-radius: initial;
-            border-top-right-radius: 30px;
-            border-top-left-radius: 30px;
         }
         &::before {
             position: absolute;
@@ -53,18 +47,12 @@ a {
     .content {
         color: $c3;
         background-color: $c4;
-        border-top-right-radius: 30px;
-        border-top-left-radius: 30px;
         border-right: 2px solid $c1;
         border-left: 2px solid $c1;
         border-top: 2px solid $c1;
         @include min_xl {
             border-bottom: 2px solid $c1;
             border-top: initial;
-            border-top-right-radius: initial;
-            border-top-left-radius: initial;
-            border-bottom-right-radius: 30px;
-            border-bottom-left-radius: 30px;
         }
         > span {
             font-weight: 600;
