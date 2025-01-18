@@ -34,13 +34,11 @@
     
 ?>
 
-<p class="text-center my-5 mb-1">Page</p>
-
-<div aria-label="pages" id="pages">
+<div class="mt-4" aria-label="pages" id="pages">
 
     <?php
 
-        echo '<a aria-label="previous" href="' .  $self . '?page=' .  $prev . '"> < </a>';
+        echo '<a aria-label="previous" href="' .  $self . '?page=' .  $prev . '"> <i class="fa-solid fa-angle-left"></i> </a>';
 
             if (!is_page($result, $page + 1) && is_page($result, $page - 4)) {
 
@@ -84,7 +82,7 @@
                 echo '<a href="' .  $self . '?page=' . $page + 4 . '">' . $page + 4 . '</a>';
             }
  
-        echo '<a aria-label="next" href="' .  $self . '?page=' . $next . '"> > </a>';
+        echo '<a aria-label="next" href="' .  $self . '?page=' . $next . '"> <i class="fa-solid fa-angle-right"></i>  </a>';
 
     ?>
 

@@ -10,9 +10,9 @@
     <link rel="manifest" href="<?php echo $this->root; ?>manifest.json" />
     <link rel="apple-touch-icon" href="<?php echo $this->root; ?>images/pwa-logo-small.webp" />
 </head>
-<body id="top" class="d-flex flex-column p-2 p-md-3">
+<body id="top" class="p-2 p-md-3">
     <nav class="container-fluid g-0">
-        <ul class="row m-0 p-0">
+        <ul class="row m-0 p-0 g-0">
             <li class="col-6 col-md-2 p-2"><a class="p-2" href="<?php echo $this->root; ?>index.php">Blog<span>01</span></a></li>
             <li class="col-6 col-md-2 p-2"><a class="p-2" href="<?php echo $this->root; ?>about.php">About<span>02</span></a></li>
             <li class="col-6 col-md-2 p-2"><a class="p-2" href="<?php echo $this->root; ?>contact.php">Contact<span>03</span></a></li>
@@ -24,7 +24,7 @@
             </li>
         </ul>
     </nav>
-    <header class="container-fluid d-flex flex-column-reverse flex-md-row justify-content-md-between">
+    <header class="container-fluid d-flex flex-column-reverse flex-md-row justify-content-md-between pb-1 ps-2 pe-3 pe-xl-4 g-0">
         <form id="blog-form" class="d-flex flex-row-reverse flex-md-row align-self-end mb-1" method="get">
             <label for="search" class="d-none">Search title</label>
             <button aria-label="Search title" class="p-0 ms-2 me-2 ms-md-0" type="submit" name="action" value="search">
@@ -32,6 +32,7 @@
             </button>
             <input aria-label="Search title" class="text-end text-md-start w-100" id="search" type="text" name="search" placeholder="Search title" />
         </form>
-        <h1 class="mx-3 my-4 m-md-4 text-end">Daves Blog</h1>
+        <h1 class="my-4 my-md-4 text-end">Daves Blog</h1>
     </header>
-    <main class="row g-0">
+    <main>
+        <div class="row g-0">
