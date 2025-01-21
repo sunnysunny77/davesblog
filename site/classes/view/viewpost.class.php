@@ -6,7 +6,8 @@
  * @property private $result Holds result from the Blogposts model
  * @property private $root Holds root directory for the head
  * @property private $title Holds title for the head
- *
+ * @property private $page Holds page for the link
+ * 
  */
 class Viewpost
 {
@@ -14,6 +15,7 @@ class Viewpost
     private $result;
     private $root = "./";
     private $title;
+    private $page;
 
     public function __construct($model)
     {
@@ -28,6 +30,8 @@ class Viewpost
         }
 
         $this->title = isset($this->result->errorInfo) ?  "Blog" : "Blog - " . $this->result['postTitle'];
+        
+        $this->page = isset($_GET["page"]) ? '?page=' . $_GET["page"] : '&page=' . 1;
     }
 
     public function GetHead()

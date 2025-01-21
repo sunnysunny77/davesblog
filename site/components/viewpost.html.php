@@ -10,8 +10,6 @@
         exit();
     }
 
-    $page = isset($_GET["page"]) ? '?page=' . $_GET["page"] : '?page=' . 1;
-
         echo '<div class="blog full">';
         echo '<article class="h-100">';
         echo '<div class="h-100 row justify-content-end me-0 p-4 p-sm-5 g-0">';
@@ -23,7 +21,7 @@
         echo '</div>';
         echo '</div>';
         echo '<div class="col-12 col-md-4 d-flex align-items-end order-3 order-md-2">';
-        echo '<a href="./' . $page . '">Return to Blog</a>';
+        echo '<a href="./' . $this->page . '">Return to Blog</a>';
         echo '</div>';
         echo '<div class="col-12 col-md-8 d-flex align-items-center order-2 order-md-3 my-3 my-md-0">';
         echo '<p class="w-100 text-end m-0">' . $this->result['postCont'] . '</p>';

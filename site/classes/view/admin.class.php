@@ -7,6 +7,7 @@
  * @property private $root Holds root directory for the head
  * @property private $title Holds title for the head
  * @property private $output Holds message for body
+ * @property private $page Holds page for the link
  *
  */
 class Admin
@@ -16,6 +17,7 @@ class Admin
     private $root = "../";
     private $title = "Admin";
     private $output;
+    private $page;
 
     public function __construct($output, $model)
     {
@@ -23,6 +25,7 @@ class Admin
         $result = $model->GetAdminBlogPosts();
         $this->result = empty($result) ? false : array_chunk($result, 5, true);
         $this->output = $output;
+        $this->page = isset($_GET["page"]) ? '&page=' . $_GET["page"] : '&page=' . 1;
     }
 
     public function GetHead()
