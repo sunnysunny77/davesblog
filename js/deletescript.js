@@ -12,9 +12,9 @@ export const deletescript = () => {
  
     events(index, "click", (e) => {
 
-      const id = e.currentTarget.getAttribute("postID");
-      const page = e.currentTarget.getAttribute("page");
-      const title = e.currentTarget.getAttribute("postTitle");
+      const id = e.currentTarget.getAttribute("data-postID");
+      const page = e.currentTarget.getAttribute("data-page");
+      const title = e.currentTarget.getAttribute("data-postTitle");
   
       if (confirm(`Are you sure you want to delete '${  title  }'`))
       {

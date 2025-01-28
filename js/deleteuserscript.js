@@ -12,8 +12,8 @@ export const deleteuserscript = () => {
 
    events(index, "click", (e) => {
   
-      const id = e.currentTarget.getAttribute("memberID");
-      const title = e.currentTarget.getAttribute("userName");
+      const id = e.currentTarget.getAttribute("data-memberID");
+      const title = e.currentTarget.getAttribute("data-userName");
   
       if (confirm(`Are you sure you want to delete '${  title  }'`))
       {
