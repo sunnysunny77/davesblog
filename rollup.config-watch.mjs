@@ -4,18 +4,7 @@ import terser from "@rollup/plugin-terser";
 import livereload from "rollup-plugin-livereload";
 import fs from "fs";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
-//alert"
-//button"
-//carousel"
-//collapse"
-//dropdown"
-//modal"
-//offcanvas"
-//popover"
-//scrollspy"
-//tab"
-//toast"
-//tooltip"
+
 export default {
   input: "./js/index.js",
   output: [
@@ -28,7 +17,6 @@ export default {
   plugins: [
     commonjs({
       include: /node_modules/,
-      "bootstrap": [],
     }),
     nodeResolve(),
     babel({ babelHelpers: "bundled" }),
