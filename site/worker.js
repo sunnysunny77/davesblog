@@ -110,8 +110,11 @@ self.addEventListener("fetch", (event) => {
 
   console.log("Fetching via Service worker");
 
-  if (event.request.url.match(/admin/)) {
+  if (event.request.method === "POST") {
 
+    return;
+  } else if (event.request.url.match(/admin/)) {
+    
     event.respondWith(admin(event.request));
   } else {
     
