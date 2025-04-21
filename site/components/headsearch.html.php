@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-overlayscrollbars-initialize>
 <head>
     <meta charset="utf-8">
     <script src="<?php echo $this->root; ?>js/preload.js"></script>
@@ -10,7 +10,7 @@
     <link rel="manifest" href="<?php echo $this->root; ?>manifest.json" />
     <link rel="apple-touch-icon" href="<?php echo $this->root; ?>images/pwa-logo-small.webp" />
 </head>
-<body id="top" class="p-2 p-md-3">
+<body id="top" class="p-2 p-md-3" data-overlayscrollbars-initialize>
     <nav class="container-fluid g-0">
         <ul class="row m-0 p-0 g-0">
             <li class="col-6 col-md-2 p-2"><a class="p-2" href="<?php echo $this->root; ?>index.php">Blog<span>01</span></a></li>

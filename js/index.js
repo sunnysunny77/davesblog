@@ -17,6 +17,7 @@ import { deletescript } from "./deletescript.js";
 import { contactscript } from "./contactscript.js";
 import { top } from "./top.js";
 import { fallback } from "./fallback.js";
+import { init } from "./init.js";
 
 events(window, "load", () => {
 
@@ -25,5 +26,6 @@ events(window, "load", () => {
     contactscript();
     deletescript();
     deleteuserscript();
+    init();
     service_worker();
 });
