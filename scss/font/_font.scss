@@ -1,7 +1,9 @@
 @font-face {
     font-family: "OpenSans";
-    src: url(../font/OpenSans.ttf);
+    src: url(../font/OpenSans.ttf) format('truetype-variations');
     font-display: swap;
+    font-style: normal;
+    font-weight: 100 900;
 }
 
 $font: "OpenSans";
